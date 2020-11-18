@@ -1,0 +1,22 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://christham-website.now.sh</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/markdown-basics</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/markdown-test</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/pre-rendering</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/ssg-ssr</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+</urlset>
