@@ -6,14 +6,14 @@ import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 export default function Post({
-  postData
+  postData,
 }: {
   postData: {
     title: string
     date: string
     contentHtml: string
   }
-}) {
+}): React.ReactElement {
   return (
     <Layout>
       <Head>
@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id as string)
   return {
     props: {
-      postData
-    }
+      postData,
+    },
   }
 }

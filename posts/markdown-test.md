@@ -1,6 +1,6 @@
 ---
-title: "Markdown: Test"
-date: "2020-01-01"
+title: 'Markdown: Test'
+date: '2020-01-01'
 ---
 
 This is a Markdown test for the Markdown Guide tools directory.
@@ -21,11 +21,9 @@ headings
 
 ###### Six
 
-Alternate One
-=============
+# Alternate One
 
-Alternate Two
--------------
+## Alternate Two
 
 ---
 
@@ -54,7 +52,7 @@ bold
 
 **asterisks**
 
-__underscores__
+**underscores**
 
 in**middle**here
 
@@ -62,7 +60,7 @@ in**middle**here
 
 italic
 
-*asterisk*
+_asterisk_
 
 _underscore_
 
@@ -72,11 +70,11 @@ in*middle*here
 
 bold and italic
 
-***asterisks***
+**_asterisks_**
 
-___underscores___
+**_underscores_**
 
-__*combo*__
+**_combo_**
 
 **_second combo_**
 
@@ -92,7 +90,7 @@ blockquotes
 
 > nested
 >
->> blockquotes
+> > blockquotes
 
 ---
 
@@ -102,10 +100,10 @@ ordered lists
 2. second
 3. third
 
-1. this
-2. is
-    1. nested
-3. now
+4. this
+5. is
+   1. nested
+6. now
 
 ---
 
@@ -118,8 +116,8 @@ unordered lists
 * asterisks
 * here
 
-+ plus
-+ signs
+- plus
+- signs
 
 ---
 
@@ -158,10 +156,10 @@ images
 
 ## Tables
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
 
 ---
 
@@ -194,7 +192,6 @@ images
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 [^1]: This is the first footnote.
-
 [^bignote]: Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
@@ -267,7 +264,7 @@ X^2^
 
 ## Abbreviation
 
-*[HTML]: Hyper Text Markup Language
+\*[HTML]: Hyper Text Markup Language
 
 The HTML specification is maintained by the W3C.
 

@@ -7,14 +7,14 @@ import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
 export default function Home({
-  allPostsData
+  allPostsData,
 }: {
   allPostsData: {
     date: string
     title: string
     id: string
   }[]
-}) {
+}): React.ReactElement {
   return (
     <Layout home>
       <Head>
@@ -23,7 +23,8 @@ export default function Home({
       <section className={utilStyles.headingMd}>
         <p>artist, consultant, cyclist, designer, musician, photograher, world traveller</p>
         <p>
-        I live in Sydney, Australia and this is a personal web site where I post articles relating to my interests.
+          I live in Sydney, Australia and this is a personal web site where I post articles relating
+          to my interests.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -50,7 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }

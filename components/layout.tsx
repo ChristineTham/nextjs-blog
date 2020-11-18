@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
@@ -8,11 +7,11 @@ export const siteTitle = 'Chris Tham Personal Web Site'
 
 export default function Layout({
   children,
-  home
+  home,
 }: {
   children: React.ReactNode
   home?: boolean
-}) {
+}): React.ReactElement {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
