@@ -7,7 +7,7 @@ export const siteTitle = 'Chris Tham Personal Web Site'
 
 export default function Layout({
   children,
-  home,
+  home
 }: {
   children: React.ReactNode
   home?: boolean

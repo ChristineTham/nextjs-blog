@@ -36,10 +36,12 @@
     ]
   },
   "prettier": {
+    "printWidth": 100,
     "arrowParens": "always",
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "semi": false
   },
   "dependencies": {
     "date-fns": "^2.11.1",

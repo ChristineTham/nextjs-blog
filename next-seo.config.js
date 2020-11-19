@@ -18,15 +18,15 @@ const SEO = {
         url: 'https://christham-website.now.sh/images/profile.jpg',
         alt: title,
         width: 500,
-        height: 500,
-      },
-    ],
+        height: 500
+      }
+    ]
   },
   twitter: {
     handle: '@chris1tham',
     site: sitename,
-    cardType: 'summary_large_image',
-  },
+    cardType: 'summary_large_image'
+  }
 }
 
 export default SEO

@@ -1,8 +1,4 @@
-export default function TestComponent({
-  name = 'world'
-}: {
-  name: string;
-}): React.ReactElement {
+export default function TestComponent({ name = 'world' }: { name: string }): React.ReactElement {
   return (
     <>
       <div>Hello, {name}!</div>
@@ -16,5 +12,5 @@ export default function TestComponent({
         }
       `}</style>
     </>
-  );
+  )
 }

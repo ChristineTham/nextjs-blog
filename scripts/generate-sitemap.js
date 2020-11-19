@@ -2,7 +2,11 @@ const fs = require('fs')
 const globby = require('globby')
 
 function addPage(page) {
-  const path = page.replace('pages', '').replace('.tsx', '').replace('.md', '').replace('posts', '/posts')
+  const path = page
+    .replace('pages', '')
+    .replace('.tsx', '')
+    .replace('.md', '')
+    .replace('posts', '/posts')
   const route = path === '/index' ? '' : path
 
   return `  <url>
@@ -18,7 +22,7 @@ async function generateSitemap() {
     'posts/**/*{.tsx,.mdx}',
     '!pages/_*.tsx',
     '!pages/posts/[id].tsx',
-    '!pages/api',
+    '!pages/api'
   ])
   const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(addPage).join('\n')}
