@@ -6,7 +6,12 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default ({ children, className, live, render }) => {
+const CodeBlock: React.FC<{
+  children: string
+  className: string
+  live: string
+  render: string
+}> = ({ children, className, live, render }) => {
   const language = className ? className.replace(/language-/, '') : 'bash'
 
   if (live) {
@@ -51,3 +56,4 @@ export default ({ children, className, live, render }) => {
     </Highlight>
   )
 }
+export default CodeBlock

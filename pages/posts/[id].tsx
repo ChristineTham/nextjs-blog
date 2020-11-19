@@ -39,7 +39,7 @@ export default function Post({
     title: string
     date: string
   }
-}): React.ReactElement {
+}): JSX.Element {
   const content = hydrate(source, { components })
   return (
     <Layout>

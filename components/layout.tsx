@@ -5,13 +5,7 @@ import Link from 'next/link'
 const name = 'Chris Tham'
 export const siteTitle = 'Chris Tham Personal Web Site'
 
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}): React.ReactElement {
+const Layout: React.FC<{ home?: boolean }> = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -54,3 +48,4 @@ export default function Layout({
     </div>
   )
 }
+export default Layout

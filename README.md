@@ -10,9 +10,10 @@ lots of additional features (mainly from [Next.js examples](https://github.com/v
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 - Auto generated [Sitemap](https://www.sitemaps.org/)
 - SEO head metadata with [next-seo](https://github.com/garmeeh/next-seo)
-- RSS feed
+- Auto generated RSS feed using [node-rss](https://github.com/dylang/node-rss)
 - MDX blog pages using [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
-- Prism
+- [Prism](https://prismjs.com) syntax highlighting using [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
+- Example [AMP](https://amp.dev) pages
 
 ## Deploy
 

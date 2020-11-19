@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
-export default function App({ Component, pageProps }: AppProps): React.ReactElement {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>

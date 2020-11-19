@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useAmp } from 'next/amp'
-// import Layout from '../components/layout'
+import Layout from '../components/AmpLayout'
 import Byline from '../components/Byline'
 
 export const config = {
@@ -8,7 +8,6 @@ export const config = {
 }
 
 // Any element you create will be accepted
-
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
@@ -22,7 +21,7 @@ export default function CatPage(): JSX.Element {
   const isAmp = useAmp()
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>The Cat</title>
       </Head>
@@ -206,6 +205,6 @@ export default function CatPage(): JSX.Element {
           text-align: center;
         }
       `}</style>
-    </>
+    </Layout>
   )
 }

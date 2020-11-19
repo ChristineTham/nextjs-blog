@@ -1,4 +1,4 @@
-export default function Byline({ author }: { author: string }): JSX.Element {
+const Byline: React.FC<{ author: string }> = ({ author }) => {
   return (
     <>
       <div className="byline">By {author}</div>
@@ -11,3 +11,4 @@ export default function Byline({ author }: { author: string }): JSX.Element {
     </>
   )
 }
+export default Byline

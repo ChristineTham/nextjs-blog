@@ -1,4 +1,4 @@
-export default function TestComponent({ name = 'world' }: { name: string }): React.ReactElement {
+const TestComponent: React.FC<{ name: string }> = ({ name = 'world' }) => {
   return (
     <>
       <div>Hello, {name}!</div>
@@ -14,3 +14,4 @@ export default function TestComponent({ name = 'world' }: { name: string }): Rea
     </>
   )
 }
+export default TestComponent

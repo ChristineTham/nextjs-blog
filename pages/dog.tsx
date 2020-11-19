@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useAmp } from 'next/amp'
+import Layout from '../components/AmpLayout'
 import Byline from '../components/Byline'
 
 export const config = {
@@ -10,7 +11,7 @@ export default function DogPage(): JSX.Element {
   const isAmp = useAmp()
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>The Dog</title>
       </Head>
@@ -75,6 +76,6 @@ export default function DogPage(): JSX.Element {
         Chocolate bar donut dragée ice cream biscuit. Pie candy canes muffin candy canes ice cream
         tiramisu.
       </p>
-    </div>
+    </Layout>
   )
 }
