@@ -46,49 +46,42 @@ Next, we can create a Node script at `scripts/generate-sitemap.js`.
 This file will dynamically build a sitemap based on your `/pages` directory.
 
 ```js
-const fs = require('fs');
+const fs = require('fs')
 
-const globby = require('globby');
-const prettier = require('prettier');
+const globby = require('globby')
+const prettier = require('prettier')
 
-(async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+;(async () => {
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
 
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
-  const pages = await globby([
-    'pages/**/*{.js,.mdx}',
-    '!pages/_*.js',
-    '!pages/api'
-  ]);
+  const pages = await globby(['pages/**/*{.js,.mdx}', '!pages/_*.js', '!pages/api'])
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
-                const path = page
-                  .replace('pages', '')
-                  .replace('.js', '')
-                  .replace('.mdx', '');
-                const route = path === '/index' ? '' : path;
+                const path = page.replace('pages', '').replace('.js', '').replace('.mdx', '')
+                const route = path === '/index' ? '' : path
 
                 return `
                         <url>
                             <loc>${`https://yoursitehere.com${route}`}</loc>
                         </url>
-                    `;
+                    `
               })
               .join('')}
         </urlset>
-    `;
+    `
 
   // If you're not using Prettier, you can remove this.
   const formatted = prettier.format(sitemap, {
     ...prettierConfig,
     parser: 'html'
-  });
+  })
 
-  fs.writeFileSync('public/sitemap.xml', formatted);
-})();
+  fs.writeFileSync('public/sitemap.xml', formatted)
+})()
 ```
 
 Finally, override your `next.config.js` to run this script as part of the build process.
@@ -99,12 +92,12 @@ root of your site (requires [Next v9.0+](https://github.com/vercel/next.js/relea
 module.exports = {
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require('./scripts/generate-sitemap');
+      require('./scripts/generate-sitemap')
     }
 
-    return config;
+    return config
   }
-};
+}
 ```
 
 ## External Content
@@ -116,29 +109,29 @@ but the idea is the same. To demonstrate, I've created an example using placehol
 First, create a new file at `pages/sitemap.xml.js`.
 
 ```js
-import React from 'react';
+import React from 'react'
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
-    const request = await fetch(EXTERNAL_DATA_URL);
-    const posts = await request.json();
+    const request = await fetch(EXTERNAL_DATA_URL)
+    const posts = await request.json()
 
-    res.setHeader('Content-Type', 'text/xml');
-    res.write(createSitemap(posts));
-    res.end();
+    res.setHeader('Content-Type', 'text/xml')
+    res.write(createSitemap(posts))
+    res.end()
   }
 }
 
-export default Sitemap;
+export default Sitemap
 ```
 
 When the route `/sitemap.xml` is initially loaded, we will fetch posts from an external data source
 and then write an XML file as the response.
 
 ```js
-import React from 'react';
+import React from 'react'
 
-const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
+const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -148,24 +141,24 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                     <url>
                         <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
                     </url>
-                `;
+                `
           })
           .join('')}
     </urlset>
-    `;
+    `
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
-    const request = await fetch(EXTERNAL_DATA_URL);
-    const posts = await request.json();
+    const request = await fetch(EXTERNAL_DATA_URL)
+    const posts = await request.json()
 
-    res.setHeader('Content-Type', 'text/xml');
-    res.write(createSitemap(posts));
-    res.end();
+    res.setHeader('Content-Type', 'text/xml')
+    res.write(createSitemap(posts))
+    res.end()
   }
 }
 
-export default Sitemap;
+export default Sitemap
 ```
 
 Here's a condensed example of the output.
