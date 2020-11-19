@@ -28,12 +28,18 @@ export default function Home({
         </p>
       </section>
       <section className={utilStyles.headingMd}>
-        <Link href="/cat">
-          <a>The Cat (AMP-first Page)</a>
-        </Link>
-        <Link href="/dog">
-          <a>The Dog (Hybrid AMP Page)</a>
-        </Link>
+        <ul>
+          <li>
+            <Link href="/cat">
+              <a>The Cat (AMP-first Page)</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/dog">
+              <a>The Dog (Hybrid AMP Page)</a>
+            </Link>
+          </li>
+        </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
