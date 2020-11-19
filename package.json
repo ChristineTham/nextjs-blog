@@ -2,8 +2,19 @@
   "name": "nextjs-blog",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Chris Tham",
+    "email": "chris.tham@hellotham.com",
+    "url": "https://christham.net"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristineTham/nextjs-blog.git"
+  },
   "scripts": {
     "dev": "next dev",
+    "dev:watch": "next-remote-watch ./posts",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
@@ -24,15 +35,26 @@
       "yarn format"
     ]
   },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
   "dependencies": {
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
+    "mdx-prism": "^0.3.1",
     "next": "^10.0.0",
     "next-seo": "^4.17.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "reading-time": "^1.2.0",
     "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
+    "remark-autolink-headings": "^6.0.1",
+    "remark-code-titles": "^0.1.1",
+    "remark-html": "^13.0.1",
+    "remark-slug": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -50,7 +72,10 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.1",
+    "next-mdx-remote": "^1.0.0",
+    "next-remote-watch": "^0.2.0",
     "prettier": "^2.1.2",
+    "rehype": "^11.0.0",
     "typescript": "^4.0.5"
   }
 }

@@ -1,14 +1,18 @@
-Simple version of personal web site for testing purposes, initially based on [Learn Next.js](https://nextjs.org/learn).
+My Next.js blog starter. Currently used for testing purposes.
 
-Configured with:
+This evolved originally from me completing the [Learn Next.js](https://nextjs.org/learn) course, but then I started adding
+lots of additional features (mainly from [Next.js examples](https://github.com/vercel/next.js/blob/canary/examples)).
 
 - [Typescript](https://www.typescriptlang.org/)
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
-- Auto generated sitemap.xml
-- SEO head metadata with next-seo
+- Auto generated [Sitemap](https://www.sitemaps.org/)
+- SEO head metadata with [next-seo](https://github.com/garmeeh/next-seo)
+- RSS feed
+- MDX blog pages using [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
+- Prism
 
 ## Deploy
 

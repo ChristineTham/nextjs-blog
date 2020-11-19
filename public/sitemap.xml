@@ -4,19 +4,23 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/markdown-basics</loc>
+    <loc>https://christham-website.now.sh/posts/example-postx</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/markdown-test</loc>
+    <loc>https://christham-website.now.sh/posts/markdown-basicsx</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/pre-rendering</loc>
+    <loc>https://christham-website.now.sh/posts/markdown-testx</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/ssg-ssr</loc>
+    <loc>https://christham-website.now.sh/posts/pre-renderingx</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/ssg-ssrx</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>
