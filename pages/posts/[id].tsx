@@ -12,9 +12,9 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
-import highlight from 'mdx-prism-2'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
+import CodeBlock from '../../components/CodeBlock'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -26,7 +26,8 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
-  Head
+  Head,
+  code: CodeBlock
 }
 
 export default function Post({
@@ -79,7 +80,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     components,
     mdxOptions: {
       remarkPlugins: [remarkMath],
-      rehypePlugins: [highlight, rehypeKatex]
+      rehypePlugins: [rehypeKatex]
     },
     scope: data
   })
