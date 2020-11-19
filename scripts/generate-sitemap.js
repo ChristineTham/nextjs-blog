@@ -5,7 +5,7 @@ function addPage(page) {
   const path = page
     .replace('pages', '')
     .replace('.tsx', '')
-    .replace('.md', '')
+    .replace('.mdx', '')
     .replace('posts', '/posts')
   const route = path === '/index' ? '' : path
 
