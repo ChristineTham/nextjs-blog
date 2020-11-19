@@ -12,7 +12,7 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
-import rehypeHighlight from 'rehype-highlight'
+import highlight from 'mdx-prism-2'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     components,
     mdxOptions: {
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeHighlight, rehypeKatex]
+      rehypePlugins: [highlight, rehypeKatex]
     },
     scope: data
   })

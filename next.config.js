@@ -1,7 +1,7 @@
 const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [require('remark-math')],
-    rehypePlugins: [require('rehype-highlight'), require('rehype-katex')]
+    rehypePlugins: [require('mdx-prism-2'), require('rehype-katex')]
   },
   extension: /\.mdx?$/
 })
