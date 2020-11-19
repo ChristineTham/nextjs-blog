@@ -12,6 +12,9 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { postFilePaths, POSTS_PATH } from '../../lib/mdxUtils'
+import rehypeHighlight from 'rehype-highlight'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -74,10 +77,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const mdxSource = await renderToString(content, {
     components,
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: []
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeHighlight, rehypeKatex]
     },
     scope: data
   })

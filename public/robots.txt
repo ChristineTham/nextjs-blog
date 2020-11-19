@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://christham-website.now.sh/sitemap.xml

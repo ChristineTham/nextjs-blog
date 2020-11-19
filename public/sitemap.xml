@@ -1,22 +1,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://christham-website.now.sh/example-math.md</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://christham-website.now.sh</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/example-postx</loc>
+    <loc>https://christham-website.now.sh/markdown-basics.md</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/markdown-testx</loc>
+    <loc>https://christham-website.now.sh/posts/example-post</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/pre-renderingx</loc>
+    <loc>https://christham-website.now.sh/posts/markdown-test</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/ssg-ssrx</loc>
+    <loc>https://christham-website.now.sh/posts/nextjs-sitemap-robots</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/pre-rendering</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/posts/ssg-ssr</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>

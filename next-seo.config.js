@@ -5,7 +5,7 @@ const description = 'artist, consultant, cyclist, designer, musician, photograhe
 const SEO = {
   title,
   description,
-  canonical: 'https://leerob.io',
+  canonical: 'https://christham-website.now.sh',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
