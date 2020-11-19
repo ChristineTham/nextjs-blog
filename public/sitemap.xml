@@ -1,5 +1,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://christham-website.now.sh/cat</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://christham-website.now.sh/dog</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://christham-website.now.sh/example-math.md</loc>
     <changefreq>hourly</changefreq>
   </url>

@@ -58,12 +58,12 @@
     "rehype-katex": "^4.0.0",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
-    "remark-math": "3",
-    "unified-ui": "^0.0.3"
+    "remark-math": "3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@testing-library/react": "^11.2.0",
+    "@types/amp": "^0.3.0",
     "@types/jest": "^26.0.15",
     "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^14.14.8",
