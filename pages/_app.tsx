@@ -14,6 +14,12 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="/browserconfig.xml" name="msapplication-config" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS for blog posts"
+          href={process.env.WEBSITE_URL + '/rss'}
+        />
       </Head>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
