@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/postutils'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
+import Nav from '../components/nav'
 
 export default function Home({
   allPostsData
@@ -20,6 +21,12 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <div>
+        <Nav />
+        <div className="py-20">
+          <h1 className="text-5xl text-center text-accent-1">Next.js + Tailwind CSS</h1>
+        </div>
+      </div>
       <section className={utilStyles.headingMd}>
         <p>artist, consultant, cyclist, designer, musician, photograher, world traveller</p>
         <p>
