@@ -10,7 +10,7 @@ module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require('./scripts/generate-sitemap')
+      require('./scripts/generate')
     }
 
     return config

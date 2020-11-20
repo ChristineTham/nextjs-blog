@@ -16,7 +16,6 @@
     "dev": "next dev",
     "dev:watch": "next-remote-watch ./posts",
     "build": "next build",
-    "build:rss": "ts-node ./scripts/generate-rss.ts",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
