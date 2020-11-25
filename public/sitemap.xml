@@ -1,34 +1,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://christham-website.now.sh/cat</loc>
+    <loc>https://learning-jamstack.now.sh/cat</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/dog</loc>
+    <loc>https://learning-jamstack.now.sh/dog</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh</loc>
+    <loc>https://learning-jamstack.now.sh/hero</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/example-post</loc>
+    <loc>https://learning-jamstack.now.sh</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/markdown-test</loc>
+    <loc>https://learning-jamstack.now.sh/posts/example-post</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/nextjs-sitemap-robots</loc>
+    <loc>https://learning-jamstack.now.sh/posts/markdown-test</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/pre-rendering</loc>
+    <loc>https://learning-jamstack.now.sh/posts/nextjs-sitemap-robots</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://christham-website.now.sh/posts/ssg-ssr</loc>
+    <loc>https://learning-jamstack.now.sh/posts/pre-rendering</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/ssg-ssr</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>

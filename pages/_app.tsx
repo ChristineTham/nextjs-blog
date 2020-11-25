@@ -1,11 +1,15 @@
-import '../styles/global.css'
 import '../styles/index.css'
+
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
+config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -21,9 +25,11 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           title="RSS for blog posts"
           href={process.env.WEBSITE_URL + '/rss'}
         />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
   )
 }
+export default App

@@ -11,7 +11,7 @@ export const postFilePaths = fs
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path))
 
-interface PostMeta {
+export interface PostMeta {
   date: string
   title: string
   id: string

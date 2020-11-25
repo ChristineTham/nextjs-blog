@@ -1,4 +1,6 @@
-My Next.js blog starter. Currently used for testing purposes.
+# Learning Jamstack
+
+My Next.js blog, used to document my adventures learning Jamstack.
 
 This evolved originally from me completing the [Learn Next.js](https://nextjs.org/learn) course, but then I started adding
 lots of additional features (mainly from [Next.js examples](https://github.com/vercel/next.js/blob/canary/examples)).
