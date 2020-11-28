@@ -1,18 +1,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://learning-jamstack.now.sh/cat</loc>
+    <loc>https://learning-jamstack.now.sh/about</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/dog</loc>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
-    <loc>https://learning-jamstack.now.sh/hero</loc>
+    <loc>https://learning-jamstack.now.sh/contact</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/landing</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

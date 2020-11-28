@@ -12,12 +12,14 @@ import { postFilePaths, POSTS_PATH } from '../../lib/postutils'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import CodeBlock from '../../components/CodeBlock'
+import A from '../../components/A'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
+  a: A,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.

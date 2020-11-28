@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import Header from './tailwindblocks/Header'
-import Footer from './Footer'
+import Header from './tailblocks/Header'
+import Footer from './Notus/Footer'
 
 import { site } from '../global'
 

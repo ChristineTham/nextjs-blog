@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Navbar from './Navbar'
-import NavbarItem from './NavbarItem'
-import Header from './Header'
-import Footer from './Footer'
+import Navbar from './Notus/Navbar'
+import NavbarItem from './Notus/NavbarItem'
+import Header from './MerakiUI/Header'
+import Footer from './Notus/Footer'
 import { FrontMatter } from '../pages/posts/[id]'
 
 const BlogLayout: React.FC<{ meta: FrontMatter }> = ({ children, meta }) => {
