@@ -6,18 +6,24 @@ function Header(): JSX.Element {
   return (
     <header className="text-rosely0 body-font top-0 fixed z-50 w-full bg-white bg-opacity-90">
       <div className=" container border-b border-rosely7 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <A href="/">
+        <A noline href="/">
           <span className="title-font font-medium items-center flex text-rosely10 mb-4 md:mb-0">
             <Logo className="h-10 w-10" />
             <span className="ml-3 text-xl">{site.title}</span>
           </span>
         </A>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-rosely7	flex flex-wrap items-center text-base justify-center space-x-3">
-          <A href="/about">About</A>
-          <A href="/contact">Contact</A>
-          <A href="/blog">Blog</A>
+          <A noline href="/about">
+            About
+          </A>
+          <A noline href="/contact">
+            Contact
+          </A>
+          <A noline href="/blog">
+            Blog
+          </A>
         </nav>
-        <A external as="button" href={site.repository}>
+        <A external noline href={site.repository}>
           <button className="inline-flex items-center bg-rosely10 border-0 py-1 px-3 focus:outline-none hover:bg-rosely9 text-white rounded text-base mt-4 md:mt-0">
             <svg
               className="h-6 w-6"

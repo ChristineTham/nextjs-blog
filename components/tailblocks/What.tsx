@@ -1,6 +1,6 @@
 import WhatItem from './WhatItem'
 import A from '../A'
-import Section from '../Section'
+import Section from './Section'
 
 import Security from '../../icons/security.svg'
 import Scale from '../../icons/scale.svg'
@@ -40,7 +40,7 @@ function What(): JSX.Element {
           <Code className="h-10 w-10" />
         </WhatItem>
       </div>
-      <A external as="button" href="https://jamstack.org">
+      <A external noline href="https://jamstack.org">
         <button
           className={`flex mx-auto mt-8 text-white bg-rosely10 border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
         >

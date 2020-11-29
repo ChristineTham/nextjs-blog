@@ -5,8 +5,8 @@ function AboutMe(): JSX.Element {
   return (
     <section className="text-rosely1 body-font">
       <div className="container px-5 pt-28 mx-auto">
-        <div className="flex flex-col text-center w-full">
-          <h1 className="title-font sm:text-4xl text-3xl font-bold text-rosely10 text-center bg-rosely4 rounded-lg">
+        <div className="flex flex-col text-center items-center">
+          <h1 className="title-font sm:text-4xl text-3xl font-bold text-rosely2 text-center bg-rosely5 rounded-lg shadow-lg p-4">
             About me and this site
           </h1>
         </div>
@@ -19,12 +19,12 @@ function AboutMe(): JSX.Element {
             src="/images/hellokitty.jpeg"
           />
           <div className="flex justify-center space-x-2 flex-row mt-6">
-            <A external as="button" href={site.website}>
+            <A external noline href={site.website}>
               <button className="inline-flex items-center text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded">
                 christham.net
               </button>
             </A>
-            <A external as="button" href={site.company_url}>
+            <A external noline href={site.company_url}>
               <button className="inline-flex items-center text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">
                 Hello Tham
               </button>

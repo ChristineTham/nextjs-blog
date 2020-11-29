@@ -31,7 +31,7 @@ const Footer: React.FC = () => (
             <h4 className="text-3xl text-rosely10 font-semibold">{site.title}</h4>
             <h5 className="text-lg mt-4 text-rosely1">Reach out to start a conversation!</h5>
             <div className="mt-6 lg:mb-0 mb-6">
-              <A external as="button" href={site.twitter}>
+              <A external noline href={site.twitter}>
                 <button
                   className="bg-rosely6 text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
@@ -39,7 +39,7 @@ const Footer: React.FC = () => (
                   <Twitter />
                 </button>
               </A>
-              <A external as="button" href={site.facebook}>
+              <A external noline href={site.facebook}>
                 <button
                   className="bg-rosely6 text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
@@ -47,7 +47,7 @@ const Footer: React.FC = () => (
                   <Facebook />
                 </button>
               </A>
-              <A external as="button" href={site.website}>
+              <A external noline href={site.website}>
                 <button
                   className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
@@ -55,7 +55,7 @@ const Footer: React.FC = () => (
                   <Blog />
                 </button>
               </A>
-              <A external as="button" href={site.github}>
+              <A external noline href={site.github}>
                 <button
                   className="bg-rosely6 text-rosely9 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"

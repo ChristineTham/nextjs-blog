@@ -2,18 +2,18 @@ import Link from 'next/link'
 
 interface AProps extends React.ComponentPropsWithoutRef<'a'> {
   href: string
-  as?: string
+  noline?: boolean
   external?: boolean
 }
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const A: React.FC<AProps> = (props) => {
-  const { external, as, href, ...otherProps } = props
+  const { external, noline: noline, href, ...otherProps } = props
   if (external) {
     return (
       <>
         <a
           href={href}
-          className="text-rosely10 hover:text-rosely9"
+          className={`text-rosely10 hover:text-rosely9 ${noline || 'underline'} font-semibold`}
           target="_blank"
           rel="noreferrer"
           {...otherProps}
@@ -23,8 +23,11 @@ const A: React.FC<AProps> = (props) => {
   } else {
     return (
       <>
-        <Link as={as} href={href}>
-          <a className="text-rosely10 hover:text-rosely9" {...otherProps} />
+        <Link href={href}>
+          <a
+            className={`text-rosely10 hover:text-rosely9 ${noline || 'underline'} font-semibold`}
+            {...otherProps}
+          />
         </Link>
       </>
     )

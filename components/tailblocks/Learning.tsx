@@ -1,6 +1,6 @@
 import LearningItem from './LearningItem'
 import A from '../A'
-import Section from '../Section'
+import Section from './Section'
 
 function Learning(): JSX.Element {
   return (

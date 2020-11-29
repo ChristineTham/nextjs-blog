@@ -15,7 +15,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {/*<meta content="width=device-width, initial-scale=1" name="viewport" />*/}
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="/browserconfig.xml" name="msapplication-config" />
@@ -25,7 +25,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           title="RSS for blog posts"
           href={process.env.WEBSITE_URL + '/rss'}
         />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />

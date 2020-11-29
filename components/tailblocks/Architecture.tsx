@@ -1,5 +1,6 @@
 import ArchitectureItem from './ArchitectureItem'
-import Section from '../Section'
+import Section from './Section'
+import A from '../A'
 
 function Architecture(): JSX.Element {
   return (
@@ -16,6 +17,26 @@ function Architecture(): JSX.Element {
       <ArchitectureItem title="Next.js" href="https://nextjs.org">
         Next.js is a minimalistic framework for server-rendered React applications as well as
         statically exported React apps.
+      </ArchitectureItem>
+      <ArchitectureItem title="TailwindCSS" href="https://tailwindcss.com">
+        A constraint based, utility-first CSS framework that can be composed to build any design,
+        directly in HTML.
+      </ArchitectureItem>
+      <ArchitectureItem title="Undraw" href="https://undraw.co">
+        The beautiful illustrations on this site were created by by Katerina Limpitsouni.
+      </ArchitectureItem>
+      <ArchitectureItem title="Tailblocks" href="https://undraw.co">
+        The current design of the website is largely inspired by the beautiful blocks created by
+        Mert Cukuren.
+      </ArchitectureItem>
+      <ArchitectureItem title="HeroIcons" href="https://heroicons.com">
+        Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.
+      </ArchitectureItem>
+      <ArchitectureItem title="Flaticon" href="https://www.flaticon.com/">
+        The website logo and favicon is a colour-modified version of transip-stack icon made by
+        <A external href="https://www.freepik.com/" title="Freepik">
+          Freepik
+        </A>
       </ArchitectureItem>
     </Section>
   )

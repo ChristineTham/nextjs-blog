@@ -8,11 +8,12 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import path from 'path'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { postFilePaths, POSTS_PATH } from '../../lib/postutils'
+import { postFilePaths, POSTS_PATH, FrontMatter } from '../../lib/postutils'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
+import inlineCode from '../../components/inlineCode'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -25,13 +26,10 @@ const components = {
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  code: CodeBlock
+  code: CodeBlock,
+  inlineCode: inlineCode
 }
 
-export interface FrontMatter {
-  title: string
-  date: string
-}
 interface PostProps {
   source: Source
   frontMatter: FrontMatter

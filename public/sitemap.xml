@@ -16,7 +16,19 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/example-post</loc>
+    <loc>https://learning-jamstack.now.sh/sample-amp-page</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/convert-to-mdx</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/learning-nextjs</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/markdown-cheat-sheet</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
@@ -24,15 +36,31 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/nextjs-sitemap-robots</loc>
+    <loc>https://learning-jamstack.now.sh/posts/math</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/pre-rendering</loc>
+    <loc>https://learning-jamstack.now.sh/posts/nextjs-amp</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/ssg-ssr</loc>
+    <loc>https://learning-jamstack.now.sh/posts/site-frontmatter</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/template</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/typemill-markdown-test</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/why-create-a-blog-in-nextjs</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/why-no-cms</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>

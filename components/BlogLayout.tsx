@@ -1,23 +1,19 @@
 import Head from 'next/head'
-import Navbar from './Notus/Navbar'
-import NavbarItem from './Notus/NavbarItem'
-import Header from './MerakiUI/Header'
+import Header from './tailblocks/Header'
+import BlogHero from './tailblocks/BlogHero'
 import Footer from './Notus/Footer'
-import { FrontMatter } from '../pages/posts/[id]'
+import { FrontMatter } from '../lib/postutils'
 
 const BlogLayout: React.FC<{ meta: FrontMatter }> = ({ children, meta }) => {
   return (
     <>
-      <Navbar>
-        <NavbarItem href="/about">About</NavbarItem>
-        <NavbarItem href="/blog">Blog</NavbarItem>
-      </Navbar>
       <Head>
         <title>{meta.title}</title>
       </Head>
-      <Header title={meta.title} />
+      <Header />
+      <BlogHero meta={meta} />
       <main className="mt-8 md:mt-10 pb-40 relative bg-white">
-        <article className="prose lg:prose-xl prose-indigo mx-auto">{children}</article>
+        <article className="prose mx-auto">{children}</article>
       </main>
       <Footer />
     </>

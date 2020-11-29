@@ -23,6 +23,57 @@ module.exports = {
         rosely14: '#64bfa4',
         rosely15: '#919bc9',
         jamstack: '#F0047F'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#27272a',
+            a: {
+              color: '#b565a7',
+              '&:hover': {
+                color: '#b0879b'
+              }
+            },
+            blockquote: {
+              borderLeftColor: '#93a9d1'
+            },
+            hr: {
+              borderColor: '#93a9d1',
+              borderTopWidth: 2
+            },
+            'ul > li::before': {
+              backgroundColor: '#93a9d1'
+            },
+            'code::before': {
+              content: ''
+            },
+            'code::after': {
+              content: ''
+            },
+            'pre code::before': {
+              content: ''
+            },
+            'pre code::after': {
+              content: ''
+            },
+            h1: {
+              color: '#85677b'
+            },
+            h2: {
+              color: '#85677b'
+            },
+            h3: {
+              color: '#85677b'
+            },
+            thead: {
+              borderBottomWidth: '2px',
+              borderBottomColor: '#93a9d1'
+            },
+            'tbody tr': {
+              borderBottomColor: '#93a9d1'
+            }
+          }
+        }
       }
     }
   },

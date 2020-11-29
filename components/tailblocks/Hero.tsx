@@ -17,14 +17,14 @@ function Hero(): JSX.Element {
           </p>
           <p className="mt-6">{site.description}</p>
           <div className="flex justify-start space-x-2 flex-row mt-6">
-            <A as="button" href="/blog">
+            <A noline href="/blog">
               <button
                 className={`inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg`}
               >
                 Read
               </button>
             </A>
-            <A external as="button" href={site.github}>
+            <A external noline href={site.github}>
               <button className="inline-flex items-center text-rosely0 bg-rosely7 border-0 py-2 px-6 focus:outline-none hover:bg-rosely3 rounded text-lg">
                 <Github /> &nbsp; View Source
               </button>
