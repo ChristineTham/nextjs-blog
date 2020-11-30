@@ -1,0 +1,178 @@
+---
+date: '2020-11-30'
+type: Article
+draft: false
+title: Conditional JSX Elements in React
+description: Ever wondered how to emit different JSX Elements depending on a condiation? Well, so did I!
+author: Chris Tham
+featured_image: /drawings/elements.svg
+tags:
+  - React
+  - JSX
+  - Typescript
+categories:
+  - React
+  - Technique
+---
+
+Ever since I started learning React and Typescript, I've been stumped whenever
+I had to generate JSX variations based on a boolean condition (which could be a state, or a prop, or any sort of logical condition).
+
+Here are some examples that I scratched my head over:
+- add (or delete) a JSX element based on a condition
+- add (or delete) a class in a JSX element based on a condition
+- add (or delete) an attribute in a JSX element based on a condition
+
+
+Everytime I find a solution to one of the above challenges, I forget a few
+weeks later and then I have to waste time rediscovering a solution.
+
+So I decided to finally document my solutions in a post so I can refer to it
+next time I forget. All my examples are in `Typescript` but will be very
+similar in `Javascript` (just omit the type declarations in the function component).
+
+## Add/Delete a JSX element based on a condition
+
+The Javascript ternary operator `?:` can be used inside the `{}` to
+conditionally output different JSX Elements based on a condition:
+
+```ts
+const Component: React.FC<{condition: boolean}> = ({condition}) = > (
+  <>
+    {condition ?
+      <JSXIfTrue/>
+    :
+      <JSXIfFalse/>
+    }
+  </>
+)
+```
+
+If you wanted to only generate a JSX Element only if a condition is true or
+false, and nothing for the opposite state, then you can use the Javascript
+logical operators
+```ts
+const Component: React.FC<{condition: boolean}> = ({condition}) = > (
+  <>
+    {condition && <JSXIfTrue/>}
+    {condition || <JSXIfFalse/>}
+  </>
+)
+```
+
+## Add/Delete a class in a JSX element based on a condition
+
+This can be done using a Javascript string literal in conjunction with our friends
+the ternary and logical operators.
+
+```ts
+const Component: React.FC<{condition: boolean}> = ({condition}) = > (
+  <>
+    <Child1 className={`button ${condition ? "btn-true" : "btn-false"}`}/>
+    <Child2 className={`button ${condition && "btn-true"}`}/>
+    <Child3 className={`button ${condition || "btn-false"}`}/>
+  </>
+)
+```
+
+If the `condition` is true the following JSX is generated:
+```ts
+<Child1 className="button btn-true"/>
+<Child2 className="button btn-true"/>
+<Child2 className="button"/>
+```
+
+And if false:
+```ts
+<Child1 className="button btn-false"/>
+<Child2 className="button"/>
+<Child3 className="button btn-false"/>
+```
+
+## Add/Delete an attribute in a JSX element based on a condition
+
+This turned out to be the hardest challenge and relies on the Javascript
+object destructuring operator, and a bit of inside knowledge that attributes in JSX
+Elements are internally manipulated as Javascript objects.
+
+If you didn't understand the above statement, don't worry, neither did I until
+recently. You can just use the following as a recipe.
+
+```ts
+const Component: React.FC<{condition: boolean}> = ({condition}) = > (
+  <>
+    <Child1 {...(condition ?
+      {trueattribute: "value"}
+    :
+      {falseattribute: "value"}
+    )}/>
+    <Child2 {...(condition && {trueattribute: "value"})}/>
+    <Child3 {...(condition || {falseattribute: "value"})}/>
+  </>
+)
+```
+
+Believe it or not, if the `condition` is true the following JSX is generated:
+```ts
+<Child1 trueattribute="value"/>
+<Child2 trueattribute="value"/>
+<Child3/>
+```
+
+And if false:
+```ts
+<Child1 falseattribute="value"/>
+<Child2/>
+<Child3 falseattribute="value"/>
+```
+
+You can of course add additional attributes formatted as JSON object properties:
+```ts
+const Component: React.FC<{condition: boolean}> = ({condition}) = > (
+  <>
+    <ChildComponent {...(condition && {
+      attribute1: "value",
+      attribute2: "1"
+    })}/>
+  </>
+)
+```
+
+This will generate (if condition is true):
+```ts
+<ChildComponent attribute1="value" attribute2="1"/>
+```
+
+Amazing, isn't it?
+
+## One last thing ... Conditionally include optional prop as attribute value
+
+If you have an optional prop and it needs to be included as an attribute value in a JSX Element
+(but only if it's defined by the caller), you can simply do this:
+
+```ts
+const Component: React.FC<{optionalProp?: string}> = ({optionalProp}) = > (
+  <>
+    <ChildComponent attribute={optionalProp}/>
+  </>
+)
+```
+
+Wait, what about checking whether `optionalProp` contains a value or not? Well,
+it turns out React is pretty smart: if the caller didn't specify a value for
+`optionalProp`, React omits the attribute and just generates `<ChildComponent/>`.
+
+In the case of optional boolean props, you can just pass them to a child
+component as easily as this (and the prop will not be included in the child
+if false or undefined):
+
+```ts
+const Component: React.FC<{optionalBool?: boolean}> = ({optionalBool}) = > (
+  <>
+    <ChildComponent optionalBool={optionalBool}/>
+  </>
+)
+```
+
+Hopefully that will save you (and me) some redundant value checking in the
+future!
