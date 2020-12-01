@@ -53,6 +53,7 @@
     "@mdx-js/loader": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "@next/mdx": "^10.0.3",
+    "@sendgrid/mail": "^7.4.0",
     "@tailwindcss/typography": "^0.3.1",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
@@ -97,5 +98,10 @@
     "rss": "^1.2.2",
     "tailwindcss": "^2.0.1",
     "typescript": "^4.1.2"
+  },
+  "build": {
+    "env": {
+      "SENDGRID_API_KEY": "@sendgrid_api_key"
+    }
   }
 }
