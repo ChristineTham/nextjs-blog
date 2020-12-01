@@ -9,7 +9,8 @@ import Article from '../components/tailblocks/Article'
 
 const Posts: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) => (
   <Layout>
-    <Articles title="Posts">
+    <div className="h-24 w-full bg-rosely5"></div>
+    <Articles title="Posts" bgcolor="bg-rosely5">
       {allPostsData.map(({ id, meta }) => (
         <Article href={`/posts/${id}`} meta={meta} key={id} />
       ))}

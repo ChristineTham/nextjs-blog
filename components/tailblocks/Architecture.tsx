@@ -23,7 +23,7 @@ function Architecture(): JSX.Element {
         directly in HTML.
       </ArchitectureItem>
       <ArchitectureItem title="Undraw" href="https://undraw.co/">
-        The beautiful illustrations on this site were created by by Katerina Limpitsouni.
+        The beautiful illustrations on this site were created by Katerina Limpitsouni.
       </ArchitectureItem>
       <ArchitectureItem title="Tailblocks" href="https://mertjf.github.io/tailblocks/">
         The current design of the website is largely inspired by the beautiful blocks created by
@@ -33,7 +33,7 @@ function Architecture(): JSX.Element {
         Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.
       </ArchitectureItem>
       <ArchitectureItem title="Flaticon" href="https://www.flaticon.com/">
-        The website logo and favicon is a colour-modified version of transip-stack icon made by
+        The website logo and favicon is a colour-modified version of transip-stack icon made by{' '}
         <A external href="https://www.freepik.com/" title="Freepik">
           Freepik
         </A>

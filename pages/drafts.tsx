@@ -9,7 +9,12 @@ import Article from '../components/tailblocks/Article'
 
 const Drafts: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) => (
   <Layout>
-    <Articles title="Drafts">
+    <div className="h-24 w-full bg-rosely6"></div>
+    <Articles
+      title="Drafts"
+      bgcolor="bg-rosely6"
+      description="You have reached a 'secret' page containing draft posts."
+    >
       {allPostsData.map(({ id, meta }) => (
         <Article href={`/posts/${id}`} meta={meta} key={id} />
       ))}

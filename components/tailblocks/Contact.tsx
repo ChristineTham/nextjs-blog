@@ -74,8 +74,8 @@ function Contact(): JSX.Element {
             Contact Us
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-rosely1">
-            Reach out if you are interested in a discussion, just want say hi, provide feedback, or
-            want to contact me!
+            Reach out if you are interested in a discussion, just want to say hi, provide feedback,
+            or want to contact me!
           </p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
