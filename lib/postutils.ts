@@ -11,10 +11,22 @@ export const postFilePaths = fs
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path))
 
-interface PostMeta {
+// Suggested front matter, a subset of Hugo
+export interface FrontMatter {
   date: string
+  type: string
+  draft: boolean
   title: string
+  description: string
+  author: string
+  featured_image: string
+  tags: string[]
+  categories: string[]
+}
+
+export interface PostMeta {
   id: string
+  meta: FrontMatter
 }
 
 export function getSortedPostsData(): PostMeta[] {
@@ -34,12 +46,12 @@ export function getSortedPostsData(): PostMeta[] {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string })
+      meta: matterResult.data as FrontMatter
     }
   })
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.meta.date < b.meta.date) {
       return 1
     } else {
       return -1

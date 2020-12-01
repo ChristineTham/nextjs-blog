@@ -1,0 +1,66 @@
+---
+date: '2020-11-05'
+type: Article
+draft: false
+title: Converting from Markdown to MDX in Nextjs
+description: Many Jamstack blogs use Markdown as a format to create content.
+  To enable advanced formatting, it is possible to an enhanced format known
+  as MSX that combines Markdown and JSX elements (React components).
+author: Chris Tham
+featured_image: /drawings/markdown.svg
+tags:
+  - Markdown
+  - MDX
+  - Nextjs
+categories:
+  - Markdown
+  - MDX
+  - Nextjs
+---
+
+The [Learn Nextjs](https://nextjs.org/learn/basics/create-nextjs-app) tutorial
+on the [Nextjs site](https://nextjs.org) will result in a bare bones blog site
+where posts are written in [Markdown](https://www.markdownguide.org) and
+rendered using [remark](https://remark.js.org) as a processor.
+
+Markdown is a lightweight markup language that makes it easy to write content
+with a minimum of fuss, but does limit the author to a restricted set of
+formatting elements and styles. Although _remark_ does allow plugins to
+enhance Markdown functionality, Markdown files will never be as rich as
+full HTML.
+
+[MDX](https://mdxjs.com) is an enhanced version of Markdown that allows JSX
+elements to be seamlessly embedded.
+
+A good starting point for learning the various ways of using MDX in Nextjs
+is on the NextJS blog:
+[Markdown/MDX with Next.js](https://nextjs.org/blog/markdown)
+written by [Lee Robinson](https://leerob.io).
+
+One of the first things I did when I completed the _Learn NextJS_ tutorial
+was to convert the site from Markdown to MDX.
+
+I decided to use [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
+approach to adding MDX to blog posts. this allows me to:
+
+- easily override the style of markdown elements
+- add front matter to the posts without complex JSX syntax
+- insert a custom set of components that I can used in posts
+
+The alternate approach, which I also experimented with, is to use
+[@next/mdx](https://github.com/vercel/next.js/tree/canary/packages/next-mdx)
+which enables me to have top level MDX pages. I implemented this as well,
+but it requires an MDX provider in `_app` for styling.
+
+There is also a
+[next-mdx-enhanced](https://github.com/hashicorp/next-mdx-enhanced)
+but I did not try that as the `README` said:
+
+> ⚠️ You probably should be using next-mdx-remote instead of this library.
+> It is ~50% faster, more flexible with content storage, does not induce memory
+> issues at scale, and fits much better with the way that data is intended to
+> flow through next.js.
+
+As a test of MDX, here is a simple React component embedded in this post!
+
+<TestComponent name="MDX" />

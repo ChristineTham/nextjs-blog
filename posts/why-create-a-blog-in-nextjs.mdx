@@ -1,0 +1,112 @@
+---
+date: '2020-11-01'
+type: Article
+draft: false
+title: Why Create a Blog in NextJS?
+description: Why not WordPress? Or Ghost? Or even Hugo?
+  This article explains my rationale.
+author: Chris Tham
+featured_image: /drawings/webdevelopment.svg
+tags:
+  - NextJS
+  - blog
+categories:
+  - Opinion
+  - NextJS
+  - blog
+---
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/WordPress),
+[WordPress](https://wordpress.org) runs on 60% of the world's websites.
+I have used it to create websites in the last few years, and my company
+offers WordPress hosting services for our clients based on a dedicated
+[Plesk](https://plesk.com) server on [AWS](https://aws.amazon.com).
+
+I use a ton of plugins on WordPress, and have even created my own theme,
+based on [Genesis Framework](https://my.studiopress.com/themes/genesis/).
+
+I have also investigated [Ghost](https://ghost.org), an alternative to
+WordPress based on a more modern codebase (it's written in
+[Node.js](https://nodejs.org) rather than [PHP](https://php.org)). Ghost
+has built in SEO and membership/subscription features, and has a nice theming
+system. I have written a few themes for Ghost. Ghost can also be used as a
+headless CMS (actually, WordPress can as well through it's REST API).
+
+Then there is [Hugo](https://gohugo.org), a really popular static site
+generator. I really like Hugo, even though there is a steep learning curve.
+I am currently trying to write a theme for Hugo.
+
+## WordPress - so 1990s
+
+My main issue with WordPress was that it is slow and clunky. It is PHP
+server side rendering using an SQL backend. I have never bothered
+learning PHP and don't intend to, so tinkering under the hood was always
+going to be a bridge too far for me.
+
+WordPress is also cumbersome. A highly functional site requires dozens of
+plugins to manage things like image galleries, SEO, security, caching, backups,
+plus UI enhancements. All these needed to be regularly updated, and can even
+break with a major WordPress release.
+
+WordPress is also in the middle of transitioning to a page builder system
+(called Full Site Editing, based on Gutenberg), and
+the front end of WordPress is now as much React as PHP. I can imagine in the
+future WordPress may evolve into a static React frontend and a headless PHP
+backend. Whilst WordPress is transitioning, I thought it may be worthwhile
+to check out alternatives.
+
+I attended the Jamstack conference and Nextjs conference in October 2020
+and was fired up to learn Nextjs and write my first app. My main motivation
+is to use this site as an excuse for learning and experimenting with NextJS.
+
+## Disadvantages of NextJS
+
+If you are reading this and considering following down the same path as me,
+let's get through the cons first.
+
+You are not writing content using a WYSIWYG
+(What You See Is What You Get) editor, you are writing code. Javascript, HTML,
+CSS ... you are pretty much building the website from scratch.
+
+If this scares you, then you are probably not ready to create a blog in NextJS.
+
+Of course, you don't have to start from nothing. There are starter kits,
+UI components, even other people's blogs on Github that you can clone and fork.
+You can also easily connect to a Headless CMS (Content Management System) and
+get the benefits of WYSIMWYG (What You See Is Mostly What You Get) and have all
+the hard bits of content management already handled for you.
+
+However, NextJS is still a maturing web framework, so don't expect a rich
+plugin and theme ecosystem compared to, say, Gatsby. Or Hugo. Or Ghost.
+Or _cough cough_ ... WordPress.
+
+## Advantages of NextJS
+
+First of all, we get all the advantages of Jamstack. NextJS supports both
+server side rendering and static prerendered content that can be served
+entirely from a CDN (Content Distribution Network). A NextJS blog can be
+deployed completely serverless for zero cost (provided you are not too
+picky about domain names).
+
+A static, serverless web site cannot be hacked, because there is no ~~spoon~~
+_server_.
+
+Thirdly, static web sites are blazingly fast, which is good for SEO (Search
+Engine Optimisation). Since all the content is prerendered and delivered from
+a CDN, page load speed is determined by content size and not complexity.
+
+NextJS leverages React and the `npm` ecosystem. Compared to WordPress plugins
+which usually cost money (per year), npm packages are open source and there is
+a rich set of UI components, frameworks and functionality that is just one
+`yarn` or `npm` install away.
+
+NextJS is so _hot_ right now, mainly because it is relatively easy to learn,
+is Typescript native, and offers a useful foundation without too mainly
+complications. I have previously learnt Gatsby, and while it is undeniably
+more powerful than NextJS and has a richer ecosystem, there are still lots of
+things in Gatsby I don't understand or haven't mastered yet.
+
+Finally, I _like_ building a website in code. I can do anything I want, have
+complete design freedom, and I can creach rich dynamic experiences without
+being restricted by a theme, or a plugin, or trying to figure out how
+WordPress works.

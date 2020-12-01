@@ -1,16 +1,21 @@
-import '../styles/global.css'
+import '../styles/index.css'
+
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
+config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {/*<meta content="width=device-width, initial-scale=1" name="viewport" />*/}
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="/browserconfig.xml" name="msapplication-config" />
@@ -26,3 +31,4 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     </>
   )
 }
+export default App

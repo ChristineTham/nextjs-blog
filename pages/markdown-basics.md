@@ -1,8 +1,3 @@
----
-title: 'Markdown: Basics'
-date: '2020-01-01'
----
-
 <ul id="ProjectSubmenu">
   <li>
     <a href="/projects/markdown/" title="Markdown Project Page">

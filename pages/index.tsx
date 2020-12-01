@@ -1,68 +1,34 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/postutils'
-import Link from 'next/link'
-import Date from '../components/date'
+// external modules
+// import Link from 'next/link'
 import { GetStaticProps } from 'next'
 
-export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}): React.ReactElement {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>artist, consultant, cyclist, designer, musician, photograher, world traveller</p>
-        <p>
-          I live in Sydney, Australia and this is a personal web site where I post articles relating
-          to my interests.
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <ul>
-          <li>
-            <Link href="/cat">
-              <a>The Cat (AMP-first Page)</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/dog">
-              <a>The Dog (Hybrid AMP Page)</a>
-            </Link>
-          </li>
-        </ul>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
-  )
-}
+// components
+import Layout from '../components/layout'
+import { getSortedPostsData, PostMeta } from '../lib/postutils'
+import Hero from '../components/tailblocks/Hero'
+import What from '../components/tailblocks/What'
+import WhoWhy from '../components/tailblocks/WhoWhy'
+import Articles from '../components/tailblocks/Articles'
+import Article from '../components/tailblocks/Article'
+
+// import { site } from '../global'
+
+const Home: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) => (
+  <Layout>
+    <Hero />
+    <WhoWhy />
+    <What />
+    <Articles title="How">
+      {allPostsData.map(({ id, meta }) => (
+        <Article href={`/posts/${id}`} meta={meta} key={id} />
+      ))}
+    </Articles>
+  </Layout>
+)
+export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
   return {
     props: {
       allPostsData

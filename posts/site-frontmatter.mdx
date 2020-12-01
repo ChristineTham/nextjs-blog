@@ -1,0 +1,77 @@
+---
+date: '2020-11-06'
+type: Article
+draft: false
+title: This site's Front Matter
+description: What metadata am I currently using to describe blog posts on This
+  site?
+author: Chris Tham
+featured_image: /drawings/sitecontent.svg
+tags:
+  - Markdown
+  - metadata
+  - Front Matter
+categories:
+  - Markdown
+  - Technique
+---
+
+The term _Front Matter_ was originally coined to describe a fixed block
+(in [YAML](https://yaml.org)) prepended in front of a Markdown document.
+
+The Front Matter block contains a number of variables which can be used as
+metadata to describe the post. The metadata is extracted when processing the
+Markdown file.
+
+I am currently using the following front matter variables to describe my blog
+posts. Here is a sample template:
+
+```yml
+---
+date: '2020-01-01'
+type: Article
+draft: true
+title: Template Post
+description: This is an example MDX file
+author: Chris Tham
+featured_image: /drawings/knowledge.svg
+tags:
+  - template
+categories:
+  - Template
+---
+
+```
+
+You may notice I am not currently doing anything with the `type` or `tags` \
+variables, but I may in the future.
+
+The variables are strongly influeced by the
+[Hugo Front Matter definitions](https://gohugo.io/content-management/front-matter/)
+
+date
+: the datetime assigned to this page
+
+type
+: the type of the content
+
+draft
+: if true, the content will not be rendered
+
+title
+: the title for the content
+
+description
+: the description for the content, used as a blog summary or blurb
+
+author
+: the author of the post
+
+featured_image
+: image used in the blog hero and blog card
+
+tags
+: an array of tags pertaining to the blog post
+
+categories
+: categories this post belong in

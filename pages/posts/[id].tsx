@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import BlogLayout from '../../components/BlogLayout'
 import Head from 'next/head'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -7,55 +7,39 @@ import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import path from 'path'
-import CustomLink from '../../components/CustomLink'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { postFilePaths, POSTS_PATH } from '../../lib/postutils'
+import { postFilePaths, POSTS_PATH, FrontMatter } from '../../lib/postutils'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import CodeBlock from '../../components/CodeBlock'
+import A from '../../components/A'
+import inlineCode from '../../components/inlineCode'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-  a: CustomLink,
+  a: A,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  code: CodeBlock
+  code: CodeBlock,
+  inlineCode: inlineCode
 }
 
-export default function Post({
-  source,
-  frontMatter
-}: {
+interface PostProps {
   source: Source
-  frontMatter: {
-    title: string
-    date: string
-  }
-}): JSX.Element {
-  const content = hydrate(source, { components })
-  return (
-    <Layout>
-      <Head>
-        <title>{frontMatter.title}</title>
-      </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{frontMatter.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={frontMatter.date} />
-        </div>
-        <div>{content}</div>
-      </article>
-    </Layout>
-  )
+  frontMatter: FrontMatter
 }
+
+const Post: React.FC<PostProps> = ({ source, frontMatter }) => {
+  const content = hydrate(source, { components })
+  return <BlogLayout meta={frontMatter}>{content}</BlogLayout>
+}
+export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = postFilePaths
@@ -88,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       source: mdxSource,
-      frontMatter: data as { date: string; title: string }
+      frontMatter: data as FrontMatter
     }
   }
 }

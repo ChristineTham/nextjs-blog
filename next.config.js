@@ -1,3 +1,4 @@
+const withPlugins = require('next-compose-plugins')
 const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [require('remark-math')],
@@ -5,14 +6,25 @@ const withMDX = require('@next/mdx')({
   },
   extension: /\.mdx?$/
 })
+const withSvgr = require('next-plugin-svgr')
 
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require('./scripts/generate')
+module.exports = withPlugins(
+  [
+    [
+      withMDX,
+      {
+        pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
+      }
+    ],
+    [withSvgr]
+  ],
+  {
+    webpack: (config, { isServer }) => {
+      if (isServer) {
+        require('./scripts/generate')
+      }
+
+      return config
     }
-
-    return config
   }
-})
+)

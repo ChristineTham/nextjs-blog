@@ -1,0 +1,62 @@
+---
+date: '2020-11-07'
+type: Article
+draft: false
+title: Why this site is not using a CMS
+description: Content Management Systems (CMS) are so hot right now, especially
+  headless ones. So why doesn't this site use one?
+author: Chris Tham
+featured_image: /drawings/buildingwebsites.svg
+tags:
+  - template
+categories:
+  - Template
+---
+
+If you have looked at the source code repository for this site, you may notice
+that this site stores blog posts as MDX files in the `posts` directory. Why did
+I not use a Content Management System (CMS)?
+
+[WordPress](https://wordpress.org) is still the most popular CMS in the world,
+and is currently used in 60% of the world's websites. WordPress is a
+traditional CMS that combines the content and presentation layers of a website.
+
+Recently, the concept of a "headless" CMS has become popular. A headless CMS
+focuses on storing and managing content, but lets you define the front end
+for presenting the content yourself. Typically, you interact with a headless
+CMS via an API, but some headless CMS are not truly "headless" but has a
+frontend that you may optionally use. Indeed, WordPress could be used as a
+headless CMS because it has a REST API that can be consumed.
+
+There are many headless CMS options to choose from. It's a hot area of
+innovation, and I've lost count as there seems to be a new one every few days
+or so. For example, there is a
+[list at the Jamstack site](https://jamstack.org/headless-cms/)
+which I know is incomplete.
+
+Many of the newer ones are cloud based, which means they won't be free
+forever, but some allow you to self host. There are even some, like
+[NetlifyCMS](https://www.netlifycms.org/)and [TinaCMS](https://tina.io)
+that allows you to continue to use flat files stored
+in a repository (such as this site) to store content. Most are also open
+source, but not all (especially not the commercial cloud based options)
+
+So, given the choice, why did I choose not to build this website using a
+headless CMS on day one.
+
+Part of the reason is a desire not to be locked into a solution too early.
+I want some time to explore the various options, and they all involve a
+learning curve. Secondly, I wanted the site not to rely on any external
+services just yet.
+
+There is a simplicity and a sense of freedom from just storing everything
+in a Github repository for the time being. My current requirements are
+very simple and I don't immediately need all the advanced features like
+role access, version control (although this is provided by Github anyway),
+custom post types, image management etc.
+
+I also like just typing in blog posts directly into Markdown from Visual
+Studio Code, and I find I am a lot more productive in a familiar environment.
+
+Eventually, I'll need the more advanced features (especially image and
+gallery management), so stay tuned as things may change!
