@@ -42,7 +42,7 @@ function WhoWhy(): JSX.Element {
       <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l-2 border-rosely7 text-rosely0 sm:border-t-0 border-t-4 border-radius mt-4 pt-4 sm:mt-0 text-center sm:text-left">
         <p className="mb-4">
           In 2020 I decided to learn how to create modern web sites and apps, for fun (and maybe
-          profit?). I started by learning Javascript ES6 and Typescript, followed by React and
+          profit?). I started by learning Javascript (ES6) and Typescript, followed by React and
           Gatsby. I converted my company website{' '}
           <A external href={site.company_url}>
             Hello Tham
@@ -50,8 +50,9 @@ function WhoWhy(): JSX.Element {
           from Wordpress to Gatsby, Bulma and Netlify CMS hosted on Netlify.
         </p>
         <p className="mb-4">
-          I am current learning Hugo, Next.js, MDX/Markdown, Tailwind and exploring various headless
-          CMS. This website is written in Next.js, Tailwind, tailblocks and hosted on Vercel.
+          I am currently learning Hugo, Next.js, MDX/Markdown, Tailwind and exploring various
+          headless CMS. This website is written in Next.js, Tailwind, tailblocks and hosted on
+          Vercel.
         </p>
         <p className="mb-4">
           I may explore GraphQL, REST APIs and serverless functions in the near future. I am also

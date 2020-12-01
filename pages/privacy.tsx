@@ -77,7 +77,7 @@ const Privacy: React.FC = () => (
           </li>
           <li>
             <em>The right to erasure</em> &mdash; You have the right to request that we erase your
-            personal data, under certain conditions. However, we current do not collect any such
+            personal data, under certain conditions. However, we currently do not collect any such
             data.
           </li>
           <li>
@@ -126,10 +126,7 @@ const Privacy: React.FC = () => (
           policy.
         </p>
         <h2>Changes to our privacy policy</h2>
-        <p>
-          Our Company keeps its privacy policy under regular review and places any updates on this
-          web page.
-        </p>
+        <p>We regularly review our privacy policy and place any updates on this web page.</p>
       </article>
     </main>
   </Layout>

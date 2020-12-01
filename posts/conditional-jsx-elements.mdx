@@ -3,7 +3,7 @@ date: '2020-11-30'
 type: Article
 draft: false
 title: Conditional JSX Elements in React
-description: Ever wondered how to emit different JSX Elements depending on a condiation? Well, so did I!
+description: Ever wondered how to emit different JSX Elements depending on a condition? Well, so did I!
 author: Chris Tham
 featured_image: /drawings/elements.svg
 tags:
@@ -48,9 +48,9 @@ const Component: React.FC<{condition: boolean}> = ({condition}) = > (
 )
 ```
 
-If you wanted to only generate a JSX Element only if a condition is true or
+If you wanted to generate a JSX Element only if a condition is true or
 false, and nothing for the opposite state, then you can use the Javascript
-logical operators
+logical operators `&&` and `||`:
 
 ```ts
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
