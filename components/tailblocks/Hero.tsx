@@ -17,7 +17,7 @@ function Hero(): JSX.Element {
           </p>
           <p className="mt-6">{site.description}</p>
           <div className="flex justify-start space-x-2 flex-row mt-6">
-            <A noline href="/blog">
+            <A noline href="/posts">
               <button
                 className={`inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg`}
               >

@@ -7,7 +7,7 @@ const BlogHero: React.FC<{ meta: FrontMatter }> = ({ meta }) => {
   const image = meta.featured_image || '/drawings/knowledge.svg'
   return (
     <section className="text-rosely0 body-font bg-white mt-28 ">
-      <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center rounded-lg shadow-xl bg-rosely5">
+      <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center rounded-lg shadow-xl bg-rosely4">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-6 flex flex-col items-start">
           <Categories categories={meta.categories} />
           <h1 className="title-font text-4xl font-bold text-rosely2 leading-none mt-4">

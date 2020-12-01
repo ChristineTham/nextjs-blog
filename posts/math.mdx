@@ -1,13 +1,20 @@
 ---
-date: '2020-11-19'
-
-status: published
+date: '2020-11-05'
+draft: false
+type: Article
 title: Rendering Math in Markdown
-description: If you are interested in publishing technical or scientific content, you may need to include math formulae in
+description: If you are interested in publishing technical or scientific
+  content, you may need to include math formulae in your blog posts. Here is
+  the method I used for this site.
 author: Chris Tham
-image: /drawings/math.svg
-tags: ['template']
-categories: ['Template']
+featured_image: /drawings/math.svg
+tags:
+  - Mathemathics
+  - Markdown
+  - KaTeX
+categories:
+  - Markdown
+  - Technique
 ---
 
 <!-- Apply katex css -->
@@ -19,11 +26,47 @@ categories: ['Template']
   crossOrigin="anonymous"
 />
 
-This is an example post, with a [link](https://nextjs.org) and a React component:
+Ever wanted to include a math formula in your blog posts? I studied Pure
+Mathematics as a major in my BSc degree so I like to use math symbols and notation
+in some of my posts.
 
-<TestComponent name="next-mdx-remote" />
+For this site, I enabled the use of math blocks via
+[remark-math](https://github.com/remarkjs/remark-math/tree/main/packages/remark-math)
+and
+[rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex)
+plugins. I followed the basic instructions in MDX
+[Math blocks](https://mdxjs.com/guides/math-blocks)
+page.
 
-The title and description are pulled from the MDX file and processed using `gray-matter`. Additionally, links are rendered using a custom component passed to `next-mdx-remote`.
+The plugins use the underlying
+[KaTeX](https://katex.org)
+library for math typesetting, which is fast and reliable and created by the
+Khan Academy.
+
+For any post that needs to include math content, the following
+code needs to be inserted into the markdown document
+(or insert into the `_amp` component, at the cost
+of slowing down the performance for all pages):
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+  integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+  crossorigin="anonymous"
+/>
+```
+
+Here is an example of both inline and block math content generated using
+the following text in the markdown document:
+
+```markdown
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+```
 
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
 
@@ -31,4 +74,16 @@ $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
 
-Go back [home](/).
+Additional examples, taken from the KaTeX website:
+
+$$
+\displaystyle \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
+$$
+
+$$
+\displaystyle \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$
+
+$$
+\displaystyle {1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots }= \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \quad\quad \text{for }\lvert q\rvert<1.
+$$

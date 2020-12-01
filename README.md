@@ -1,6 +1,6 @@
 # Learning Jamstack
 
-My Next.js blog, used to document my adventures learning Jamstack.
+My NextJS blog, used to document my adventures learning Jamstack.
 
 This evolved originally from me completing the [Learn Next.js](https://nextjs.org/learn) course, but then I started adding
 lots of additional features (mainly from [Next.js examples](https://github.com/vercel/next.js/blob/canary/examples)).
@@ -16,6 +16,9 @@ lots of additional features (mainly from [Next.js examples](https://github.com/v
 - MDX blog pages using [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
 - [Prism](https://prismjs.com) syntax highlighting using [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
 - Example [AMP](https://amp.dev) pages
+- [TailwindCSS](https://tailwindcss.com/) UI framework
+- [Tailblocks](https://mertjf.github.io/tailblocks/) for web components
+- [Undraw](https://undraw.io) for illustrations and feature images
 
 ## Deploy
 

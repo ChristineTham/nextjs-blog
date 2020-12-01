@@ -19,8 +19,11 @@ function Header(): JSX.Element {
           <A noline href="/contact">
             Contact
           </A>
-          <A noline href="/blog">
-            Blog
+          <A noline href="/privacy">
+            Privacy
+          </A>
+          <A noline href="/posts">
+            Posts
           </A>
         </nav>
         <A external noline href={site.repository}>

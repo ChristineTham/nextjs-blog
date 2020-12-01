@@ -22,10 +22,10 @@ function Architecture(): JSX.Element {
         A constraint based, utility-first CSS framework that can be composed to build any design,
         directly in HTML.
       </ArchitectureItem>
-      <ArchitectureItem title="Undraw" href="https://undraw.co">
+      <ArchitectureItem title="Undraw" href="https://undraw.co/">
         The beautiful illustrations on this site were created by by Katerina Limpitsouni.
       </ArchitectureItem>
-      <ArchitectureItem title="Tailblocks" href="https://undraw.co">
+      <ArchitectureItem title="Tailblocks" href="https://mertjf.github.io/tailblocks/">
         The current design of the website is largely inspired by the beautiful blocks created by
         Mert Cukuren.
       </ArchitectureItem>
@@ -37,6 +37,9 @@ function Architecture(): JSX.Element {
         <A external href="https://www.freepik.com/" title="Freepik">
           Freepik
         </A>
+      </ArchitectureItem>
+      <ArchitectureItem title="Vercel" href="https://vercel.com/">
+        The creators of NextJS and a hosting platform for this site.
       </ArchitectureItem>
     </Section>
   )

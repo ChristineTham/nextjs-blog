@@ -1,16 +1,90 @@
 ---
 date: '2020-11-02'
 type: Article
-draft: true
+draft: false
 title: Learning NextJS
 description: How I learnt NextJS, and some links to useful resources.
 author: Chris Tham
 featured_image: /drawings/nextjs.svg
 tags:
-- NextJS
+  - NextJS
 categories:
-- NextJS
-- Resources
+  - NextJS
+  - Resources
 ---
 
-Like many others, 
+Like many others, I started learning [NextJS](https://nextjs.org) by following
+[Learn NextJS](https://nextjs.org/learn/basics/create-nextjs-app)
+which takes a beginner like me on a step by step journey building a simple
+blog site from scratch. In fact, this website started it's origins using the
+code from this tutorial!
+
+However, I felt I still did not really understand NextJS after completing
+the tutorial. I was going through the motions of copy and paste to build out
+the site without really understanding the contents.
+
+Much more recently, I watched [Lee Robinson](https://leerob.io)'s excellent
+[Mastering Nextjs](https://masteringnextjs.com) course.
+I found this very helpful in terms of learning about different packages
+I can use as part of building a Nextjs app.
+
+I strongly recommend browsing the
+[examples on the NextJS repo](https://github.com/vercel/next.js/tree/canary/examples)
+and trying anything that is of interest. This is how I finally understood
+NextJS and how this site started from those experiments.
+
+After that, I recommend looking at various starter kits (also known as
+_boilerplates_). Here are some that I have learnt from:
+
+[Notus Nextjs](https://www.creative-tim.com/product/notus-nextjs)
+: A free Tailwind UI and Admin Dashboard starter kit by the well known
+UI kit seller, an evolution from their previous effort
+[Tailwind Starter Kit](https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation).
+
+[devii](https://devii.dev/)
+: Colin McConnell's starter kit for creating a NextJS blog, also used as his
+blog site. I strongly considered using this as a code base, but ultimately
+decided to use the end point of _Learn NextJS_ because I found the code
+easier to understand.
+
+[Nextjs Blog Boilerplate](https://github.com/ixartz/Next-js-Blog-Boilerplate.git)
+: Nextjs Blog Boilerplate is starter code written by
+[Creative Design Gurus](https://creativedesignsguru.com/).
+Made with Nextjs, TypeScript, ESLint, Prettier, PostCSS, Tailwind CSS.
+
+[Next.js with Theme UI Starter Kit](https://www.nextjs-starter.io/)
+: A fairly opinionated and feature-full kit by Manny Becerra
+
+[KNESTS Stack](https://github.com/tudorconstantin/knests/)
+: A full-stack boilerplate suitable for hackathons etc. created by Tudor
+Constantin. This includes a NodeJS backend on Docker, GraphQL and PostgreSQL.
+
+[next-boilerplate](https://pankod.github.io/next-boilerplate/)
+: Another boilerplate with a host of features, including a CLI tool for
+creating new components.
+
+[Nextron](https://npm.im/nextron)
+: A package for creating NextJS desktop apps using Electron.
+
+[nextjs-redux-starter](https://nextjs-redux-starter.now.sh/)
+: Next.js + Redux + styled-components + Express for building an SPA.
+
+[Next Right Now](https://unlyed.github.io/next-right-now/)
+: Flexible production-grade boilerplate with Next.js 10, Vercel and TypeScript.
+Includes multiple opt-in presets.
+
+The main advantage of browsing starter kits is to get a sampling of how
+different people structure a blog app, what tools and packages they use,
+and how to implement features. However, I don't recommend actually using
+a starter kit by cloning the repository. I feel whilst these kits are
+useful, they sould serve as inspiration rather than an actual code base.
+
+In my not so humble opinion, even minimalist starter kits are too opinionated
+for me, and I often find I am fighting someone else's design and structure
+and I may have to remove features I don't need or refactor code. At the end
+of the day, every line of code that I write is a line I understand completely.
+
+The other cautionary note I might add is be careful when browsing starter kits
+because some of them are old code that haven't been updated recently. NextJS
+evolves rapidly so an older starter kit may no longer be based on best
+practices.

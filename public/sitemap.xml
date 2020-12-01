@@ -8,11 +8,23 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/drafts</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/landing</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh//posts</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/privacy</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
@@ -25,6 +37,10 @@
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/convert-to-mdx</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/hello-world</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
@@ -48,7 +64,19 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/roadmap</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/site-frontmatter</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/stop-using-starter-kits</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/stop-using-ui-themes</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

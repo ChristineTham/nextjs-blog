@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { site } from '../../global'
 import Twitter from '../../icons/twitter'
 import Facebook from '../../icons/facebook'
@@ -29,7 +28,7 @@ const Footer: React.FC = () => (
         <div className="flex flex-wrap text-center lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
             <h4 className="text-3xl text-rosely10 font-semibold">{site.title}</h4>
-            <h5 className="text-lg mt-4 text-rosely1">Reach out to start a conversation!</h5>
+            <h5 className="text-lg text-rosely1">Reach out to start a conversation!</h5>
             <div className="mt-6 lg:mb-0 mb-6">
               <A external noline href={site.twitter}>
                 <button
@@ -73,27 +72,30 @@ const Footer: React.FC = () => (
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <Link href="/about">
-                      <a className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm">
-                        About This Site
-                      </a>
-                    </Link>
+                    <A
+                      href="/about"
+                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
+                    >
+                      About This Site
+                    </A>
                   </li>
                   <li>
-                    <a
-                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
+                    <A
+                      external
                       href={site.website}
+                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
                     >
-                      Personal Website
-                    </a>
+                      Personal Site
+                    </A>
                   </li>
                   <li>
-                    <a
-                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
+                    <A
+                      external
                       href={site.company_url}
+                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
                     >
-                      {site.company} Website
-                    </a>
+                      {site.company} Site
+                    </A>
                   </li>
                 </ul>
               </div>
@@ -103,36 +105,45 @@ const Footer: React.FC = () => (
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <a
+                    <A
+                      external
+                      href="https://github.com/ChristineTham/nextjs-blog/blob/master/LICENSE"
                       className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
-                      href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=nnjs-footer"
                     >
                       MIT License
-                    </a>
+                    </A>
                   </li>
                   <li>
-                    <a
+                    <A
+                      href="/privacy"
                       className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/terms?ref=nnjs-footer"
-                    >
-                      Terms & Conditions
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/privacy?ref=nnjs-footer"
                     >
                       Privacy Policy
-                    </a>
+                    </A>
                   </li>
                   <li>
-                    <a
+                    <A
+                      href="/contact"
                       className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/contact-us?ref=nnjs-footer"
                     >
                       Contact Us
-                    </a>
+                    </A>
+                  </li>
+                  <li>
+                    <A
+                      href="/sitemap.xml"
+                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
+                    >
+                      Sitemap
+                    </A>
+                  </li>
+                  <li>
+                    <A
+                      href="/feed.xml"
+                      className="text-rosely10 hover:text-rosely9 font-semibold block pb-2 text-sm"
+                    >
+                      RSS Feed
+                    </A>
                   </li>
                 </ul>
               </div>
