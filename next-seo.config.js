@@ -1,6 +1,7 @@
 const sitename = 'Learning Jamstack'
 const title = 'Learning Jamstack'
-const description = 'My adventures learning how to build websites and apps in 2020 using the Jamstack architecture, auto workflows and modern build tools. Content is pre-rendered and served to a CDN and made dynamic through APIs and serverless functions.'
+const description =
+  'My adventures learning how to build websites and apps in 2020 using the Jamstack architecture, auto workflows and modern build tools. Content is pre-rendered and served to a CDN and made dynamic through APIs and serverless functions.'
 
 const SEO = {
   title,
@@ -17,8 +18,8 @@ const SEO = {
       {
         url: 'https://learning-jamstack.now.sh/images/screenshot.png',
         alt: title,
-        width: 796,
-        height: 500
+        width: 1200,
+        height: 630
       }
     ]
   },
