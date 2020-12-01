@@ -1,23 +1,23 @@
-const sitename = 'ChrisTham'
-const title = 'Chris Tham - Personal Web Page'
-const description = 'artist, consultant, cyclist, designer, musician, photograher, world traveller'
+const sitename = 'Learning Jamstack'
+const title = 'Learning Jamstack'
+const description = 'My adventures learning how to build websites and apps in 2020 using the Jamstack architecture, auto workflows and modern build tools. Content is pre-rendered and served to a CDN and made dynamic through APIs and serverless functions.'
 
 const SEO = {
   title,
   description,
-  canonical: 'https://christham-website.now.sh',
+  canonical: 'https://learning-jamstack.now.sh',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://christham-website.now.sh/',
+    url: 'https://learning-jamstack.now.sh/',
     site_name: sitename,
     title,
     description,
     images: [
       {
-        url: 'https://christham-website.now.sh/images/profile.jpg',
+        url: 'https://learning-jamstack.now.sh/images/screenshot-small.png',
         alt: title,
-        width: 500,
+        width: 796,
         height: 500
       }
     ]
