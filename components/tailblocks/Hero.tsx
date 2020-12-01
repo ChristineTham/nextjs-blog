@@ -1,7 +1,8 @@
 import A from '../A'
 import { site } from '../../global'
-import Github from '../../icons/github'
+import Github from '../../icons/github.svg'
 import Jamstack from '../../icons/jamstack.svg'
+import Read from '../../icons/book.svg'
 
 function Hero(): JSX.Element {
   return (
@@ -21,12 +22,12 @@ function Hero(): JSX.Element {
               <button
                 className={`inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg`}
               >
-                Read
+                <Read className="h-6 w-6" /> &nbsp; Read
               </button>
             </A>
             <A external noline href={site.github}>
               <button className="inline-flex items-center text-rosely0 bg-rosely7 border-0 py-2 px-6 focus:outline-none hover:bg-rosely3 rounded text-lg">
-                <Github /> &nbsp; View Source
+                <Github className="h-6 w-6" /> &nbsp; Download
               </button>
             </A>
           </div>

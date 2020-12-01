@@ -1,8 +1,8 @@
 import { site } from '../../global'
-import Twitter from '../../icons/twitter'
-import Facebook from '../../icons/facebook'
-import Github from '../../icons/github'
-import Blog from '../../icons/blog'
+import Twitter from '../../icons/twitter.svg'
+import Facebook from '../../icons/facebook.svg'
+import Github from '../../icons/github.svg'
+import Blog from '../../icons/blog.svg'
 import A from '../A'
 
 const Footer: React.FC = () => (
@@ -35,7 +35,7 @@ const Footer: React.FC = () => (
                   className="bg-rosely6 text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <Twitter />
+                  <Twitter className="h-6 w-6 mx-2" />
                 </button>
               </A>
               <A external noline href={site.facebook}>
@@ -43,7 +43,7 @@ const Footer: React.FC = () => (
                   className="bg-rosely6 text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <Facebook />
+                  <Facebook className="h-6 w-6 mx-2" />
                 </button>
               </A>
               <A external noline href={site.website}>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => (
                   className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <Blog />
+                  <Blog className="h-6 w-6 mx-2" />
                 </button>
               </A>
               <A external noline href={site.github}>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => (
                   className="bg-rosely6 text-rosely9 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
-                  <Github />
+                  <Github className="h-6 w-6 mx-2" />
                 </button>
               </A>
             </div>
