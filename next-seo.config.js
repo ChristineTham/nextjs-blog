@@ -15,7 +15,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://learning-jamstack.now.sh/images/screenshot-small.png',
+        url: 'https://learning-jamstack.now.sh/images/screenshot.png',
         alt: title,
         width: 796,
         height: 500
