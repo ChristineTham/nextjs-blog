@@ -1,9 +1,9 @@
-const sgMail = require('@sendgrid/mail')
+import { NowRequest, NowResponse } from '@vercel/node'
+import sgMail from '@sendgrid/mail'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default async function (req, res) {
+export default async (req: NowRequest, res: NowResponse) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-  // console.log(process.env.SENDGRID_API_KEY)
 
   const { name, email, message } = req.body
 
@@ -19,7 +19,6 @@ export default async function (req, res) {
     await sgMail.send(content)
     res.status(200).send('Message sent successfully.')
   } catch (error) {
-    // console.log('ERROR', error)
     res.status(400).send('Message not sent.')
   }
 }

@@ -1,0 +1,78 @@
+---
+date: '2020-12-03'
+type: Article
+draft: false
+title: Integrating a Contact Form to SendGrid
+description: How to create a contact form that sends email via SendGrid
+author: Chris Tham
+featured_image: /drawings/mail.svg
+tags:
+- Contact
+- Form
+- SendGrid
+categories:
+- Form
+- Technique
+---
+
+SendGrid is a popular SMTP mail delivery service to send emails without a
+server. Integrating it with a Contact form in React and NextJS turned out
+to be relatively easy.
+
+First, you need to create an account, then an API key in SendGrid, with
+restricted permission to just "Mail Send".
+
+Then, follow the instructions
+[here](https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now).
+
+Essentially you create a simple API (in the `/pages/api` directory)
+that uses the `@sendgrid/mail` package
+to do the hard work (mine is called `send.ts`):
+
+```ts
+import { NowRequest, NowResponse } from '@vercel/node'
+import sgMail from '@sendgrid/mail'
+
+export default async (req: NowRequest, res: NowResponse) => {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+  const { name, email, message } = req.body
+
+  const content = {
+    to: 'chris.tham@hellotham.com',
+    from: email,
+    subject: `Learning NextJS Message From ${name} - ${email}`,
+    text: message,
+    html: `<p>${message}</p>`
+  }
+
+  try {
+    await sgMail.send(content)
+    res.status(200).send('Message sent successfully.')
+  } catch (error) {
+    res.status(400).send('Message not sent.')
+  }
+}
+```
+
+And then make sure you define the `SENDGRID_API_KEY` in your environment
+so it can be picked up by the API above. There are various ways of doing this,
+but I suggest you keep the API Key secret and not commit it to the
+Github repository. Most static web app hosting providers have a way of
+managing secrets.
+
+Now just create a form, and in the event handler when you press the Submit
+button, invoke the API:
+
+```js
+const res = await fetch('/api/send', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(inputs)
+})
+```
+
+Have a look at the source code of this website to see a complete
+implementation.

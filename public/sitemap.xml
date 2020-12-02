@@ -64,7 +64,15 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/object-oriented-considered-harmful</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/roadmap</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/sendgrid-form</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

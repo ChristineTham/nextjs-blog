@@ -1,0 +1,118 @@
+---
+date: '2020-12-02'
+type: Article
+draft: false
+title: Object Oriented Considered Harmful
+description: My rant of the day. One of the reasons why I did not pursue
+  software development as a career was that the computing industry in the
+  1990s and 2000s was a nightmare created by an obsession with
+  object-orientation.
+author: Chris Tham
+featured_image: /drawings/object.svg
+tags:
+  - Object-Oriented
+categories:
+  - Opinion
+---
+
+In March 1968 in the *Communications of the ACM* journal, the famous
+computer scientist Edgar Dijkstra penned the infamous paper
+[Go To Statement Considered Harmful](https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf).
+
+The paper was considered quite controversial and many people disagreed
+with Dijkstra. Of course, in hindsight he was completely correct.
+
+Dijkstra was also not a fan of object oriented computing. He was reputed to
+say:
+> Object-oriented programming is an exceptionally bad idea which could
+> only have originated in California.
+
+
+For a number of years I have been familiar with the observation that the
+quality of code is a decreasing function of the density of object-oriented
+paradigms that has been embraced by it's creators.
+
+Indeed, I have never been in love with object orientation, and it was one of
+the reasons I never really seriously pursued a career in software development.
+
+When I went to university, the dominant language taught at universities were
+Pascal and C. Some less enlightened institutions would continue to teach
+FORTRAN or COBOL, but those lecturers were hopelessly out of touch and
+good students knew to avoid their courses.
+
+Pascal was simple and easy to program in, although a bit verbose and the
+vanilla language did not have a lot of features. C was a lot nicer and
+the standard C library was really powerful, but it was quite low level.
+
+When I left university, I worked for a fintech doing synthetic options.
+For some reason, the company thought it would be good to get into
+object-oriented computing, and sent us to a C++ workshop taught by
+Bjarne Stroustrup.
+
+Before I attended the workshop, I was actually keen to learn more about C++
+because I thought it would solve some of the obvious problems with C -
+memory management being a primary example.
+
+I left the workshop hating C++, and I had a good discussion with Bjarne.
+He acknowledged a lot of my points, but felt that some of them were tied
+to the C++ compiler being a transpiler rather than a true native compiler.
+I agreed with some of his rebuttals.
+
+Over the coming weeks, I grew more and more disenchanted with C++. I didn't
+like the syntax, and object orientation made writing code a lot harder,
+and more importantly, a lot less fun.
+
+Object orientation encourages over abstraction, makes data less
+portable, and discourages reuse.
+
+To use a potentially less-than-useful analogy, let's compare writing code
+to making a cup of coffee. In C, you will write a function that specifies
+how to make a cup of coffee, and the ingredients may be in a data structure
+(`struct`).
+
+If you were to do the same in C++, you would need to describe an object
+called coffee, potentially an object called cup, and all the ingredients
+will also be objects, or at the very least properties of objects.
+
+Then you need to decide whether making a coffee is a method on the coffee
+object, or the cup object, or maybe you need to create a third object
+that inherits from both of them. Pretty soon, you are worried about
+constructors, polymorphism and whether you need to model the coffee machine as
+an additional object.
+
+You can't rest with just a coffee machine method. You are doing yourself
+and the world a disservice unless you exhaustively model all the possible
+methods and properties of the coffee, cup, and coffee machine objects. Then
+you start realising you need to model the spoon, saucer and sugar objects.
+
+Two weeks later, you have finally solved the problem of modelling a coffee
+plantation, with full separation of concerns and views between the coffee
+grower, seller and consumer.
+
+And that in a nutshell is why I think object-orientation is just crazy.
+
+Data Science has taught us that data should never be abstracted or encapsulated
+in objects and need to be independent of the manipulating logic.
+
+And any sufficiently complex object model is non reusable. Again, to take
+the coffee analogy, you can't just make and drink the coffee. You have to
+inherit the coffee object, the cup and everything all the way to the
+coffee plantation.
+
+And you can't mix and match between someone's coffee and another person's cup,
+because they have made completely different design decisions on their
+object modelling.
+
+I realised this fairly early on, and then watched in dismay as the computing
+world became obsessed with object-orientation and ever increasing
+abstraction and complexity, with object frameworks competing with each other.
+
+Java, Objective C were no better, and perhaps made it worse.
+
+In a sense, modern programming has gone back to basics and I am glad. We
+are no longer obsessed with over-abstracting everything. We are seeing a
+return to using command line utilities and simple editors rather than bloated
+IDEs, declarative/imperative UI frameworks rather than MVC, and functional
+programming rather than object-oriented.
+
+Coding has become fun again.
