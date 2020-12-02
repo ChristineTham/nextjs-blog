@@ -17,9 +17,7 @@ const SEO = {
     images: [
       {
         url: 'https://learning-jamstack.now.sh/images/screenshot.png',
-        alt: title,
-        width: 1200,
-        height: 630
+        alt: title
       }
     ]
   },
