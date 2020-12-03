@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 import AboutMe from '../components/tailblocks/AboutMe'
 import Learning from '../components/tailblocks/Learning'
 import Architecture from '../components/tailblocks/Architecture'
+import List from '../components/TailwindUI/List'
+import Section from '../components/tailblocks/Section'
 
 import { site } from '../global'
 
@@ -43,6 +45,14 @@ const About: React.FC = () => {
       <AboutMe />
       <Learning />
       <Architecture />
+      <Section
+        title="Website Information"
+        description="Detailed information on current build of website"
+        backgroundColor="bg-rosely5"
+        width="w-64"
+      >
+        <List />
+      </Section>
     </Layout>
   )
 }
