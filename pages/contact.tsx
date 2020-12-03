@@ -1,8 +1,10 @@
-import { NextSeo } from 'next-seo'
+import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
 // components
 import Layout from '../components/layout'
 import Contact from '../components/tailblocks/Contact'
+
+import { site } from '../global'
 
 const ContactUs: React.FC = () => {
   const title = 'Contact Us'
@@ -15,8 +17,21 @@ const ContactUs: React.FC = () => {
         description={description}
         openGraph={{
           title: title,
-          description: description
+          description: description,
+          type: 'profile',
+          profile: {
+            firstName: 'Chris',
+            lastName: 'Tham',
+            username: 'chris1tham',
+            gender: 'female'
+          }
         }}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Chris Tham"
+        url={site.url}
+        sameAs={[site.facebook, site.instagram, site.linkedin, site.twitter]}
       />
       <Contact />
     </Layout>

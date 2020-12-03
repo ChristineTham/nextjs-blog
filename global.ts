@@ -14,5 +14,6 @@ export const site = {
   facebook: 'https://www.facebook.com/chris1.tham',
   twitter: 'https://twitter.com/Chris1Tham',
   github: 'https://github.com/ChristineTham',
-  linkedin: 'https://www.linkedin.com/in/christham/'
+  linkedin: 'https://www.linkedin.com/in/christham/',
+  instagram: 'https://www.instagram.com/chris1tham/'
 }

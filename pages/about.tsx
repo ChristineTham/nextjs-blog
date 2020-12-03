@@ -1,4 +1,4 @@
-import { NextSeo } from 'next-seo'
+import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
 // components
 import Layout from '../components/layout'
@@ -19,6 +19,13 @@ const About: React.FC = () => {
         openGraph={{
           title: title,
           description: description,
+          type: 'profile',
+          profile: {
+            firstName: 'Chris',
+            lastName: 'Tham',
+            username: 'chris1tham',
+            gender: 'female'
+          },
           images: [
             {
               url: site.url + '/images/hellokitty.jpg',
@@ -26,6 +33,12 @@ const About: React.FC = () => {
             }
           ]
         }}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name="Chris Tham"
+        url={site.url}
+        sameAs={[site.facebook, site.instagram, site.linkedin, site.twitter]}
       />
       <AboutMe />
       <Learning />

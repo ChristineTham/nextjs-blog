@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Header from './tailblocks/Header'
 import BlogHero from './tailblocks/BlogHero'
 import Footer from './Notus/Footer'
-import { NextSeo } from 'next-seo'
+import { NextSeo, ArticleJsonLd } from 'next-seo'
 import { FrontMatter } from '../lib/postutils'
 import { site } from '../global'
 
-const BlogLayout: React.FC<{ meta: FrontMatter }> = ({ children, meta }) => {
+const BlogLayout: React.FC<{ url: string; meta: FrontMatter }> = ({ children, url, meta }) => {
   return (
     <>
       <Head>
@@ -18,6 +18,13 @@ const BlogLayout: React.FC<{ meta: FrontMatter }> = ({ children, meta }) => {
         openGraph={{
           title: meta.title,
           description: meta.description,
+          type: 'article',
+          article: {
+            publishedTime: meta.date,
+            section: meta.categories[0],
+            authors: [meta.author],
+            tags: meta.tags
+          },
           images: [
             {
               url: site.url + meta.featured_image.replace('.svg', '.png'),
@@ -25,6 +32,17 @@ const BlogLayout: React.FC<{ meta: FrontMatter }> = ({ children, meta }) => {
             }
           ]
         }}
+      />
+      <ArticleJsonLd
+        url={url}
+        title={meta.title}
+        images={[site.url + meta.featured_image.replace('.svg', '.png')]}
+        datePublished={meta.date}
+        dateModified={meta.date}
+        authorName={[meta.author]}
+        publisherName={meta.author}
+        publisherLogo={site.url + '/android-chrome-512x512.png'}
+        description={meta.description}
       />
       <Header />
       <BlogHero meta={meta} />

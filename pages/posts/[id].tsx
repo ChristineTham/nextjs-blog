@@ -31,13 +31,20 @@ const components = {
 }
 
 interface PostProps {
+  id: string
+  url: string
   source: Source
   frontMatter: FrontMatter
 }
 
-const Post: React.FC<PostProps> = ({ source, frontMatter }) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Post: React.FC<PostProps> = ({ id, url, source, frontMatter }) => {
   const content = hydrate(source, { components })
-  return <BlogLayout meta={frontMatter}>{content}</BlogLayout>
+  return (
+    <BlogLayout url={url} meta={frontMatter}>
+      {content}
+    </BlogLayout>
+  )
 }
 export default Post
 
@@ -71,6 +78,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      id: params.id,
+      url: postFilePath,
       source: mdxSource,
       frontMatter: data as FrontMatter
     }
