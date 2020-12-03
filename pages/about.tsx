@@ -1,4 +1,5 @@
 import { NextSeo, SocialProfileJsonLd } from 'next-seo'
+import { GetStaticProps } from 'next'
 
 // components
 import Layout from '../components/layout'
@@ -10,7 +11,15 @@ import Section from '../components/tailblocks/Section'
 
 import { site } from '../global'
 
-const About: React.FC = () => {
+interface AboutProps {
+  arch: string
+  platform: string
+  version: string
+  commit: string
+  message: string
+}
+
+const About: React.FC<AboutProps> = ({ arch, platform, version, commit, message }) => {
   const title = 'About'
   const description = 'About Me and This Site'
   return (
@@ -51,9 +60,21 @@ const About: React.FC = () => {
         backgroundColor="bg-rosely5"
         width="w-64"
       >
-        <List />
+        <List arch={arch} platform={platform} version={version} commit={commit} message={message} />
       </Section>
     </Layout>
   )
 }
 export default About
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      arch: process.arch,
+      platform: process.platform,
+      version: process.version,
+      commit: process.env.VERCEL_GIT_COMMIT_REF,
+      message: process.env.VERCEL_GIT_COMMIT_MESSAGE
+    }
+  }
+}
