@@ -7,8 +7,9 @@ import Layout from '../components/layout'
 import AboutMe from '../components/tailblocks/AboutMe'
 import Learning from '../components/tailblocks/Learning'
 import Architecture from '../components/tailblocks/Architecture'
-import List from '../components/TailwindUI/List'
 import Section from '../components/tailblocks/Section'
+import ListHeader from '../components/TailwindUI/ListHeader'
+import ListItem from '../components/TailwindUI/ListItem'
 
 import { site } from '../global'
 
@@ -61,13 +62,18 @@ const About: React.FC<AboutProps> = ({ arch, platform, version, commit, chimpsta
         backgroundColor="bg-rosely5"
         width="w-64"
       >
-        <List
-          arch={arch}
-          platform={platform}
-          version={version}
-          commit={commit}
-          chimpstatus={chimpstatus}
-        />
+        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+          <ListHeader title="Deployment Information" description="Website deployment details" />
+          <div className="border-t border-rosely7">
+            <dl>
+              <ListItem item="Architecture" value={arch} bgcolor="bg-rosely6" />
+              <ListItem item="Platform" value={platform} />
+              <ListItem item="NodeJS Version" value={version} bgcolor="bg-rosely6" />
+              <ListItem item="Last Commit" value={commit} />
+              <ListItem item="Mailchimp Status" value={chimpstatus} bgcolor="bg-rosely6" />
+            </dl>
+          </div>
+        </div>
       </Section>
     </Layout>
   )
