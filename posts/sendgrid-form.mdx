@@ -36,12 +36,12 @@ import sgMail from '@sendgrid/mail'
 export default async (req: NowRequest, res: NowResponse) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-  const { name, email, message } = req.body
+  const { email, subject, message } = req.body
 
   const content = {
-    to: 'chris.tham@hellotham.com',
+    to: 'learning.jamstack@hellotham.com',
     from: email,
-    subject: `Learning NextJS Message From ${name} - ${email}`,
+    subject: subject,
     text: message,
     html: `<p>${message}</p>`
   }

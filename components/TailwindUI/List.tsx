@@ -6,20 +6,20 @@ interface ListProps {
   platform: string
   version: string
   commit: string
-  message: string
+  chimpstatus: string
 }
-const List: React.FC<ListProps> = ({ arch, platform, version, commit, message }) => (
+const List: React.FC<ListProps> = ({ arch, platform, version, commit, chimpstatus }) => (
   <div className="bg-white shadow overflow-hidden sm:rounded-lg">
     <ListHeader title="Deployment Information" description="Website deployment details" />
     <div className="border-t border-rosely7">
       <dl>
         <ListItem item="Architecture" value={arch} />
         <ListItem item="Platform" value={platform} />
-        <ListItem item="Version" value={version} />
+        <ListItem item="NodeJS Version" value={version} />
         <ListItem item="Last Commit" value={commit} />
-        <ListItem item="Commit Message" value={message} />
+        <ListItem item="Mailchimp Status" value={chimpstatus} />
       </dl>
-    </div>{' '}
+    </div>
   </div>
 )
 export default List

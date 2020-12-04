@@ -10,6 +10,7 @@ import What from '../components/tailblocks/What'
 import WhoWhy from '../components/tailblocks/WhoWhy'
 import Articles from '../components/tailblocks/Articles'
 import Article from '../components/tailblocks/Article'
+import CTA from '../components/tailblocks/CTA'
 
 import { site } from '../global'
 
@@ -43,6 +44,7 @@ const Home: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
         <Article href={`/posts/${id}`} meta={meta} key={id} />
       ))}
     </Articles>
+    <CTA />
   </Layout>
 )
 export default Home

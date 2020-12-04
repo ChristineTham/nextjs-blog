@@ -60,7 +60,11 @@ function Contact(): JSX.Element {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(inputs)
+      body: JSON.stringify({
+        email: inputs.email,
+        subject: 'Learning Jamstack message from ' + inputs.name + '(' + inputs.email + ')',
+        message: inputs.message
+      })
     })
     const text = await res.text()
     handleResponse(res.status, text)

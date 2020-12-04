@@ -1,5 +1,6 @@
 import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 import { GetStaticProps } from 'next'
+import mailchimp from '@mailchimp/mailchimp_marketing'
 
 // components
 import Layout from '../components/layout'
@@ -16,10 +17,10 @@ interface AboutProps {
   platform: string
   version: string
   commit: string
-  message: string
+  chimpstatus: string
 }
 
-const About: React.FC<AboutProps> = ({ arch, platform, version, commit, message }) => {
+const About: React.FC<AboutProps> = ({ arch, platform, version, commit, chimpstatus }) => {
   const title = 'About'
   const description = 'About Me and This Site'
   return (
@@ -60,7 +61,13 @@ const About: React.FC<AboutProps> = ({ arch, platform, version, commit, message 
         backgroundColor="bg-rosely5"
         width="w-64"
       >
-        <List arch={arch} platform={platform} version={version} commit={commit} message={message} />
+        <List
+          arch={arch}
+          platform={platform}
+          version={version}
+          commit={commit}
+          chimpstatus={chimpstatus}
+        />
       </Section>
     </Layout>
   )
@@ -68,13 +75,19 @@ const About: React.FC<AboutProps> = ({ arch, platform, version, commit, message 
 export default About
 
 export const getStaticProps: GetStaticProps = async () => {
+  mailchimp.setConfig({
+    apiKey: process.env.MAILCHIMP_API_KEY,
+    server: process.env.MAILCHIMP_SERVER_PREFIX
+  })
+  const mailchimpResponse = await mailchimp.ping.get()
+
   return {
     props: {
       arch: process.arch,
       platform: process.platform,
       version: process.version,
-      commit: process.env.VERCEL_GIT_COMMIT_REF,
-      message: process.env.VERCEL_GIT_COMMIT_MESSAGE
+      commit: process.env.VERCEL_GIT_COMMIT_MESSAGE,
+      chimpstatus: mailchimpResponse.health_status
     }
   }
 }

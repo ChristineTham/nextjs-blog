@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from './tailblocks/Header'
 import BlogHero from './tailblocks/BlogHero'
+import CTA from './tailblocks/CTA'
 import Footer from './Notus/Footer'
 import { NextSeo, ArticleJsonLd } from 'next-seo'
 import { FrontMatter } from '../lib/postutils'
@@ -49,6 +50,7 @@ const BlogLayout: React.FC<{ url: string; meta: FrontMatter }> = ({ children, ur
       <main className="mt-8 md:mt-10 pb-40 relative bg-white">
         <article className="prose mx-auto">{children}</article>
       </main>
+      <CTA />
       <Footer />
     </>
   )
