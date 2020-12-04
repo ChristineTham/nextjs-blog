@@ -57,9 +57,10 @@ const Privacy: React.FC = () => {
             <A external href="https://vercel.com">
               Vercel
             </A>
-            . It currently does not collect any personal information or data gathering on web site
-            visitors, implement any tracking or cookies. Vercel may collect some statistics on the
-            usage of their service, please refer to the{' '}
+            . We currently collect your name and email information only if you subscribe to our
+            mailing list for website notifications, and if you choose to contact us via the
+            [Contact](/contact) page. Vercel may also collect some statistics on the usage of their
+            service, please refer to the{' '}
             <A external href="https://vercel.com/legal/privacy-policy">
               Vercel Privacy Policy
             </A>{' '}
@@ -68,10 +69,10 @@ const Privacy: React.FC = () => {
           <h2>Future data collection</h2>
           <p>
             We reserve the right to change this privacy policy and implement user data collection
-            for the purposes of providing features such as usage tracking, memberships,
-            subscriptions, commenting, and any other feature consistent with the stated purpose of
-            this website which is in the <A href="/about">About page</A>. If we do so, we will
-            change this Privacy Policy appropriately so please visit this page from time to time.
+            for the purposes of providing features such as usage tracking, memberships, commenting,
+            and any other feature consistent with the stated purpose of this website which is in the{' '}
+            <A href="/about">About page</A>. If we do so, we will change this Privacy Policy
+            appropriately so please visit this page from time to time.
           </p>
           <h2>What are your data protection rights?</h2>
           <p>
@@ -82,32 +83,37 @@ const Privacy: React.FC = () => {
           <ul>
             <li>
               <em>The right to access</em> &mdash; You have the right to request us for copies of
-              your personal data. However, we currently do not collect any data.
+              your personal data.
             </li>
             <li>
               <em>The right to rectification</em> &mdash; You have the right to request that we
               correct any information you believe is inaccurate. You also have the right to request
-              we complete the information you believe is incomplete. Please use the form in{' '}
-              <A href="/contact">Contact page</A> to notify us.
+              we complete the information you believe is incomplete. Please use the form in the{' '}
+              <A href="/contact">Contact</A> page to notify us.
             </li>
             <li>
               <em>The right to erasure</em> &mdash; You have the right to request that we erase your
-              personal data, under certain conditions. However, we currently do not collect any such
-              data.
+              personal data, under certain conditions. This includes unsubscribing yourself from the
+              mailing list (which you can do from link at the bottom of every email you receive from
+              us). In addition, you can also request we delete any previous feedback you have given
+              us via the <A href="/contact">Contact</A> page.
             </li>
             <li>
               <em>The right to restrict processing</em> &mdash; You have the right to request that
               we restrict the processing of your personal data, under certain conditions. We
-              currently do not process any personal data.
+              currently do not process your personal data.
             </li>
             <li>
               <em>The right to object to processing</em> &mdash; You have the right to object to our
-              processing of your personal data, under certain conditions.
+              processing of your personal data, under certain conditions. We currently do not
+              process your personal data.
             </li>
             <li>
               <em>The right to data portability</em> &mdash; You have the right to request that we
               transfer the data that we have collected to another organization, or directly to you,
-              under certain conditions. We currently have no data to transfer.
+              under certain conditions. On request, we can provide you with copies of any previous
+              feedback you have sent to us, if they are still on our email server (we periodically
+              clean our emails and may no longer have copies to provide to you).
             </li>
           </ul>
           <h2>Cookies</h2>
