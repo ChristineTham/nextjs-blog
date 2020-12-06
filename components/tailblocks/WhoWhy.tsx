@@ -15,7 +15,13 @@ function WhoWhy(): JSX.Element {
     >
       <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
         <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-rosely3 text-rosely1">
-          <Image className="rounded-full" height="80" width="80" src="/images/profile.jpg" />
+          <Image
+            className="rounded-full"
+            height="80"
+            width="80"
+            src="/images/profile.jpg"
+            alt="Profile"
+          />
         </div>
         <div className="flex flex-col items-center text-center justify-center">
           <h2 className="font-medium title-font mt-4 text-rosely2">Chris Tham</h2>

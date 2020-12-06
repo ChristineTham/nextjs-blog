@@ -7,7 +7,7 @@ import A from '../A'
 
 const Footer: React.FC = () => (
   <>
-    <footer className="relative bg-rosely4 pt-8 pb-6">
+    <footer className="relative bg-rosely5 pt-8 pb-6">
       <div
         className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
         style={{ transform: 'translateZ(0)' }}
@@ -21,14 +21,14 @@ const Footer: React.FC = () => (
           x="0"
           y="0"
         >
-          <polygon className="text-rosely4 fill-current" points="2560 0 2560 100 0 100"></polygon>
+          <polygon className="text-rosely5 fill-current" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap text-center lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl text-rosely10 font-semibold">{site.title}</h4>
-            <h5 className="text-lg text-rosely1">Reach out to start a conversation!</h5>
+            <p className="text-3xl text-rosely10 font-semibold">{site.title}</p>
+            <p className="text-lg text-rosely1">Reach out to start a conversation!</p>
             <div className="mt-6 lg:mb-0 mb-6">
               <A external noline href={site.twitter}>
                 <button
@@ -36,6 +36,7 @@ const Footer: React.FC = () => (
                   type="button"
                 >
                   <Twitter className="h-6 w-6 mx-2" />
+                  <span className="hidden">Twitter</span>
                 </button>
               </A>
               <A external noline href={site.facebook}>
@@ -44,6 +45,7 @@ const Footer: React.FC = () => (
                   type="button"
                 >
                   <Facebook className="h-6 w-6 mx-2" />
+                  <span className="hidden">Facebook</span>
                 </button>
               </A>
               <A external noline href={site.website}>
@@ -52,6 +54,7 @@ const Footer: React.FC = () => (
                   type="button"
                 >
                   <Blog className="h-6 w-6 mx-2" />
+                  <span className="hidden">Blog</span>
                 </button>
               </A>
               <A external noline href={site.github}>
@@ -60,6 +63,7 @@ const Footer: React.FC = () => (
                   type="button"
                 >
                   <Github className="h-6 w-6 mx-2" />
+                  <span className="hidden">Github</span>
                 </button>
               </A>
             </div>

@@ -92,7 +92,7 @@ const CTA: React.FC = () => {
           <h2 className="text-rosely2 text-lg font-medium title-font mb-5">Subscribe</h2>
           <form onSubmit={handleOnSubmit}>
             <div className="relative mb-4">
-              <label htmlFor="full-name" className="leading-7 text-sm text-rosely1">
+              <label htmlFor="firstname" className="leading-7 text-sm text-rosely1">
                 First Name
               </label>
               <input
@@ -106,7 +106,7 @@ const CTA: React.FC = () => {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="full-name" className="leading-7 text-sm text-rosely1">
+              <label htmlFor="lastname" className="leading-7 text-sm text-rosely1">
                 Last Name
               </label>
               <input

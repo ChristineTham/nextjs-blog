@@ -15,6 +15,8 @@ const Article: React.FC<ArticleProps> = ({ href, meta }) => (
       <img
         className="lg:h-48 md:h-36 w-full object-fit object-center"
         src={meta.featured_image || '/drawings/knowledge.svg'}
+        height="192"
+        width="100%"
         alt="Featured Image"
       />
       <div className="p-6">
@@ -23,32 +25,33 @@ const Article: React.FC<ArticleProps> = ({ href, meta }) => (
           <h1 className="title-font text-lg font-bold text-rosely2 mt-2">{meta.title}</h1>
         </A>
         <div className="flex items-center flex-wrap ">
-          <span className="text-rosely3 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-rosely7">
+          <span className="text-rosely1 mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-rosely7">
             <DateIcon className="w-4 h-4 mr-1" />
             {meta.date}
           </span>
-          <span className="text-rosely3 inline-flex items-center leading-none text-sm">
+          <span className="text-rosely1 inline-flex items-center leading-none text-xs">
             <AuthorIcon className="w-4 h-4 mr-1" />
             {meta.author}
           </span>
+          <A href={href}>
+            <div className="inline-flex items-center ml-2">
+              Read
+              <svg
+                className="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </A>
         </div>
-        <A href={href}>
-          <div className="inline-flex items-center md:mb-2 lg:mb-0">
-            Learn More
-            <svg
-              className="w-4 h-4 ml-2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </div>
-        </A>
+
         <p className="mt-3 italic text-sm text-rosely1">{meta.description}</p>
       </div>
     </div>
