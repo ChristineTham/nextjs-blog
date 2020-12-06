@@ -33,7 +33,7 @@ export function getSortedPostsData(): PostMeta[] {
   // Get file names under /posts
   const fileNames = postFilePaths
   const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
+    // Remove ".mdx" from file name to get id
     const id = fileName.replace(/\.mdx$/, '')
 
     // Read markdown file as string

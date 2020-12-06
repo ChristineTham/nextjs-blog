@@ -92,6 +92,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/sitemap-rss</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/stop-using-starter-kits</loc>
     <changefreq>hourly</changefreq>
   </url>

@@ -19,16 +19,9 @@ module.exports = withPlugins(
     [withSvgr]
   ],
   {
-    webpack: (config, { isServer }) => {
-      if (isServer) {
-        require('./scripts/generate')
-      }
-
-      return config
-    },
     i18n: {
       locales: ['en'],
       defaultLocale: 'en'
-    },
+    }
   }
 )

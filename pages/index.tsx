@@ -13,6 +13,7 @@ import Article from '../components/tailblocks/Article'
 import CTA from '../components/tailblocks/CTA'
 
 import { site } from '../global'
+import { generateSitemap, generateRSS } from '../lib/generate'
 
 const Home: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
   allPostsData,
@@ -52,6 +53,10 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
   const buildDate = new Date().toISOString()
+
+  generateSitemap()
+  generateRSS(allPostsData)
+
   return {
     props: {
       allPostsData,

@@ -1,0 +1,129 @@
+---
+date: '2020-12-07'
+type: Article
+draft: false
+title: Generating Sitemap and RSS feed for site
+description: How to generate a sitemap and RSS feed for a site automatically.
+  I have decided to use a method that is completely internal and does not
+  rely on scripts or loaders.
+author: Chris Tham
+featured_image: /drawings/posts.svg
+tags:
+  - Sitemap
+  - RSS
+  - NextJS
+categories:
+  - Techique
+  - Sitemap
+  - RSS
+  - NextJS
+---
+
+According to [Sitemaps.org]():
+
+> **Sitemaps** are an easy way for webmasters to inform search engines about pages
+> on their sites that are available for crawling. In its simplest form, a
+> Sitemap is an XML file that lists URLs for a site along with additional
+> metadata about each URL (when it was last updated, how often it usually
+> changes, and how important it is, relative to other URLs in the site) so
+> that search engines can more intelligently crawl the site.
+
+> Web crawlers usually discover pages from links within the site and from
+> other sites. Sitemaps supplement this data to allow crawlers that support
+> Sitemaps to pick up all URLs in the Sitemap and learn about those URLs using
+> the associated metadata. Using the Sitemap protocol does not guarantee that
+> web pages are included in search engines, but provides hints for web crawlers
+> to do a better job of crawling your site.
+
+RSS, on the other hand, is a way for website authors to publish notifications
+of new content on their website.
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/RSS):
+
+> **RSS** (RDF Site Summary or Really Simple Syndication) is a web feed that
+> allows users and applications to access updates to websites in a standardized,
+> computer-readable format. These feeds can, for example, allow a user to keep
+> track of many different websites in a single news aggregator. The news
+> aggregator will automatically check the RSS feed for new content, allowing
+> the list to be automatically passed from website to website or from website
+> to user. This passing of content is called web syndication. Websites usually
+> use RSS feeds to publish frequently updated information, such as blog
+> entries, news headlines, or episodes of audio and video series. RSS is also
+> used to distribute podcasts. An RSS document (called "feed", "web feed",
+> or "channel") includes full or summarized text, and metadata, like
+> publishing date and author's name.
+
+For this site, I have decided to use functions called from `getStaticProps()`
+in `index.tsx` so they are
+created during build without any changes in the Nextjs configuration or
+requiring any additional plugins or loaders.
+
+To generate the sitemap, I used a simple function that enumerates the files in
+the `pages` and `posts` directories:
+
+```ts
+function addPage(page) {
+  const path = page
+    .replace('pages', '')
+    .replace('.tsx', '')
+    .replace('.mdx', '')
+    .replace('posts', '/posts')
+  const route = path === '/index' ? '' : path
+
+  return `  <url>
+    <loc>${`${site.url}${route}`}</loc>
+    <changefreq>hourly</changefreq>
+  </url>`
+}
+
+export async function generateSitemap() {
+  // Ignore Next.js specific files (e.g., _app.js) and API routes.
+  const pages = await globby([
+    'pages/**/*{.tsx,.mdx}',
+    '!pages/_*.tsx',
+    '!pages/posts/[id].tsx',
+    '!pages/api'
+  ])
+  const posts = await globby(['posts/**/*.mdx'])
+  const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(addPage).join('\n')}
+${posts.map(addPage).join('\n')}
+</urlset>`
+
+  fs.writeFileSync('public/sitemap.xml', sitemap)
+}
+```
+
+And for the RSS feed, a function that uses the array of post metadata
+generated and the npm package `rss`:
+
+```ts
+export async function generateRSS(allPostData: PostMeta[]) {
+  const feed = new RSS({
+    title: site.title,
+    description: site.description,
+    site_url: site.url,
+    feed_url: site.sitemap
+  })
+
+  function itemRSS(post: PostMeta) {
+    feed.item({
+      title: post.meta.title,
+      description: post.meta.description,
+      url: `${site.url}/${post.id}`,
+      categories: post.meta.categories,
+      date: post.meta.date,
+      author: post.meta.author,
+      enclosure: {
+        url: `${site.url}${post.meta.featured_image.replace('.svg', '.png')}`,
+        file: 'public' + post.meta.featured_image.replace('.svg', '.png')
+      }
+    })
+  }
+
+  allPostData.map(itemRSS)
+
+  const rss = feed.xml({ indent: true })
+  fs.writeFileSync('public/feed.xml', rss)
+}
+```
