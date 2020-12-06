@@ -1,0 +1,89 @@
+---
+date: '2020-12-05'
+type: Article
+draft: false
+title: Create a Call to Action to Subscribe using Mailchimp
+description: I have just implemented a call to action component on this site
+  which allows a user to subscribe to a mailing list on Mailchimp. I encourage
+  you to subscribe to get notifications via email of future posts.
+author: Chris Tham
+featured_image: /drawings/subscribe.svg
+tags:
+  - Mailchimp
+  - NextJS
+  - subscribe
+categories:
+  - Technique
+  - Mailchimp
+  - NextJS
+---
+
+A standard technique on a website to measure user engagement is a Call to
+Action (CTA) to encourage users to subscribe to a mailing list.
+
+[Mailchimp](https://mailchimp.com/) is a popular email marketing platform
+that also offers other services like transactional email and website hosting.
+
+From the perspective of an app Mailchimp offers two APIs, a marketing API
+and a transactional API (based on their acquisition of Mandrill).
+
+Their [quick start guide](https://mailchimp.com/developer/guides/marketing-api-quick-start/)
+gives the basics on how to start using their Marketing API. Essentially,
+you need a Mailchimp account (there is a free plan) and a generated API key.
+
+Mailchimp provides a convenient NPM package called
+`@mailchimp/mailchimp_marketing` that makes it super easy to use their services
+to add a new contact (name and email address) to a mailing list (which
+Mailchimp calls "Audience"). Unfortunately, the package is not
+[Typescript friendly](https://stackoverflow.com/questions/64685959/mailchimp-mailchimp-marketing-types-d-ts-is-not-a-module-in-nodejs)
+therefore requires a custom Typescript module declaration file.
+
+This is the code to check that everything works and the Mailchimp API service
+can be accessed:
+
+```ts
+mailchimp.setConfig({
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: process.env.MAILCHIMP_SERVER_PREFIX
+})
+const mailchimpResponse = await mailchimp.ping.get()
+```
+
+The above code can be included in an `async` function (such as
+`GetStaticProps()` which is executed at build time) or in a serverless API
+function defined in the `pages/api` directory.
+
+This is the code to add a new contact to the mailing list:
+
+```ts
+import { NowRequest, NowResponse } from '@vercel/node'
+import mailchimp from '@mailchimp/mailchimp_marketing'
+
+export default async (req: NowRequest, res: NowResponse) => {
+  const { firstname, lastname, email } = req.body
+
+  if (!email) {
+    return res.status(400).json({ error: 'Email is required' })
+  }
+
+  try {
+    mailchimp.setConfig({
+      apiKey: process.env.MAILCHIMP_API_KEY,
+      server: process.env.MAILCHIMP_SERVER_PREFIX
+    })
+
+    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID, {
+      email_address: email,
+      status: 'subscribed',
+      merge_fields: {
+        FNAME: firstname,
+        LNAME: lastname
+      }
+    })
+
+    return res.status(201).send('You have been subscribed: ' + response.id)
+  } catch (error) {
+    return res.status(400).send('An error has occurred.')
+  }
+}
+```

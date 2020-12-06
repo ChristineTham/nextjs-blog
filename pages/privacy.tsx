@@ -58,9 +58,9 @@ const Privacy: React.FC = () => {
               Vercel
             </A>
             . We currently collect your name and email information only if you subscribe to our
-            mailing list for website notifications, and if you choose to contact us via the
-            [Contact](/contact) page. Vercel may also collect some statistics on the usage of their
-            service, please refer to the{' '}
+            mailing list for website notifications, and if you choose to contact us via the{' '}
+            <A href="/contact">Contact</A> page. Vercel may also collect some statistics on the
+            usage of their service, please refer to the{' '}
             <A external href="https://vercel.com/legal/privacy-policy">
               Vercel Privacy Policy
             </A>{' '}

@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import { getSortedPostsData, PostMeta } from '../lib/postutils'
 import Articles from '../components/tailblocks/Articles'
 import Article from '../components/tailblocks/Article'
+import CTA from '../components/tailblocks/CTA'
 
 import { site } from '../global'
 
@@ -36,12 +37,13 @@ const Posts: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
         authorName={site.author}
         description={site.description}
       />
-      <div className="h-24 w-full bg-rosely5"></div>
-      <Articles title="Posts" bgcolor="bg-rosely5">
+      <div className="h-24 w-full bg-rosely6"></div>
+      <Articles title="Posts" bgcolor="bg-rosely6">
         {allPostsData.map(({ id, meta }) => (
           <Article href={`/posts/${id}`} meta={meta} key={id} />
         ))}
       </Articles>
+      <CTA />
     </Layout>
   )
 }

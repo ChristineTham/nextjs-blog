@@ -58,7 +58,6 @@
     "@tailwindcss/typography": "^0.3.1",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
-    "isomorphic-unfetch": "^3.1.0",
     "next": "^10.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^1.0.0",
@@ -101,10 +100,5 @@
     "rss": "^1.2.2",
     "tailwindcss": "^2.0.1",
     "typescript": "^4.1.2"
-  },
-  "build": {
-    "env": {
-      "SENDGRID_API_KEY": "@sendgrid_api_key"
-    }
   }
 }

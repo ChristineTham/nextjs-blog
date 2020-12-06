@@ -40,11 +40,19 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/cta-mailchimp</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/deployment-info</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/hello-world</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/implementing-seo</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
@@ -89,10 +97,6 @@
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/stop-using-ui-themes</loc>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
-    <loc>https://learning-jamstack.now.sh/posts/template copy 2</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

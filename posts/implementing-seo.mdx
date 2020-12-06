@@ -1,0 +1,191 @@
+---
+date: '2020-12-06'
+type: Article
+draft: false
+title: Improving SEO on the website
+description: Search Engine Optimisation (SEO) is a strategy for improving
+  the ranking of websites in search results. This article focuses on
+  incorporating social media and search engine tags into website pages
+  using next-seo
+author: Chris Tham
+featured_image: /drawings/search.svg
+tags:
+  - Search
+  - SEO
+  - NextJS
+  - next-seo
+categories:
+  - Technique
+  - NextJS
+  - next-seo
+---
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/Search_engine_optimization):
+
+> Search engine optimization (SEO) is the process of improving the quality and
+> quantity of website traffic to a website or a web page from search engines.
+
+Successful SEO means a web page will be more likely to appear higher on a
+search engine results page. This is a complex and dynamic process, since
+search engines do not fully disclose their algorithms and change them from
+time to time.
+
+According to [Webopedia](https://www.webopedia.com/TERM/S/SEO.html),
+many factors can potentially be involved in the
+search ranking of a particular web page:
+
+- _Keyword density_, or the frequency with which a targeted word or phrase
+  appears in the content of the page. (SEO is improved by keywords that are
+  used appropriately.)
+- _Bounce rate_, or how often a user visits the page and exits without visiting
+  any other pages. (High bounce rate can detract from SEO.)
+- _Metadata_, or the information that summarizes the content on the page.
+- _Social media traffic_, which indirectly signals that a page contains content
+  that's in high demand. (High traffic from social media is beneficial to SEO,
+  but lack of social media traffic doesn't necessarily have a negative impact.)
+- _Links_, including backlinks, outbound links, and internal links, which
+  indicate credibility and relevance to and from other content on the internet.
+  (Google looks favorably on sites that strategically direct traffic to other
+  sources.)
+- _EAT_ (Google's acronym for expertise, authority, and trustworthiness), which
+  signifies that a page has a reputable author.
+- _Security_, as signified by a site's SSL certificate, which search engines
+  use to verify that site has a secure connection and it's safe to share
+  personal information.
+- _Load speed_, or the time it takes a web page to completely load.
+  (Slow load speed can detract from SEO.)
+- _Mobile responsiveness_, or how a web page adjusts to different screen sizes.
+- _User experience_, or the features that could improve (or diminish) a user's
+  interaction with the content on a page.
+
+This article focuses on a specific technique for improving SEO, which is to
+incorporate structured metadata on the contents of each page to social
+media platforms and search engines using a package called `next-seo`.
+
+Next SEO is a plug in that makes managing your SEO easier in Next.js projects.
+It allows you to easily add SEO attributes (metadata) into specific pages, or
+have default attributes on every page via the `_app` component.
+
+Next SEO supports the [Open Graph protocol](https://ogp.me) which was created
+by Facebook but also supported by Twitter and Linkedin. In addition, Next SEO
+supports [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
+and [Schema](https://schema.org) JSON-LD data which are used by
+Google, Microsoft, Pinterest, Yandex.
+
+My default next-seo configuration is in `next-seo-config.js` and loaded
+on every page using the `DefaultSeo` component in `_App.tsx`
+
+```js
+const SEO = {
+  openGraph: {
+    type: 'website',
+    locale: 'en_AU',
+    site_name: 'Learning Jamstack',
+    images: [
+      {
+        url: 'https://learning-jamstack.now.sh/images/screenshot.png',
+        alt: 'Screenshot'
+      }
+    ]
+  },
+  twitter: {
+    handle: '@chris1tham',
+    site: 'Chris1Tham',
+    cardType: 'summary_large_image'
+  }
+}
+
+export default SEO
+```
+
+On the index page, I add additional JSON-LD tags appropriate for a blog site
+as well as the site title and description
+
+```ts
+<NextSeo
+  title={site.title}
+  description={site.description}
+  openGraph={{
+    title: site.title,
+    description: site.description
+  }}
+/>
+<BlogJsonLd
+  url={site.url}
+  title={site.title}
+  images={[site.url + '/images/screenshot.png']}
+  datePublished="2020-12-01"
+  dateModified={buildDate}
+  authorName={site.author}
+  description={site.description}
+/>
+```
+
+There are also user profile specific Open Graph and JSON-LD tags:
+
+```ts
+<NextSeo
+  title={title}
+  description={description}
+  openGraph={{
+    title: title,
+    description: description,
+    type: 'profile',
+    profile: {
+      firstName: 'Chris',
+      lastName: 'Tham',
+      username: 'chris1tham',
+      gender: 'female'
+    },
+    images: [
+      {
+        url: site.url + '/images/hellokitty.jpg',
+        alt: title
+      }
+    ]
+  }}
+/>
+<SocialProfileJsonLd
+  type="Person"
+  name="Chris Tham"
+  url={site.url}
+  sameAs={[site.facebook, site.instagram, site.linkedin, site.twitter]}
+/>
+```
+
+Finally, for each blog post/article, we use specific article tags:
+
+```ts
+      <NextSeo
+        title={meta.title}
+        description={meta.description}
+        openGraph={{
+          title: meta.title,
+          description: meta.description,
+          type: 'article',
+          article: {
+            publishedTime: meta.date,
+            section: meta.categories[0],
+            authors: [meta.author],
+            tags: meta.tags
+          },
+          images: [
+            {
+              url: site.url + meta.featured_image.replace('.svg', '.png'),
+              alt: meta.title
+            }
+          ]
+        }}
+      />
+      <ArticleJsonLd
+        url={url}
+        title={meta.title}
+        images={[site.url + meta.featured_image.replace('.svg', '.png')]}
+        datePublished={meta.date}
+        dateModified={meta.date}
+        authorName={[meta.author]}
+        publisherName={meta.author}
+        publisherLogo={site.url + '/android-chrome-512x512.png'}
+        description={meta.description}
+      />
+```

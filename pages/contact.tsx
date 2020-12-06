@@ -3,6 +3,7 @@ import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 // components
 import Layout from '../components/layout'
 import Contact from '../components/tailblocks/Contact'
+import CTA from '../components/tailblocks/CTA'
 
 import { site } from '../global'
 
@@ -34,6 +35,7 @@ const ContactUs: React.FC = () => {
         sameAs={[site.facebook, site.instagram, site.linkedin, site.twitter]}
       />
       <Contact />
+      <CTA />
     </Layout>
   )
 }

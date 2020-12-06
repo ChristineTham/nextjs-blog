@@ -1,5 +1,6 @@
 import A from '../A'
 import { site } from '../../global'
+import Image from 'next/image'
 
 function AboutMe(): JSX.Element {
   return (
@@ -13,9 +14,11 @@ function AboutMe(): JSX.Element {
       </div>
       <div className="container mx-auto flex px-5 pt-12 pb-20 xl:flex-row flex-col items-center">
         <div className="xl:max-w-xl xl:w-1/3 w-5/6 mb-10 xl:mb-0">
-          <img
+          <Image
             className="object-cover object-center rounded"
             alt="Hello Kitty"
+            width="1500"
+            height="1000"
             src="/images/hellokitty.jpeg"
           />
           <div className="flex justify-center space-x-2 flex-row mt-6">

@@ -24,6 +24,7 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ arch, platform, version, commit, chimpstatus }) => {
   const title = 'About'
   const description = 'About Me and This Site'
+
   return (
     <Layout>
       <NextSeo

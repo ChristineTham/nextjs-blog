@@ -7,7 +7,7 @@ const Hero: React.FC = ({ children }) => (
         </div>
 
         <div className="flex items-center justify-center w-full mt-6 md:mt-0 md:w-1/2">
-          <img className="max-w-2xl w-full h-full" src="/drawings/knowledge.svg" alt="" />
+          <img className="max-w-2xl w-full h-full" src="/drawings/knowledge.svg" alt="Hero" />
         </div>
       </div>
     </div>

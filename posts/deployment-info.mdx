@@ -11,8 +11,8 @@ tags:
   - git
   - NextJS
 categories:
-  - NextJS
   - Technique
+  - NextJS
 ---
 
 You tested and committed your latest changes, created a pull request on the
@@ -22,7 +22,7 @@ into production. Or is it?
 You browse pages on the production URL, but nothing has really changed. How
 can you be absolutely sure the website contains your latest changes?
 Hopefully, your static web hosting provider gives you that information (Vercel
-does) but maybe you really really want to be sure.
+does) but maybe you really, really want to be sure.
 
 One technique is to include website deployment information (such as the
 last successful commit message) into a web page on your website, perhaps
@@ -31,8 +31,8 @@ the [About](/about) page or a hidden secret page that only you know about.
 Vercel defines [System Environment Variables](https://vercel.com/docs/environment-variables#system-environment-variables)
 that you can query (provided you expose them in your project) to find out
 various information relating to your current deployment, including
-`VERCEL_GIT_COMMIT_SHA` and `VERCEL_GIT_COMMIT_MESSAGE`. You also query
-`VERCEL_ENV` to find out if you are currently on the production or
+`VERCEL_GIT_COMMIT_SHA` and `VERCEL_GIT_COMMIT_MESSAGE`.
+`VERCEL_ENV` tells you if you are currently on the production or
 staging site.
 
 You can also query the Nodejs `process` object to find out which version
@@ -42,7 +42,7 @@ The only trick is, these environment variables and deployment information
 are only available during the build phase. It's not available when a user
 browses the static content that has been deployed, so the trick is to
 get this information in `GetStaticProps` and pass them as props to your
-page component
+page component.
 
 ```ts
 export const getStaticProps: GetStaticProps = async () => (
@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps = async () => (
 
 Then, in your page, you can display the information any way you want, for
 example in a list (I used Javascript rather than Typescript in this
-example for simplicity)
+example for simplicity).
 
 ```js
 const WebsiteInfo = ({ arch, platform, version, commit }) => (
