@@ -12,7 +12,6 @@ config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatica
 import { site } from '../global'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-  document.documentElement.lang = 'en-au'
   return (
     <>
       <Head>
