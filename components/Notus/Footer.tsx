@@ -34,6 +34,7 @@ const Footer: React.FC = () => (
                 <button
                   className="bg-rosely6 text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
+                  aria-label="Twitter"
                 >
                   <Twitter className="h-6 w-6 mx-2" />
                   <span className="hidden">Twitter</span>
@@ -43,6 +44,7 @@ const Footer: React.FC = () => (
                 <button
                   className="bg-rosely6 text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
+                  aria-label="Facebook"
                 >
                   <Facebook className="h-6 w-6 mx-2" />
                   <span className="hidden">Facebook</span>
@@ -52,6 +54,7 @@ const Footer: React.FC = () => (
                 <button
                   className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
+                  aria-label="Blog"
                 >
                   <Blog className="h-6 w-6 mx-2" />
                   <span className="hidden">Blog</span>
@@ -61,6 +64,7 @@ const Footer: React.FC = () => (
                 <button
                   className="bg-rosely6 text-rosely9 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
+                  aria-label="Github"
                 >
                   <Github className="h-6 w-6 mx-2" />
                   <span className="hidden">Github</span>
