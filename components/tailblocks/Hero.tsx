@@ -36,6 +36,8 @@ function Hero(): JSX.Element {
           <img
             className="object-cover object-center rounded"
             alt="hero"
+            height="100%"
+            width="100%"
             src="/drawings/blogging.svg"
           />
         </div>
