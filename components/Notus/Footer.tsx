@@ -163,8 +163,8 @@ const Footer: React.FC = () => (
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-rosely1 font-semibold py-1">
               Copyright &copy; {new Date().getFullYear()}{' '}
-              <a href="https://hellotham.com" className="text-rosely10 hover:text-rosely9">
-                Hello Tham Pty Ltd
+              <a href={site.company_url} className="text-rosely10 hover:text-rosely9">
+                {site.company}
               </a>
               .
             </div>

@@ -1,1 +1,2 @@
-export default <></>
+const template: React.FC = () => <></>
+export default template

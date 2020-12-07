@@ -24,6 +24,9 @@ module.exports = {
         rosely15: '#919bc9',
         jamstack: '#F0047F'
       },
+      spacing: {
+        128: '32rem'
+      },
       typography: {
         DEFAULT: {
           css: {
