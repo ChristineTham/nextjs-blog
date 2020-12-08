@@ -37,11 +37,13 @@ const Article: React.FC<ArticleProps> = ({ href, meta }) => (
               src="/images/profile.jpg"
               alt="Avatar"
             />
-            <a href="#" className="mx-2 text-rosely1 font-semibold">
-              {meta.author}
-            </a>
+            <div className="flex flex-col items-center">
+              <a href="#" className="mx-2 text-rosely1 font-semibold">
+                {meta.author}
+              </a>
+              <span className="mx-1 text-rosely1 text-xs">{meta.date}</span>
+            </div>
           </div>
-          <span className="mx-1 text-rosely1 text-xs">{meta.date}</span>
         </div>
       </div>
     </div>
