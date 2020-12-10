@@ -61,7 +61,7 @@ requiring any additional plugins or loaders.
 To generate the sitemap, I used a simple function that enumerates the files in
 the `pages` and `posts` directories:
 
-```ts
+```tsx
 function addPage(page) {
   const path = page
     .replace('pages', '')
@@ -97,7 +97,7 @@ ${posts.map(addPage).join('\n')}
 And for the RSS feed, a function that uses the array of post metadata
 generated and the npm package `rss`:
 
-```ts
+```tsx
 export async function generateRSS(allPostData: PostMeta[]) {
   const feed = new RSS({
     title: site.title,

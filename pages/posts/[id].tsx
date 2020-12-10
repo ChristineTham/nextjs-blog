@@ -13,7 +13,6 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
-import inlineCode from '../../components/inlineCode'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -26,8 +25,7 @@ const components = {
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  code: CodeBlock,
-  inlineCode: inlineCode
+  code: CodeBlock
 }
 
 interface PostProps {

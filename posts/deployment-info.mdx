@@ -44,7 +44,7 @@ browses the static content that has been deployed, so the trick is to
 get this information in `GetStaticProps` and pass them as props to your
 page component.
 
-```ts
+```tsx
 export const getStaticProps: GetStaticProps = async () => (
   props: {
     arch: process.arch,
@@ -60,7 +60,7 @@ Then, in your page, you can display the information any way you want, for
 example in a list (I used Javascript rather than Typescript in this
 example for simplicity).
 
-```js
+```jsx
 const WebsiteInfo = ({ arch, platform, version, commit }) => (
   <ul>
     <li>{arch}</li>

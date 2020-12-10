@@ -4,6 +4,7 @@ import React from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
+import theme from '../styles/rosely-prism'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const CodeBlock: React.FC<{
@@ -16,7 +17,7 @@ const CodeBlock: React.FC<{
 
   if (live) {
     return (
-      <div style={{ marginTop: '40px', backgroundColor: 'black' }}>
+      <div className="mt-10 bg-rosely5">
         <LiveProvider
           code={children.trim()}
           transformCode={(code) => '/** @jsx mdx */' + code}
@@ -32,7 +33,7 @@ const CodeBlock: React.FC<{
 
   if (render) {
     return (
-      <div style={{ marginTop: '40px' }}>
+      <div className="mt-10">
         <LiveProvider code={children}>
           <LivePreview />
         </LiveProvider>
@@ -41,14 +42,27 @@ const CodeBlock: React.FC<{
   }
 
   return (
-    <Highlight {...defaultProps} code={children.trim()} language={language as Language}>
+    <Highlight
+      {...defaultProps}
+      code={children.trim()}
+      theme={theme}
+      language={language as Language}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
+        <pre
+          className={`${className} text-left mt-4 mr-0 p-2 overflow-scroll text-lg`}
+          style={style}
+        >
           {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
+            <div className="table-row" key={i} {...getLineProps({ line, key: i })}>
+              <span className="table-cell text-right w-10 pr-4 select-none opacity-50 text-xs">
+                {i + 1}
+              </span>
+              <span className="table-cell">
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </span>
             </div>
           ))}
         </pre>

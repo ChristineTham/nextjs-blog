@@ -47,6 +47,15 @@ module.exports = {
             'ul > li::before': {
               backgroundColor: '#93a9d1'
             },
+            code: {
+              color: '#27272a',
+              backgroundColor: '#f4dede',
+              fontWeight: '600',
+              borderWidth: '1px',
+              padding: '0.25rem',
+              borderRadius: '0.25rem',
+              borderColor: '#93a9d1'
+            },
             'code::before': {
               content: ''
             },
@@ -67,6 +76,18 @@ module.exports = {
             },
             h3: {
               color: '#85677b'
+            },
+            pre: {
+              color: '#27272a',
+              backgroundColor: '#f4dede',
+              overflowX: 'auto',
+              left: '50%',
+              marginLeft: '-40vw',
+              marginRight: '-40vw',
+              maxWidth: '80vw',
+              position: 'relative',
+              right: '50%',
+              width: '80vw'
             },
             thead: {
               borderBottomWidth: '2px',

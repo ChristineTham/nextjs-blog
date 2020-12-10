@@ -4,9 +4,9 @@ const TestComponent: React.FC<{ name: string }> = ({ name = 'world' }) => {
       <div>Hello, {name}!</div>
       <style jsx>{`
         div {
-          background-color: #111;
+          background-color: #f4dede;
           border-radius: 0.5em;
-          color: #fff;
+          color: #615f5f;
           margin-bottom: 1.5em;
           padding: 0.5em 0.75em;
         }

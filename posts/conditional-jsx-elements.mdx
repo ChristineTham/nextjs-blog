@@ -36,7 +36,7 @@ similar in `Javascript` (just omit the type declarations in the function compone
 The Javascript ternary operator `?:` can be used inside the `{}` to
 conditionally output different JSX Elements based on a condition:
 
-```ts
+```tsx
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
   <>
     {condition ?
@@ -52,7 +52,7 @@ If you wanted to generate a JSX Element only if a condition is true or
 false, and nothing for the opposite state, then you can use the Javascript
 logical operators `&&` and `||`:
 
-```ts
+```tsx
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
   <>
     {condition && <JSXIfTrue/>}
@@ -66,7 +66,7 @@ const Component: React.FC<{condition: boolean}> = ({condition}) = > (
 This can be done using a Javascript string literal in conjunction with our friends
 the ternary and logical operators.
 
-```ts
+```tsx
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
   <>
     <Child1 className={`button ${condition ? "btn-true" : "btn-false"}`}/>
@@ -78,7 +78,7 @@ const Component: React.FC<{condition: boolean}> = ({condition}) = > (
 
 If the `condition` is true the following JSX is generated:
 
-```ts
+```tsx
 <Child1 className="button btn-true"/>
 <Child2 className="button btn-true"/>
 <Child2 className="button"/>
@@ -86,7 +86,7 @@ If the `condition` is true the following JSX is generated:
 
 And if false:
 
-```ts
+```tsx
 <Child1 className="button btn-false"/>
 <Child2 className="button"/>
 <Child3 className="button btn-false"/>
@@ -101,7 +101,7 @@ Elements are internally manipulated as Javascript objects.
 If you didn't understand the above statement, don't worry, neither did I until
 recently. You can just use the following as a recipe.
 
-```ts
+```tsx
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
   <>
     <Child1 {...(condition ?
@@ -117,7 +117,7 @@ const Component: React.FC<{condition: boolean}> = ({condition}) = > (
 
 Believe it or not, if the `condition` is true the following JSX is generated:
 
-```ts
+```tsx
 <Child1 trueattribute="value"/>
 <Child2 trueattribute="value"/>
 <Child3/>
@@ -125,7 +125,7 @@ Believe it or not, if the `condition` is true the following JSX is generated:
 
 And if false:
 
-```ts
+```tsx
 <Child1 falseattribute="value"/>
 <Child2/>
 <Child3 falseattribute="value"/>
@@ -133,7 +133,7 @@ And if false:
 
 You can of course add additional attributes formatted as JSON object properties:
 
-```ts
+```tsx
 const Component: React.FC<{condition: boolean}> = ({condition}) = > (
   <>
     <ChildComponent {...(condition && {
@@ -146,7 +146,7 @@ const Component: React.FC<{condition: boolean}> = ({condition}) = > (
 
 This will generate (if condition is true):
 
-```ts
+```tsx
 <ChildComponent attribute1="value" attribute2="1" />
 ```
 
@@ -157,7 +157,7 @@ Amazing, isn't it?
 If you have an optional prop and it needs to be included as an attribute value in a JSX Element
 (but only if it's defined by the caller), you can simply do this:
 
-```ts
+```tsx
 const Component: React.FC<{optionalProp?: string}> = ({optionalProp}) = > (
   <>
     <ChildComponent attribute={optionalProp}/>
@@ -173,7 +173,7 @@ In the case of optional boolean props, you can just pass them to a child
 component as easily as this (and the prop will not be included in the child
 if false or undefined):
 
-```ts
+```tsx
 const Component: React.FC<{optionalBool?: boolean}> = ({optionalBool}) = > (
   <>
     <ChildComponent optionalBool={optionalBool}/>

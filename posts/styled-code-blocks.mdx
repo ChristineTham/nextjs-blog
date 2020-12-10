@@ -1,0 +1,300 @@
+---
+date: '2020-12-12'
+type: Article
+draft: false
+title: How to implement Syntax Highlighting in Code Blocks
+description: Why have boring code blocks in Markdown when you can have them
+  styled in accordance with your website and with syntax highlighting based
+  on the code language.
+author: Chris Tham
+featured_image: /drawings/codeinspection.svg
+tags:
+  - MDX
+  - Prism
+  - style highlighting
+categories:
+  - Technique
+  - MDX
+  - Prism
+---
+
+You will notice that articles in this website look like this, with a wider than
+normal block, syntax highlighting, line numbers and a colour theme consistent
+with the rest of the site:
+
+```jsx
+import React, { useState } from 'react'
+
+function Example() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+This is quite easily implemented using a custom Code Block component that is
+inserted in the MDX Provider embedded in `pages/posts/[id.tsx]`
+
+```tsx
+const components = {
+  a: A,
+  code: CodeBlock
+}
+
+interface PostProps {
+  id: string
+  url: string
+  source: Source
+  frontMatter: FrontMatter
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Post: React.FC<PostProps> = ({ id, url, source, frontMatter }) => {
+  const content = hydrate(source, { components })
+  return (
+    <BlogLayout url={url} meta={frontMatter}>
+      {content}
+    </BlogLayout>
+  )
+}
+```
+
+So, in MDX posts, any `a` link is replaced by our customised `A` component and
+any `code` block uses our customised `CodeBlock` component which is defined
+like this:
+
+```tsx
+const CodeBlock: React.FC<{
+  children: string
+  className: string
+  live: string
+  render: string
+}> = ({ children, className, live, render }) => {
+  const language = className ? className.replace(/language-/, '') : 'bash'
+
+  if (live) {
+    return (
+      <div className="mt-10 bg-rosely5">
+        <LiveProvider
+          code={children.trim()}
+          transformCode={(code) => '/** @jsx mdx */' + code}
+          scope={{ mdx }}
+        >
+          <LivePreview />
+          <LiveEditor />
+          <LiveError />
+        </LiveProvider>
+      </div>
+    )
+  }
+
+  if (render) {
+    return (
+      <div className="mt-10">
+        <LiveProvider code={children}>
+          <LivePreview />
+        </LiveProvider>
+      </div>
+    )
+  }
+
+  return (
+    <Highlight
+      {...defaultProps}
+      code={children.trim()}
+      theme={theme}
+      language={language as Language}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className={`${className} text-left mt-4 mr-0 p-2 overflow-scroll text-lg`}
+          style={style}
+        >
+          {tokens.map((line, i) => (
+            <div className="table-row" key={i} {...getLineProps({ line, key: i })}>
+              <span className="table-cell text-right pr-4 select-none opacity-50 text-xs">
+                {i + 1}
+              </span>
+              <span className="table-cell">
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </span>
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  )
+}
+```
+
+Note that this relies on `prism-react-renderer` and a custom theme which
+is defined like this:
+
+```json
+const theme: PrismTheme = {
+  plain: {
+    backgroundColor: rosely5,
+    color: rosely1,
+    fontSize: '0.9rem'
+  },
+  styles: [
+    {
+      types: ['comment', 'prolog', 'doctype', 'cdata', 'punctuation'],
+      style: {
+        color: rosely3
+      }
+    },
+    {
+      types: ['namespace'],
+      style: {
+        opacity: 0.7
+      }
+    },
+    {
+      types: ['tag', 'operator', 'number'],
+      style: {
+        color: rosely10
+      }
+    },
+    {
+      types: ['property', 'function'],
+      style: {
+        color: rosely2
+      }
+    },
+    {
+      types: ['tag-id', 'selector', 'atrule-id'],
+      style: {
+        color: rosely15
+      }
+    },
+    {
+      types: ['attr-name'],
+      style: {
+        color: rosely14
+      }
+    },
+    {
+      types: [
+        'boolean',
+        'string',
+        'entity',
+        'url',
+        'attr-value',
+        'keyword',
+        'control',
+        'directive',
+        'unit',
+        'statement',
+        'regex',
+        'at-rule'
+      ],
+      style: {
+        color: rosely7
+      }
+    },
+    {
+      types: ['placeholder', 'variable'],
+      style: {
+        color: rosely9
+      }
+    },
+    {
+      types: ['deleted'],
+      style: {
+        textDecorationLine: 'line-through'
+      }
+    },
+    {
+      types: ['inserted'],
+      style: {
+        textDecorationLine: 'underline'
+      }
+    },
+    {
+      types: ['italic'],
+      style: {
+        fontStyle: 'italic'
+      }
+    },
+    {
+      types: ['important', 'bold'],
+      style: {
+        fontWeight: 'bold'
+      }
+    },
+    {
+      types: ['important'],
+      style: {
+        color: rosely11
+      }
+    }
+  ]
+}
+```
+
+The following languages are supported by default:
+
+```json
+module.exports = {
+  markup: true,
+  bash: true,
+  clike: true,
+  c: true,
+  cpp: true,
+  css: true,
+  "css-extras": true,
+  javascript: true,
+  jsx: true,
+  "js-extras": true,
+  coffeescript: true,
+  diff: true,
+  git: true,
+  go: true,
+  graphql: true,
+  handlebars: true,
+  json: true,
+  less: true,
+  makefile: true,
+  markdown: true,
+  objectivec: true,
+  ocaml: true,
+  python: true,
+  reason: true,
+  sass: true,
+  scss: true,
+  sql: true,
+  stylus: true,
+  tsx: true,
+  typescript: true,
+  wasm: true,
+  yaml: true
+};
+```
+
+How is the code block itself styled? Because I use
+[Tailwind Typography](https://tailwindcss.com/docs/typography-plugin),
+I ended up customising the `tailwind.config.js` file using a Technique
+described in [Full Width Containers in Limited Width Parents](https://css-tricks.com/full-width-containers-limited-width-parents/):
+
+```json
+pre: {
+  color: '#27272a',
+  backgroundColor: '#f4dede',
+  overflowX: 'auto',
+  left: '50%',
+  marginLeft: '-40vw',
+  marginRight: '-40vw',
+  maxWidth: '80vw',
+  position: 'relative',
+  right: '50%',
+  width: '80vw'
+}
+```

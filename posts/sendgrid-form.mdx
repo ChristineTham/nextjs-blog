@@ -31,7 +31,7 @@ Essentially you create a simple API (in the `/pages/api` directory)
 that uses the `@sendgrid/mail` package
 to do the hard work (mine is called `send.ts`):
 
-```ts
+```tsx
 import { NowRequest, NowResponse } from '@vercel/node'
 import sgMail from '@sendgrid/mail'
 
@@ -70,7 +70,7 @@ can be included in the environment according to
 Now just create a form, and in the event handler when you press the Submit
 button, invoke the API:
 
-```js
+```jsx
 const res = await fetch('/api/send', {
   method: 'POST',
   headers: {

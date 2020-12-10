@@ -75,7 +75,7 @@ Google, Microsoft, Pinterest, Yandex.
 My default next-seo configuration is in `next-seo-config.js` and loaded
 on every page using the `DefaultSeo` component in `_App.tsx`
 
-```js
+```jsx
 const SEO = {
   openGraph: {
     type: 'website',
@@ -101,7 +101,7 @@ export default SEO
 On the index page, I add additional JSON-LD tags appropriate for a blog site
 as well as the site title and description
 
-```ts
+```tsx
 <NextSeo
   title={site.title}
   description={site.description}
@@ -123,7 +123,7 @@ as well as the site title and description
 
 There are also user profile specific Open Graph and JSON-LD tags:
 
-```ts
+```tsx
 <NextSeo
   title={title}
   description={description}
@@ -155,7 +155,7 @@ There are also user profile specific Open Graph and JSON-LD tags:
 
 Finally, for each blog post/article, we use specific article tags:
 
-```ts
+```tsx
       <NextSeo
         title={meta.title}
         description={meta.description}

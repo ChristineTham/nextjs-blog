@@ -41,7 +41,7 @@ therefore requires a custom Typescript module declaration file.
 This is the code to check that everything works and the Mailchimp API service
 can be accessed:
 
-```ts
+```tsx
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
   server: process.env.MAILCHIMP_SERVER_PREFIX
@@ -55,7 +55,7 @@ function defined in the `pages/api` directory.
 
 This is the code to add a new contact to the mailing list:
 
-```ts
+```tsx
 import { NowRequest, NowResponse } from '@vercel/node'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
