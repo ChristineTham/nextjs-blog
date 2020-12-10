@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">
             <div className="h-8 w-8 overflow-hidden rounded-full">
-              <img src="/icons/stack.svg" className="h-full w-full object-cover" alt="avatar" />
+              <img src="/icons/stack.svg" className="h-full w-full object-cover" alt="Logo" />
             </div>
             <div className="text-xl font-semibold text-rosely0 ml-2">
               <a

@@ -1,7 +1,7 @@
 import { getSortedPostsData, PostMeta } from '../lib/postutils'
 import { GetStaticProps } from 'next'
 
-import Avatar from '../components/MerakiUI/Navbar'
+import Navbar from '../components/MerakiUI/Navbar'
 import Hero from '../components/MerakiUI/Hero'
 import About from '../components/MerakiUI/About'
 import Section from '../components/MerakiUI/Section'
@@ -18,7 +18,7 @@ import Code from '../icons/code.svg'
 
 const SampleMeraki: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) => (
   <>
-    <Avatar />
+    <Navbar />
     <Hero />
     <About />
     <Section />

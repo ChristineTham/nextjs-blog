@@ -32,6 +32,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/sample-notus</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/sample-tailwindui</loc>
     <changefreq>hourly</changefreq>
   </url>
@@ -84,6 +88,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/notus</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/object-oriented-considered-harmful</loc>
     <changefreq>hourly</changefreq>
   </url>
@@ -109,6 +117,10 @@
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/stop-using-ui-themes</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/tailwindui</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

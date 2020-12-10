@@ -1,0 +1,174 @@
+---
+date: '2020-12-10'
+type: Article
+draft: false
+title: Exploring Notus from Creative Tim
+description: Notus is a free Tailwind CSS and NextJS UI Kit and Admin
+  Dashboard made by popular UI developers Creative Tim.
+author: Chris Tham
+featured_image: /images/notus.png
+tags:
+  - UI
+  - Notus
+  - TailwindCSS
+categories:
+  - UI
+  - MerakiUI
+  - Notus
+---
+
+There are several sets of pre-designed [TailwindCSS](https://tailwindcss.com)
+components that can be incorporated into web projects, regardless of what
+technology stack is used.
+
+Today I explore [Notus NextJS](https://www.creative-tim.com/product/notus-nextjs)
+which has been designed by [Creative Tim](https://www.creative-tim.com/).
+
+Creative Tim started by making Bootstrap design themes but have since expanded
+to Material UI and have now released a UI Kit based on TailwindCSS which
+they call Notus. Notus is mostly based on their earlier effort called
+[Tailwind Starter Kit](https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation)
+which is still available. Notus adds on top of the Tailwind Starter Kit (which
+was HTML only) by adding Javascript and support for various web frameworks
+including vanilla React, vanilla Javascript, Vue, Angular, NextJS and Svelte.
+
+The version of Notus I am exploring is the NextJS version called Notus NextJS.
+
+I am struck by how pretty the demo pages are. Creative Tim has designed various
+pages including a landing page, profile page plus an Admin Layout including
+Dashboard, Settings, Tables and Map. In addition, Login and Register pages
+are provided, so there is enough design content to start building a web app.
+
+The components themselves are similar to Bootstrap components so should aid
+someone transitioning from Bootstrap to TailwindCSS:
+
+- Alerts
+- Badge
+- Buttons
+- Dropdowns
+- Images
+- Inputs
+- Menus
+- Modals
+- Navbar
+- Pagination
+- Popovers
+- Progressbars
+- Tabs
+- Tooltips
+
+In addition, there are support for ChartJS, PopperJS and React Google Maps
+plugins.
+
+There are no higher level block components such as Hero, Pricing and CTA
+sections so this is an Admin UI rather than Marketing or blog kit.
+
+Although Creative Tim claims Notus does not 'does not change or add any CSS'
+to TailwindCSS, there's a fairly heavy config file:
+
+```json
+module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  purge: {
+    enabled: true,
+    content: ["./**/*.html", "./*.html", "./**/*.js", "./*.js"],
+    options: {
+      whitelist: [],
+    },
+  },
+  theme: {
+    extend: {
+      minHeight: {
+        "screen-75": "75vh",
+      },
+      fontSize: {
+        "55": "55rem",
+      },
+      opacity: {
+        "80": ".8",
+      },
+      zIndex: {
+        "2": 2,
+        "3": 3,
+      },
+      inset: {
+        "-100": "-100%",
+        "-225-px": "-225px",
+        "-160-px": "-160px",
+        "-150-px": "-150px",
+        "-94-px": "-94px",
+        "-50-px": "-50px",
+        "-29-px": "-29px",
+        "-20-px": "-20px",
+        "25-px": "25px",
+        "40-px": "40px",
+        "95-px": "95px",
+        "145-px": "145px",
+        "195-px": "195px",
+        "210-px": "210px",
+        "260-px": "260px",
+      },
+      height: {
+        "95-px": "95px",
+        "70-px": "70px",
+        "350-px": "350px",
+        "500-px": "500px",
+        "600-px": "600px",
+      },
+      maxHeight: {
+        "860-px": "860px",
+      },
+      maxWidth: {
+        "100-px": "100px",
+        "120-px": "120px",
+        "150-px": "150px",
+        "180-px": "180px",
+        "200-px": "200px",
+        "210-px": "210px",
+        "580-px": "580px",
+      },
+      minWidth: {
+        "140-px": "140px",
+        "48": "12rem",
+      },
+      backgroundSize: {
+        full: "100$",
+      },
+    },
+  },
+  variants: [
+    "responsive",
+    "group-hover",
+    "focus-within",
+    "first",
+    "last",
+    "odd",
+    "even",
+    "hover",
+    "focus",
+    "active",
+    "visited",
+    "disabled",
+  ],
+  plugins: [require("@tailwindcss/custom-forms")],
+};
+```
+
+I was surprised by the amount of custom sizes and spacing, and the number of
+variants required, and I would have preferred a more vanilla approach
+sticking to the constraints already provided by Tailwind. I suspect pixel
+based sizes are required by the demo page layouts.
+
+I created a version of this site's homepage based on the sample homepage in
+the Notus NextJS source code, but I removed all the custom sizes and replaced
+with standard Tailwind sizes, so I ended up not having to use the config file.
+
+I also replaced the use of Font Awesome icons with HeroIcons.
+
+Please have a look at my
+[Sample Notus Page](/sample-notus) which is this site's home page
+reimplemented in Notus. I really like the non-"blocky" design but it may
+be a bit too hard to maintain or change over time.

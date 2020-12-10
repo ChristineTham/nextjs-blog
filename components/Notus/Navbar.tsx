@@ -4,15 +4,14 @@ import Link from 'next/link'
 import { site } from '../../global'
 
 // components
-
-// import IndexDropdown from './IndexDropdown'
+import NavbarSocialItem from './NavbarSocialItem'
 
 // icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import NavbarSocialItem from './NavbarSocialItem'
+import MenuIcon from '../../icons/menu.svg'
+import Facebook from '../../icons/facebook.svg'
+import Github from '../../icons/github.svg'
+import Twitter from '../../icons/twitter.svg'
+import Download from '../../icons/download.svg'
 
 const Navbar: React.FC = ({ children }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
@@ -26,7 +25,7 @@ const Navbar: React.FC = ({ children }) => {
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <FontAwesomeIcon icon={faBars} />
+              <MenuIcon className="h-8 w-8 text-rosely10 hover:text-rosely9" />
             </button>
           </div>
           <div
@@ -39,7 +38,7 @@ const Navbar: React.FC = ({ children }) => {
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               <li>
                 <Link href="/">
-                  <a className="text-pink-800 text-md font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
+                  <a className="text-rosely10 hover:rosely9 text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
                     {site.title}
                   </a>
                 </Link>
@@ -47,38 +46,33 @@ const Navbar: React.FC = ({ children }) => {
               {children}
             </ul>
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              {/*}
-              <li className="flex items-center">
-                <IndexDropdown />
-              </li>
-              */}
               <NavbarSocialItem
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                   site.title
                 )}`}
-                icon={faFacebook}
+                title="Share"
               >
-                Share
+                <Facebook className="h-8 w-8" />
               </NavbarSocialItem>
               <NavbarSocialItem
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                   site.title
                 )}&text=${encodeURIComponent(site.description)}`}
-                icon={faTwitter}
+                title="Tweet"
               >
-                Tweet
+                <Twitter className="h-8 w-8" />
               </NavbarSocialItem>
-              <NavbarSocialItem href={site.repository} icon={faGithub}>
-                Star
+              <NavbarSocialItem href={site.repository} title="Star">
+                <Github className="h-8 w-8" />
               </NavbarSocialItem>
 
               <li className="flex items-center">
                 <Link href={site.repository}>
                   <button
-                    className="bg-pink-800 text-white active:bg-gray-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                    className="bg-rosely10 text-white hover:bg-rosely9 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 flex flex-row items-center"
                     type="button"
                   >
-                    <FontAwesomeIcon icon={faArrowAltCircleDown} /> Download
+                    <Download className="h-6 w-6" /> Download
                   </button>
                 </Link>
               </li>
