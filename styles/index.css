@@ -6,6 +6,24 @@
 @tailwind components;
 /* Stop purging. */
 
+.remark-code-title {
+  display: block;
+  color: #85677b;
+  background-color: #f7caca;
+  overflow-x: auto;
+  left: 50%;
+  margin-left: -40vw;
+  margin-right: -40vw;
+  max-width: 80vw;
+  position: relative;
+  right: 50%;
+  width: 80vw;
+  border-radius: 0.5rem;
+  margin-bottom: -1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: bold;
+}
 /* Write your own custom component styles here */
 
 /* Start purging... */

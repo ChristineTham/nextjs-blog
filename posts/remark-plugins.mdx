@@ -1,0 +1,55 @@
+---
+date: '2020-12-13'
+type: Article
+draft: false
+title: Enhancing Markdown with remark and rehype plugins
+description: Why settle for generic Markdown? Additional functionality can
+  be added to the markdown processing chain through remark and rehype plugins.
+author: Chris Tham
+featured_image: /drawings/addcontent.svg
+tags:
+  - MDX
+categories:
+  - Technique
+  - MDX
+---
+
+Under the hood, MDX posts on this site are converted to HTML during build
+time using the `next-mdx-remote` processor which uses
+[remark](https://github.com/remarkjs/remark) and
+[rehype](https://github.com/rehypejs/rehype).
+
+It's possible to enhance the processing by adding plugins, and previously
+I had already enabled the `remark-math` and `rehype-katex` plugins in my
+article called [Rendering Math in Markdown](/posts/math).
+
+I have now decided to explore what other
+[remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
+are available/
+
+I have decided to install the following:
+
+- [remark-slug](https://github.com/remarkjs/remark-slug)
+- [remark-autolink-headings](https://github.com/remarkjs/remark-autolink-headings)
+- [remark-code-titles](https://github.com/mottox2/remark-code-titles)
+- [remark-toc](https://github.com/remarkjs/remark-toc)
+- [@silvenon/remark-smartypants](https://github.com/silvenon/remark-smartypants)
+
+## Table of Contents
+
+## remark-slug
+
+remark plugin to add anchors headings using GitHub’s algorithm.
+
+## remark-autolink-headings
+
+remark plugin to automatically add links to headings.
+
+## remark-code-titles
+
+Remark plugin to add code title inspired by
+[gatsby-remark-code-titles](https://github.com/DSchau/gatsby-remark-code-titles)
+
+## remark-toc
+
+remark plugin to generate a table of contents.

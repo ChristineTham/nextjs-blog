@@ -11,6 +11,12 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { postFilePaths, POSTS_PATH, FrontMatter } from '../../lib/postutils'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
+import remarkSlug from 'remark-slug'
+import remarkHeadings from 'remark-autolink-headings'
+import remarkCodeTitles from 'remark-code-titles'
+import remarkTOC from 'remark-toc'
+import remarkSmartyPants from '@silvenon/remark-smartypants'
+// import remarkTWEmoji from 'remark-twemoji'
 import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
 
@@ -68,7 +74,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await renderToString(content, {
     components,
     mdxOptions: {
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [
+        remarkMath,
+        remarkSlug,
+        remarkHeadings,
+        remarkCodeTitles,
+        remarkSmartyPants,
+        // remarkTWEmoji,
+        remarkTOC
+      ],
       rehypePlugins: [rehypeKatex]
     },
     scope: data
