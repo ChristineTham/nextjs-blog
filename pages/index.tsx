@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 
 // components
 import Layout from '../components/layout'
-import { getSortedPostsData, PostMeta } from '../lib/postutils'
+import { getPosts, PostMeta } from '../lib/postutils'
 import Hero from '../components/tailblocks/Hero'
 import What from '../components/tailblocks/What'
 import WhoWhy from '../components/tailblocks/WhoWhy'
@@ -40,7 +40,10 @@ const Home: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
     <Hero />
     <WhoWhy />
     <What />
-    <Articles title="How">
+    <Articles
+      title="How"
+      description="Please follow my journey by reading articles relating to steps along my learning process. Please visit Posts page to filter by category."
+    >
       {allPostsData.map(({ id, meta }) => (
         <Article href={`/posts/${id}`} meta={meta} key={id} />
       ))}
@@ -51,7 +54,7 @@ const Home: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
+  const allPostsData = getPosts().filter((post) => !post.meta.draft)
   const buildDate = new Date().toISOString()
 
   generateSitemap()

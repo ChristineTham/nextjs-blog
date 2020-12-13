@@ -29,10 +29,16 @@ export interface PostMeta {
   meta: FrontMatter
 }
 
-export function getSortedPostsData(): PostMeta[] {
+let savedPosts: PostMeta[]
+let categories: string[]
+let isLoaded = false
+
+export function getPosts(): PostMeta[] {
+  if (isLoaded) return savedPosts
+
   // Get file names under /posts
   const fileNames = postFilePaths
-  const allPostsData = fileNames.map((fileName) => {
+  const posts = fileNames.map((fileName) => {
     // Remove ".mdx" from file name to get id
     const id = fileName.replace(/\.mdx$/, '')
 
@@ -50,11 +56,20 @@ export function getSortedPostsData(): PostMeta[] {
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  savedPosts = posts.sort((a, b) => {
     if (a.meta.date < b.meta.date) {
       return 1
     } else {
       return -1
     }
   })
+  categories = Array.from(new Set(posts.flatMap((post) => post.meta.categories).sort()))
+
+  isLoaded = true
+  return savedPosts
+}
+
+export function getCategories(): string[] {
+  if (!isLoaded) getPosts()
+  return categories
 }

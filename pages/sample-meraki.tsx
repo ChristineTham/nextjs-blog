@@ -1,4 +1,4 @@
-import { getSortedPostsData, PostMeta } from '../lib/postutils'
+import { getPosts, PostMeta } from '../lib/postutils'
 import { GetStaticProps } from 'next'
 
 import Navbar from '../components/MerakiUI/Navbar'
@@ -61,7 +61,7 @@ const SampleMeraki: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) 
 export default SampleMeraki
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
+  const allPostsData = getPosts().filter((post) => !post.meta.draft)
 
   return {
     props: {

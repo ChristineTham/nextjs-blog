@@ -1,0 +1,69 @@
+---
+date: '2020-12-14'
+type: Article
+draft: false
+title: Implementing Post filtering by category
+description: How to select posts belonging to a category on the Posts page
+author: Chris Tham
+featured_image: /drawings/filter.svg
+tags:
+  - Category
+  - Filter
+categories:
+  - Technique
+  - Category
+  - Filter
+---
+
+Implementing filtering of posts by category via a select control turned out
+to be relatively easy.
+
+First of all, we need to determine the superset of all categories that we
+have written posts in. Currently, categories are free-form strings embedded
+in the post front matter. To determine a unique set of categories, we
+implement the following function (where `posts` is an array of post metadata)
+
+```typescript:lib/postutils.ts
+categories = Array.from(new Set(posts.flatMap((post) => post.meta.categories).sort()))
+```
+
+This rather clever line scans through the `posts` array and extract all
+category strings, then flattens them into a single array using the
+Javascript `flatMap` function. We then sort the array, convert the array
+into a Set (to remove duplicate categories) then back to an Array again.
+
+To implement post filtering, we just need the currently selected category
+from a list (which may include the pseudo category `(all)`):
+
+```tsx
+const categoryList = [...categories]
+categoryList.unshift('(all)')
+const [selectedCategory, setSelectedCategory] = useState(categoryList[0])
+const currentPosts =
+  selectedCategory === '(all)'
+    ? posts
+    : posts.filter((post) => post.meta.categories.includes(selectedCategory))
+```
+
+Then we use the `Listbox` component in [HeadlessUI](https://headlessui.dev)
+to display a select box. The code, stripped of TailwindCSS classes, look like
+this:
+
+```tsx
+<Listbox value={selectedCategory} onChange={setSelectedCategory as any}>
+  <Listbox.Label >
+    Select Category
+  </Listbox.Label>
+
+  <Listbox.Button>
+    {selectedCategory}
+  </Listbox.Button>
+
+  <Listbox.Options>
+    {categoryList.map((category) => (
+      <Listbox.Option key={category} value={category}>
+        {category}
+      </Listbox.Option>
+  </Listbox.Options>
+</Listbox>
+```

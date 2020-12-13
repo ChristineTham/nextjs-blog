@@ -30,7 +30,7 @@ import Chat from '../icons/chat.svg'
 import Document from '../icons/document.svg'
 
 import { site } from '../global'
-import { getSortedPostsData, PostMeta } from '../lib/postutils'
+import { getPosts, PostMeta } from '../lib/postutils'
 import A from '../components/A'
 import NavbarItem from '../components/Notus/NavbarItem'
 
@@ -647,7 +647,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
 export default SampleNotus
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
+  const allPostsData = getPosts().filter((post) => !post.meta.draft)
 
   return {
     props: {

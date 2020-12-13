@@ -40,6 +40,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/category-filtering</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/conditional-jsx-elements</loc>
     <changefreq>hourly</changefreq>
   </url>

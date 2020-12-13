@@ -1,4 +1,4 @@
-import { getSortedPostsData, PostMeta } from '../lib/postutils'
+import { getPosts, PostMeta } from '../lib/postutils'
 import { GetStaticProps } from 'next'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
@@ -223,7 +223,7 @@ const SampleTailWindUI: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData
 export default SampleTailWindUI
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData().filter((post) => !post.meta.draft)
+  const allPostsData = getPosts().filter((post) => !post.meta.draft)
 
   return {
     props: {
