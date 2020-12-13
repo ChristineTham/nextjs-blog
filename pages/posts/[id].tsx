@@ -19,6 +19,7 @@ import remarkSmartyPants from '@silvenon/remark-smartypants'
 // import remarkTWEmoji from 'remark-twemoji'
 import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
+import Typed from 'react-typed'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -31,7 +32,8 @@ const components = {
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  code: CodeBlock
+  code: CodeBlock,
+  Typed
 }
 
 interface PostProps {

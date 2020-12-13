@@ -60,6 +60,7 @@
     "react-dom": "^17.0.0",
     "react-live": "^2.2.3",
     "react-paginate": "^6.5.0",
+    "react-typed": "^1.2.0",
     "rehype": "^11.0.0",
     "rehype-katex": "^4.0.0",
     "remark": "^13.0.0",

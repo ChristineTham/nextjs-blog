@@ -1,0 +1,54 @@
+---
+date: '2020-12-16'
+type: Article
+draft: false
+title: Typed text animation
+description: This post is all about enabling a common animation to be found
+  on websites, having letters appear on the page as it they are typed by
+  a human on a keyboard.
+author: Chris Tham
+featured_image: /drawings/typewriter.svg
+tags:
+  - typed
+  - react-typed
+categories:
+  - Technique
+  - react-typed
+---
+
+I installed
+[react-typed](https://github.com/ssbeefeater/react-typed)
+which uses
+[Typed.js](https://github.com/mattboldt/typed.js)
+as the underlying engine for animating typed text. I then made the component
+available over MDX.
+
+Here are some examples:
+
+```tsx
+<Typed strings={['Here you can find anything']} typeSpeed={40} />
+```
+
+<Typed strings={['Here you can find anything']} typeSpeed={40} />
+
+```tsx
+<Typed
+  strings={['Search for products', 'Search for categories', 'Search for brands']}
+  typeSpeed={40}
+  backSpeed={50}
+  attr="placeholder"
+  loop
+>
+  <input type="text" />
+</Typed>
+```
+
+<Typed
+  strings={['Search for products', 'Search for categories', 'Search for brands']}
+  typeSpeed={40}
+  backSpeed={50}
+  attr="placeholder"
+  loop
+>
+  <input type="text" />
+</Typed>
