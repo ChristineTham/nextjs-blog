@@ -1,0 +1,60 @@
+---
+date: '2020-12-15'
+type: Article
+draft: false
+title: Implementing blog post pagination
+description: Although this site does not have many posts, I have decided to
+  try out pagination of posts on the home page. At most 6 posts are displayed
+  but you can click on pages to see other posts.
+author: Chris Tham
+featured_image: /drawings/portfolioupdate.svg
+tags:
+  - pagination
+  - react-paginate
+categories:
+  - Technique
+  - pagination
+---
+
+Many sites with many posts implement a pagination system so that the page
+that lists blog posts only show a fixed number, but you can click on a page
+number or use next/previous page buttons to view other pages. This improves
+performance so that the site only needs to fetch a subset of pages at any
+given time.
+
+This site is so small it's easy enough to show all posts on the same page,
+but I thought I'll implement a pagination system on the home page just for
+fun.
+
+This turned out to be really easy to do using a package called
+[react-paginate](https://github.com/AdeleD/react-paginate).
+
+To make pagination work, the component that displays the blog post cards
+must be altered to only display a fixed number starting from an `offset`:
+
+```tsx
+{
+  posts
+    .slice(offset, offset + POSTS_PER_PAGE)
+    .map(({ id, meta }) => <Article href={`/posts/${id}`} meta={meta} key={id} />)
+}
+```
+
+The rest is handled by `react-paginate`
+
+```tsx
+const [offset, setOffset] = useState(0)
+
+const handlePageClick = (data) => {
+  const selected = data.selected
+  const offset = Math.ceil(selected * POSTS_PER_PAGE)
+  setOffset(offset)
+}
+
+;<ReactPaginate
+  pageCount={Math.ceil(posts.length / POSTS_PER_PAGE)}
+  marginPagesDisplayed={2}
+  pageRangeDisplayed={3}
+  onPageChange={handlePageClick}
+/>
+```

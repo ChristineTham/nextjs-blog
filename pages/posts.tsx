@@ -100,7 +100,7 @@ const Posts: React.FC<{ posts: PostMeta[]; categories: string[]; buildDate: stri
                           {({ selected, active }) => (
                             <div
                               className={`${
-                                active ? 'text-rosely2 bg-rosely6' : 'text-rosely1'
+                                active ? 'text-rosely2 bg-rosely4' : 'text-rosely1'
                               } cursor-default select-none relative py-2 pl-8 pr-4`}
                             >
                               <span
