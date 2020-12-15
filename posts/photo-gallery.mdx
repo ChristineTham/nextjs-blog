@@ -1,0 +1,119 @@
+---
+date: '2020-12-17'
+type: Article
+draft: false
+title: Implementing a Photo Gallery and Lightbox
+description: Display a group of photos is a masonry grid and browse photos
+  using a lightbox.
+author: Chris Tham
+featured_image: /drawings/knowledge.svg
+gallery: test
+tags:
+  - gallery
+  - lightbox
+categories:
+  - Technique
+  - react-bnb-gallery
+---
+
+As I am a photographer, I love being able to showcase my photos in a grid,
+and clicking on a grid should launch a lightbox where I can browse through
+photos.
+
+I investigated various react gallery packages and finally settled on
+[react-photo-gallery](http://neptunian.github.io/react-photo-gallery/)
+for the masonry grid and
+[react-bnb-gallery](https://frontend-collective.github.io/react-image-lightbox/)
+for the lightbox.
+
+I implemented two additional frontmatter variables called `gallery` and
+`images`.
+
+`images` is an array of user-specified images (can be external
+images) that will result in a masonry grid gallery being displayed with the
+blog post.
+
+`gallery` is the name of a folder in `public/gallery` that will be used
+as the source for images to be displayed.
+
+The Gallery images are retrieved using `GetStaticProps`:
+
+```tsx:pages/posts/[id].tsx
+  if (data.gallery) {
+    const galleryPath = path.join(GALLERY_PATH, data.gallery)
+    const images = fs.readdirSync(galleryPath)
+    data.images = images.map((image) => path.join('/gallery', data.gallery, image))
+    data.image_dimensions = images.map((image) =>
+      ImageSize(path.join(GALLERY_PATH, data.gallery, image))
+    )
+  }
+```
+
+If an array of images exist, then it is automatically displayed in a Gallery
+from `BlogLayout`
+
+```tsx:components/BlogLayout.tsx
+{meta.images && <MyGallery photos={meta.images} dimensions={meta.image_dimensions}/>}
+```
+
+My Gallery is currently defined as
+
+```tsx:components/Gallery.tsx
+import React, { useCallback, useState } from 'react'
+import ReactBnbGallery from 'react-bnb-gallery'
+import 'react-bnb-gallery/dist/style.css'
+import Gallery from 'react-photo-gallery'
+import { ISizeCalculationResult } from 'image-size/dist/types/interface'
+
+const MyGallery: React.FC<{ photos: string[]; dimensions?: ISizeCalculationResult[] }> = ({
+  photos,
+  dimensions
+}) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const openLightbox = useCallback((event, { _photo, index }) => {
+    setCurrentImage(index)
+    setIsOpen(true)
+  }, [])
+
+  const closeLightbox = () => {
+    setCurrentImage(0)
+    setIsOpen(false)
+  }
+
+  return (
+    <>
+      <div className="container flex flex-col items-center mx-auto">
+        <button
+          className="inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg mb-4"
+          onClick={() => setIsOpen(true)}
+        >
+          View gallery
+        </button>
+      </div>
+      <div className="container mx-auto">
+        <Gallery
+          photos={photos.map((photo, i) => ({
+            src: photo,
+            width: dimensions ? dimensions[i].width : 1,
+            height: dimensions ? dimensions[i].height : 1
+          }))}
+          direction="column"
+          onClick={openLightbox}
+        />
+      </div>
+      <ReactBnbGallery
+        show={isOpen}
+        photos={photos}
+        onClose={closeLightbox}
+        activePhotoIndex={currentImage}
+      />
+    </>
+  )
+}
+export default MyGallery
+
+```
+
+Here is a sample image gallery attached to this post.

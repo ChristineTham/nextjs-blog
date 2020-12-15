@@ -40,6 +40,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/test-ril</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/category-filtering</loc>
     <changefreq>hourly</changefreq>
   </url>
@@ -97,6 +101,10 @@
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/object-oriented-considered-harmful</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/photo-gallery</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

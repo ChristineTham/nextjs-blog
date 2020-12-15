@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { ISizeCalculationResult } from 'image-size/dist/types/interface'
 
 // POSTS_PATH is useful when you want to get the path to a specific file
 export const POSTS_PATH = path.join(process.cwd(), 'posts')
+export const GALLERY_PATH = path.join(process.cwd(), 'public/gallery')
 
 // postFilePaths is the list of all mdx files inside the POSTS_PATH directory
 export const postFilePaths = fs
@@ -20,6 +22,9 @@ export interface FrontMatter {
   description: string
   author: string
   featured_image: string
+  images: string[]
+  image_dimensions: ISizeCalculationResult[]
+  gallery: string
   tags: string[]
   categories: string[]
 }
