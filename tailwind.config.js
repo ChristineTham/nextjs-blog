@@ -22,6 +22,8 @@ module.exports = {
         rosely13: '#eada4f',
         rosely14: '#64bfa4',
         rosely15: '#919bc9',
+        rosely15: '#919bc9',
+        primary: '#8c4e80',
         jamstack: '#F0047F'
       },
       spacing: {

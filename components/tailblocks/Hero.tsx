@@ -20,7 +20,7 @@ function Hero(): JSX.Element {
           <div className="flex justify-start space-x-2 flex-row mt-6">
             <A noline href="/posts">
               <button
-                className={`inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+                className={`inline-flex items-center text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg`}
               >
                 <Read className="h-6 w-6" /> &nbsp; Read
               </button>

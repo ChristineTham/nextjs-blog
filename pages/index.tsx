@@ -58,7 +58,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
         width="w-16"
       >
         <ReactPaginate
-          previousLinkClassName="relative inline-flex items-center px-2 py-2 rounded-l-md border border-rosely3 bg-white text-sm font-medium text-rosely1 hover:bg-rosely8"
+          previousLinkClassName="relative inline-flex items-center px-2 py-2 rounded-l-md border border-rosely3 bg-white text-sm font-medium text-rosely0 hover:bg-rosely8"
           previousLabel={
             <>
               <span className="sr-only">Previous</span>
@@ -77,7 +77,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
               </svg>
             </>
           }
-          nextLinkClassName="relative inline-flex items-center px-2 py-2 rounded-r-md border border-rosely3 bg-white text-sm font-medium text-rosely1 hover:bg-rosely8"
+          nextLinkClassName="relative inline-flex items-center px-2 py-2 rounded-r-md border border-rosely3 bg-white text-sm font-medium text-rosely0 hover:bg-rosely8"
           nextLabel={
             <>
               <span className="sr-only">Next</span>
@@ -96,7 +96,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
               </svg>
             </>
           }
-          pageLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely3 bg-white text-sm font-medium text-rosely1 hover:bg-rosely8"
+          pageLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely3 bg-white text-sm font-medium text-rosely0 hover:bg-rosely8"
           breakLabel={'...'}
           breakLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely3 bg-rosely5 text-sm font-medium text-rosely3"
           pageCount={Math.ceil(posts.length / POSTS_PER_PAGE)}
@@ -104,7 +104,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
           pageRangeDisplayed={3}
           onPageChange={handlePageClick}
           containerClassName="relative z-0 inline-flex shadow-sm -space-x-px"
-          activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely7 bg-rosely4 text-sm font-medium text-rosely2 hover:bg-rosely8"
+          activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely7 bg-rosely4 text-sm font-medium text-rosely0 hover:bg-rosely8"
         />
         <div className="flex flex-wrap px-6 pt-6">
           {posts.slice(offset, offset + POSTS_PER_PAGE).map(({ id, meta }) => (

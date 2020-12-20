@@ -42,7 +42,7 @@ function What(): JSX.Element {
       </div>
       <A external noline href="https://jamstack.org">
         <button
-          className={`flex mx-auto mt-8 text-white bg-rosely10 border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+          className={`flex mx-auto mt-8 text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
         >
           Learn More at Jamstack.org
         </button>

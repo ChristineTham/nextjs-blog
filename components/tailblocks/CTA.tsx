@@ -89,7 +89,7 @@ const CTA: React.FC = () => {
           </p>
         </div>
         <div className="lg:w-2/6 md:w-1/2 bg-rosely6 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-          <h2 className="text-rosely2 text-lg font-medium title-font mb-5">Subscribe</h2>
+          <h2 className="text-rosely1 text-lg font-medium title-font mb-5">Subscribe</h2>
           <form onSubmit={handleOnSubmit}>
             <div className="relative mb-4">
               <label htmlFor="firstname" className="leading-7 text-sm text-rosely1">
@@ -134,7 +134,7 @@ const CTA: React.FC = () => {
               />
             </div>
             <button
-              className={`text-white bg-rosely10 border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+              className={`text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
             >
               {!status.submitting ? (!status.submitted ? 'Subscribe' : 'Subscribed') : 'Adding ...'}
             </button>

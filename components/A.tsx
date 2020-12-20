@@ -13,7 +13,7 @@ const A: React.FC<AProps> = (props) => {
       <>
         <a
           href={href}
-          className={`text-rosely10 hover:text-rosely9 ${noline || 'underline'} font-semibold`}
+          className={`text-primary hover:text-rosely9 ${noline || 'underline'} font-semibold`}
           target="_blank"
           rel="noreferrer"
           {...otherProps}
@@ -25,7 +25,7 @@ const A: React.FC<AProps> = (props) => {
       <>
         <Link href={href}>
           <a
-            className={`text-rosely10 hover:text-rosely9 ${noline || 'underline'} font-semibold`}
+            className={`text-primary hover:text-rosely9 ${noline || 'underline'} font-semibold`}
             {...otherProps}
           />
         </Link>

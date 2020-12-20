@@ -7,7 +7,7 @@ function Header(): JSX.Element {
     <header className="text-rosely0 body-font top-0 fixed z-50 w-full bg-white bg-opacity-90">
       <div className=" container border-b border-rosely7 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <A noline href="/">
-          <span className="title-font font-medium items-center flex text-rosely10 mb-4 md:mb-0">
+          <span className="title-font font-medium items-center flex text-primary mb-4 md:mb-0">
             <Logo className="h-10 w-10" />
             <span className="ml-3 text-xl">{site.title}</span>
           </span>
@@ -27,7 +27,7 @@ function Header(): JSX.Element {
           </A>
         </nav>
         <A external noline href={site.repository}>
-          <button className="inline-flex items-center bg-rosely10 border-0 py-1 px-3 focus:outline-none hover:bg-rosely9 text-white rounded text-base mt-4 md:mt-0">
+          <button className="inline-flex items-center bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-rosely9 text-white rounded text-base mt-4 md:mt-0">
             <svg
               className="h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"

@@ -24,7 +24,7 @@ function WhoWhy(): JSX.Element {
           />
         </div>
         <div className="flex flex-col items-center text-center justify-center">
-          <h2 className="font-medium title-font mt-4 text-rosely2">Chris Tham</h2>
+          <h2 className="font-medium title-font mt-4 text-rosely1">Chris Tham</h2>
           <div className="w-20 h-1 bg-rosely7 rounded mt-2 mb-4"></div>
           <p className="text-base text-rosely1 italic tracking-wide">
             artist, consultant, cyclist, designer, musician, photographer, world traveller.
