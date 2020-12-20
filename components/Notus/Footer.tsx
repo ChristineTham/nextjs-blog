@@ -82,7 +82,7 @@ const Footer: React.FC = () => (
                   <li>
                     <A
                       href="/about"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       About This Site
                     </A>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => (
                     <A
                       external
                       href={site.website}
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       Personal Site
                     </A>
@@ -100,7 +100,7 @@ const Footer: React.FC = () => (
                     <A
                       external
                       href={site.company_url}
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       {site.company} Site
                     </A>
@@ -116,7 +116,7 @@ const Footer: React.FC = () => (
                     <A
                       external
                       href="https://github.com/ChristineTham/nextjs-blog/blob/master/LICENSE"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       MIT License
                     </A>
@@ -124,7 +124,7 @@ const Footer: React.FC = () => (
                   <li>
                     <A
                       href="/privacy"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       Privacy Policy
                     </A>
@@ -132,7 +132,7 @@ const Footer: React.FC = () => (
                   <li>
                     <A
                       href="/contact"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       Contact Us
                     </A>
@@ -140,7 +140,7 @@ const Footer: React.FC = () => (
                   <li>
                     <A
                       href="/sitemap.xml"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       Sitemap
                     </A>
@@ -148,7 +148,7 @@ const Footer: React.FC = () => (
                   <li>
                     <A
                       href="/feed.xml"
-                      className="text-primary hover:text-rosely9 font-semibold block py-1 text-sm"
+                      className="text-primary hover:text-rosely9 font-semibold block py-1 my-1 text-sm"
                     >
                       RSS Feed
                     </A>
