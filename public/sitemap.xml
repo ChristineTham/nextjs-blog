@@ -48,6 +48,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/christmas</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/conditional-jsx-elements</loc>
     <changefreq>hourly</changefreq>
   </url>
@@ -101,6 +105,10 @@
   </url>
   <url>
     <loc>https://learning-jamstack.now.sh/posts/object-oriented-considered-harmful</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://learning-jamstack.now.sh/posts/optimise-site</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>

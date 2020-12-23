@@ -1,0 +1,109 @@
+---
+date: '2020-12-23'
+type: Article
+draft: false
+title: How to optimise a site for performance and accessibility
+description: This article is all about tuning a site for performance,
+  accessibility and best practices using site auditing
+  tools such as Lighthouse, Wave, and WebPageTest.
+author: Chris Tham
+featured_image: /drawings/performance.svg
+tags:
+  - Lighthouse
+  - Wave
+categories:
+  - Technique
+  - Performance
+---
+
+It's important that web sites are optimised for performance and accessibility.
+People access web sites from a multitude of devices, at various Internet
+transfer speeds. Web site speed also has a huge impact on search engine
+rankings and optimisation, and most importantly overall user experience
+and satistfaction.
+
+Web site accessibility is also extremely important, so that the site contents
+are available to the widest possible audience. In addition, ensuring a site
+meets accessibility requirements also improves the user experience for all
+users.
+
+There are various auditing tools that can check a web site for performance,
+accessibility and adherence to current best practices. In this article, I
+discuss 3 of the popular ones:
+
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [WebPageTest.org](https://webpagetest.org/)
+- [WAVE](https://wave.webaim.org/)
+
+## Lighthouse
+
+Lighthouse is developed by Google. According to Google:
+
+> Lighthouse is an open-source, automated tool for improving the quality of
+> web pages. You can run it against any web page, public or requiring
+> authentication. It has audits for performance, accessibility, progressive
+> web apps, SEO and more.
+
+> You can run Lighthouse in Chrome DevTools, from the command line, or as a
+> Node module. You give Lighthouse a URL to audit, it runs a series of audits
+> against the page, and then it generates a report on how well the page did.
+> From there, use the failing audits as indicators on how to improve the page.
+> Each audit has a reference doc explaining why the audit is important, as
+> well as how to fix it.
+
+Here is a screenshot of the results of Lighthouse on this site. As you can see,
+Lighthouse collates a set of metrics and provides a score in the following
+categories, as well as an overall score (out of 100):
+
+- Performance
+- Accessibility
+- Best Practices
+- SEO
+- Progressive Web App
+
+![Lighthouse](/images/lighthouse.png)
+
+It's fairly easy to follow the recommendations provided by the report
+(for example, improving contrast between elements for better accessibility).
+A NextJS project such as this site should
+have no issues with performance without any further optimisation
+
+## WebPageTest
+
+WebPagetest is a tool that was originally developed by AOL for use internally
+and was open-sourced in 2008 under a BSD license.
+
+According to the online version of the tool, it can perform a
+
+> ... a free website speed test from multiple locations around the globe
+> using real browsers (IE and Chrome) and at real consumer connection speeds.
+> You can run simple tests or perform advanced testing including multi-step
+> transactions, video capture, content blocking and much more. Your results
+> will provide rich diagnostic information including resource loading
+> waterfall charts, Page Speed optimization checks and suggestions for
+> improvements.
+
+Here is the results of WebPageTest on this site. The user interface is a bit
+1990s, but that's okay.
+
+![WebPageTest](/images/webpagetest.png)
+
+## WAVE
+
+WAVE (or Web Accessibility Evaluation Tool) is a suite of evaluation tools
+that helps authors make their web content more accessible to individuals
+with disabilities. WAVE is developed and made available as a free community
+service by WebAIM at Utah State University.
+
+According to the site:
+
+> WAVE can identify many accessibility and Web Content Accessibility
+> Guideline (WCAG) errors, but also facilitates human evaluation of web
+> content.
+
+Here is the results of WAVE on this site (using the Chrome extension). As
+you can see, there are no errors or contrast issues on the site, but there
+is one alert (relating to the use of `noscript` due to the NextJS
+implementation of the Image component).
+
+![WAVE](/images/wave.png)
