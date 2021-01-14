@@ -68,6 +68,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.now.sh/posts/gatsby-themeui</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.now.sh/posts/hello-world</loc>
     <changefreq>hourly</changefreq>
   </url>
