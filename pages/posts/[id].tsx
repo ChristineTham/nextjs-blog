@@ -3,9 +3,8 @@ import Head from 'next/head'
 import fs from 'fs'
 import ImageSize from 'image-size'
 import matter from 'gray-matter'
-import { Source } from 'next-mdx-remote/hydrate'
-import hydrate from 'next-mdx-remote/hydrate'
-import renderToString from 'next-mdx-remote/render-to-string'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import dynamic from 'next/dynamic'
 import path from 'path'
 import { GetStaticProps, GetStaticPaths } from 'next'
@@ -42,16 +41,15 @@ const components = {
 interface PostProps {
   id: string
   url: string
-  source: Source
+  source: MDXRemoteSerializeResult
   frontMatter: FrontMatter
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Post: React.FC<PostProps> = ({ id, url, source, frontMatter }) => {
-  const content = hydrate(source, { components })
+const Post: React.FC<PostProps> = ({ url, source, frontMatter }) => {
   return (
     <BlogLayout url={url} meta={frontMatter}>
-      {content}
+      <MDXRemote {...source} components={components} />
     </BlogLayout>
   )
 }
@@ -85,8 +83,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     )
   }
 
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         remarkMath,
