@@ -24,7 +24,7 @@ module.exports = withPlugins(
       defaultLocale: 'en'
     },
     future: {
-      webpack5: true,
-    },
-  },
+      webpack5: true
+    }
+  }
 )
