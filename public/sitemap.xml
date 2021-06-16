@@ -1,186 +1,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://learning-jamstack.now.sh/about</loc>
+    <loc>https://learning-jamstack.vercel.app/about</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/contact</loc>
+    <loc>https://learning-jamstack.vercel.app/contact</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/drafts</loc>
+    <loc>https://learning-jamstack.vercel.app/drafts</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh</loc>
+    <loc>https://learning-jamstack.vercel.app</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh//posts</loc>
+    <loc>https://learning-jamstack.vercel.app//posts</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/privacy</loc>
+    <loc>https://learning-jamstack.vercel.app/privacy</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/sample-amp-page</loc>
+    <loc>https://learning-jamstack.vercel.app/sample-amp-page</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/sample-meraki</loc>
+    <loc>https://learning-jamstack.vercel.app/sample-meraki</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/sample-notus</loc>
+    <loc>https://learning-jamstack.vercel.app/sample-notus</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/sample-tailwindui</loc>
+    <loc>https://learning-jamstack.vercel.app/sample-tailwindui</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/test-ril</loc>
+    <loc>https://learning-jamstack.vercel.app/test-ril</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/category-filtering</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/category-filtering</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/christmas</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/christmas</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/conditional-jsx-elements</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/conditional-jsx-elements</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/convert-to-mdx</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/convert-to-mdx</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/cta-mailchimp</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/cta-mailchimp</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/deployment-info</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/deployment-info</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/gatsby-themeui</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/gatsby-themeui</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/hello-world</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/hello-world</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/implementing-seo</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/implementing-seo</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/learning-nextjs</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/learning-nextjs</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/markdown-cheat-sheet</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/markdown-cheat-sheet</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/markdown-test</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/markdown-test</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/math</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/math</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/merakiui</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/merakiui</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/nextjs-amp</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/nextjs-amp</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/notus</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/notus</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/object-oriented-considered-harmful</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/object-oriented-considered-harmful</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/optimise-site</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/optimise-site</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/photo-gallery</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/photo-gallery</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/post-paginate</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/post-paginate</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/remark-plugins</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/remark-plugins</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/roadmap</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/roadmap</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/sendgrid-form</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/sendgrid-form</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/site-frontmatter</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/site-frontmatter</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/sitemap-rss</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/sitemap-rss</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/stop-using-starter-kits</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/stop-using-starter-kits</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/stop-using-ui-themes</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/stop-using-ui-themes</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/styled-code-blocks</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/styled-code-blocks</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/tailblocks</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/tailblocks</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/tailwindui</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/tailwindui</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/template</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/template</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/typed</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/typed</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/typemill-markdown-test</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/typemill-markdown-test</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/why-create-a-blog-in-nextjs</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/why-create-a-blog-in-nextjs</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.now.sh/posts/why-no-cms</loc>
+    <loc>https://learning-jamstack.vercel.app/posts/why-no-cms</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>
