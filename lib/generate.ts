@@ -2,7 +2,7 @@
 // Generate sitemap.xml and feed.xml
 
 import fs from 'fs'
-import globby from 'globby'
+import { globby } from 'globby'
 import RSS from 'rss'
 import { PostMeta } from '../lib/postutils'
 
