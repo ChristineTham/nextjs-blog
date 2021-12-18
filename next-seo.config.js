@@ -5,7 +5,7 @@ const SEO = {
     site_name: 'Learning Jamstack',
     images: [
       {
-        url: 'https://learning-jamstack.vercel.app/images/screenshot.png',
+        url: 'https://learning-jamstack.hellotham.com/images/screenshot.png',
         alt: 'Screenshot'
       }
     ]

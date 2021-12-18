@@ -25,6 +25,7 @@ const Navbar: React.FC = ({ children }) => {
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
+              <span className="sr-only">Menu</span>
               <MenuIcon className="h-8 w-8 text-rosely10 hover:text-rosely9" />
             </button>
           </div>
@@ -67,7 +68,7 @@ const Navbar: React.FC = ({ children }) => {
               </NavbarSocialItem>
 
               <li className="flex items-center">
-                <Link href={site.repository}>
+                <Link href={site.repository} passHref>
                   <button
                     className="bg-rosely10 text-white hover:bg-rosely9 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 flex flex-row items-center"
                     type="button"

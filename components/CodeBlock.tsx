@@ -1,5 +1,3 @@
-/* eslint react/jsx-key: 0 */
-
 import React from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'

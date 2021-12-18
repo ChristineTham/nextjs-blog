@@ -140,15 +140,11 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-rosely1">{site.description}</p>
               <div className="mt-12">
-                <Link href="/posts">
-                  <a
-                    href="/posts"
-                    className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                  >
+                <Link href="/posts" passHref>
+                  <span className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
                     Read
-                  </a>
+                  </span>
                 </Link>
-
                 <a
                   href={site.repository}
                   className="github-star ml-1 text-rosely0 font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely7 hover:bg-rosely3 uppercase text-sm shadow hover:shadow-lg"
