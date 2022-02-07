@@ -2,7 +2,11 @@
   "compilerOptions": {
     "importHelpers": true,
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,8 +17,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "strict": false
   },
-  "exclude": ["node_modules", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/send.ts"]
+  "exclude": [
+    "node_modules",
+    "next.config.js"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/send.ts"
+  ]
 }

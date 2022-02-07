@@ -42,7 +42,7 @@
     "@headlessui/react": "^1.4.2",
     "@mailchimp/mailchimp_marketing": "^3.0.72",
     "@sendgrid/mail": "^7.6.0",
-    "@silvenon/remark-smartypants": "^2.0.0",
+    "remark-smartypants": "^2.0.0",
     "@tailwindcss/typography": "^0.5.0",
     "date-fns": "^2.28.0",
     "g": "^2.0.1",
