@@ -1,4 +1,5 @@
 interface FeatureProps {
+  children?: React.ReactNode
   feature: string
   description: string
 }

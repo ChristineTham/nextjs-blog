@@ -9,18 +9,21 @@ import dynamic from 'next/dynamic'
 import path from 'path'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { postFilePaths, POSTS_PATH, GALLERY_PATH, FrontMatter } from '../../lib/postutils'
+import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
+import remarkMdxEnhanced from 'remark-mdx-math-enhanced'
 import remarkSlug from 'remark-slug'
 import remarkHeadings from 'remark-autolink-headings'
-import remarkCodeTitles from 'remark-code-titles'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypeHighlight from 'rehype-highlight'
 import remarkTOC from 'remark-toc'
 import remarkSmartyPants from 'remark-smartypants'
 // import remarkTWEmoji from 'remark-twemoji'
-import CodeBlock from '../../components/CodeBlock'
+// import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
 import Typed from 'react-typed'
 import Gallery from '../../components/Gallery'
+import { Math } from '../../components/Math'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -33,9 +36,10 @@ const components = {
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  code: CodeBlock,
+  // code: CodeBlock,
   Typed,
-  Gallery
+  Gallery,
+  Math
 }
 
 interface PostProps {
@@ -48,9 +52,12 @@ interface PostProps {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Post: React.FC<PostProps> = ({ url, source, frontMatter }) => {
   return (
-    <BlogLayout url={url} meta={frontMatter}>
-      <MDXRemote {...source} components={components} />
-    </BlogLayout>
+    <>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css"/>
+      <BlogLayout url={url} meta={frontMatter}>
+        <MDXRemote {...source} components={components} />
+      </BlogLayout>
+    </>
   )
 }
 export default Post
@@ -86,15 +93,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
+        remarkGfm,
         remarkMath,
+        [remarkMdxEnhanced, { component: 'Math' }],
         remarkSlug,
         remarkHeadings,
-        remarkCodeTitles,
         remarkSmartyPants,
         // remarkTWEmoji,
         remarkTOC
       ],
-      rehypePlugins: [rehypeKatex]
+      rehypePlugins: [
+        rehypeCodeTitles,
+        rehypeHighlight
+      ]
     },
     scope: data
   })

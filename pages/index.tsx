@@ -1,5 +1,5 @@
 // external modules
-import { NextSeo, BlogJsonLd } from 'next-seo'
+import { NextSeo, ArticleJsonLd } from 'next-seo'
 import { GetStaticProps } from 'next'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
@@ -38,7 +38,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
           description: site.description
         }}
       />
-      <BlogJsonLd
+      <ArticleJsonLd
         url={site.url}
         title={site.title}
         images={[site.url + '/images/screenshot.png']}

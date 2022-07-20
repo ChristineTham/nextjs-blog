@@ -1,6 +1,7 @@
 import Section from './Section'
 
 interface ArticleProps {
+  children?: React.ReactNode
   title?: string
   description?: string
   bgcolor?: string

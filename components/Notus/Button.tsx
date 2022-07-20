@@ -1,4 +1,5 @@
 interface ButtonProps {
+  children?: React.ReactNode
   color?: string
   size?: string
 }

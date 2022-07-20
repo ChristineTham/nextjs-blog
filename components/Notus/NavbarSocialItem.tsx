@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const NavbarSocialItem: React.FC<{ href: string; title: string }> = ({ children, href, title }) => (
+const NavbarSocialItem: React.FC<{ children?: React.ReactNode; href: string; title: string }> = ({ children, href, title }) => (
   <li className="flex items-center">
     <Link href={href}>
       <a

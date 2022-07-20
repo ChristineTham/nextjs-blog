@@ -1,7 +1,7 @@
 import React from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import { mdx } from '@mdx-js/react'
+import { useMDXComponents } from '@mdx-js/react'
 import theme from '../styles/rosely-prism'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -19,7 +19,7 @@ const CodeBlock: React.FC<{
         <LiveProvider
           code={children.trim()}
           transformCode={(code) => '/** @jsx mdx */' + code}
-          scope={{ mdx }}
+          scope={{ useMDXComponents }}
         >
           <LivePreview />
           <LiveEditor />

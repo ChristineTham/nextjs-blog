@@ -8,7 +8,7 @@ import { NextSeo, ArticleJsonLd } from 'next-seo'
 import { FrontMatter } from '../lib/postutils'
 import { site } from '../global'
 
-const BlogLayout: React.FC<{ url: string; meta: FrontMatter }> = ({ children, url, meta }) => {
+const BlogLayout: React.FC<{ children?: React.ReactNode; url: string; meta: FrontMatter }> = ({ children, url, meta }) => {
   return (
     <>
       <Head>

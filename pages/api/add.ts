@@ -1,7 +1,7 @@
 import { NowRequest, NowResponse } from '@vercel/node'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, import/no-anonymous-default-export
 export default async (req: NowRequest, res: NowResponse) => {
   const { firstname, lastname, email } = req.body
 

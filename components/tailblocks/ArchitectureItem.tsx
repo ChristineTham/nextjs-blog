@@ -1,6 +1,7 @@
 import A from '../A'
 
 interface ItemProps {
+  children?: React.ReactNode
   title: string
   href: string
 }

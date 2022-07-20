@@ -1,4 +1,5 @@
 interface ItemProps {
+  children?: React.ReactNode
   feature: string
   description: string
   more?: string

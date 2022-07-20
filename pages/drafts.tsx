@@ -1,4 +1,4 @@
-import { NextSeo, BlogJsonLd } from 'next-seo'
+import { NextSeo, ArticleJsonLd } from 'next-seo'
 // external modules
 import { GetStaticProps } from 'next'
 
@@ -26,7 +26,7 @@ const Drafts: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
           description: description
         }}
       />
-      <BlogJsonLd
+      <ArticleJsonLd
         url={site.url}
         title={site.title}
         images={[site.url + '/images/screenshot.png']}

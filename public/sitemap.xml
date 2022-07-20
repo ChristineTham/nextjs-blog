@@ -172,10 +172,6 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.hellotham.com/posts/typemill-markdown-test</loc>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
     <loc>https://learning-jamstack.hellotham.com/posts/why-create-a-blog-in-nextjs</loc>
     <changefreq>hourly</changefreq>
   </url>

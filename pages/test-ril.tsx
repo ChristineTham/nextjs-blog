@@ -36,7 +36,8 @@ const TestRPG: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
 
-  const openLightbox = useCallback((event, { _photo, index }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index)
     setViewerIsOpen(true)
   }, [])

@@ -1,4 +1,5 @@
 interface ItemProps {
+  children?: React.ReactNode
   category: string
   title: string
   image?: string

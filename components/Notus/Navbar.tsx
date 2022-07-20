@@ -13,7 +13,7 @@ import Github from '../../icons/github.svg'
 import Twitter from '../../icons/twitter.svg'
 import Download from '../../icons/download.svg'
 
-const Navbar: React.FC = ({ children }) => {
+const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
     <>
