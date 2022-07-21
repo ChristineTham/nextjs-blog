@@ -6,7 +6,7 @@
 @tailwind components;
 /* Stop purging. */
 
-.remark-code-title {
+.rehype-code-title {
   display: block;
   color: #85677b;
   background-color: #f7caca;

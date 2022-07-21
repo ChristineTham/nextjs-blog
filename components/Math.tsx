@@ -1,13 +1,13 @@
-import { useMemo } from 'react';
-import katex from 'katex';
+import { useMemo } from 'react'
+import katex from 'katex'
+import 'katex/dist/katex.min.css'
 
 export function Math({ children = '', display = false, options }) {
-  const Wrapper = display ? 'div' : 'span';
-  if (typeof children !== 'string')
-    throw new Error('Children prop must be a katex string');
+  const Wrapper = display ? 'div' : 'span'
+  if (typeof children !== 'string') throw new Error('Children prop must be a katex string')
 
   const renderedKatex = useMemo(() => {
-    let result;
+    let result
 
     try {
       result = katex.renderToString(children, {
@@ -16,22 +16,22 @@ export function Math({ children = '', display = false, options }) {
         throwOnError: true,
         globalGroup: true,
         trust: true,
-        strict: false,
-      });
+        strict: false
+      })
     } catch (error) {
-      console.error(error);
+      console.error(error)
       result = katex.renderToString(children, {
         ...options,
         displayMode: display,
         throwOnError: false,
         strict: 'ignore',
         globalGroup: true,
-        trust: true,
-      });
+        trust: true
+      })
     }
 
-    return result;
-  }, [children, display, options]);
+    return result
+  }, [children, display, options])
 
-  return <Wrapper dangerouslySetInnerHTML={{ __html: renderedKatex || '' }} />;
+  return <Wrapper dangerouslySetInnerHTML={{ __html: renderedKatex || '' }} />
 }

@@ -24,6 +24,7 @@ import A from '../../components/A'
 import Typed from 'react-typed'
 import Gallery from '../../components/Gallery'
 import { Math } from '../../components/Math'
+import 'highlight.js/styles/github-dark.css'
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -52,12 +53,9 @@ interface PostProps {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Post: React.FC<PostProps> = ({ url, source, frontMatter }) => {
   return (
-    <>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css"/>
-      <BlogLayout url={url} meta={frontMatter}>
-        <MDXRemote {...source} components={components} />
-      </BlogLayout>
-    </>
+    <BlogLayout url={url} meta={frontMatter}>
+      <MDXRemote {...source} components={components} />
+    </BlogLayout>
   )
 }
 export default Post
