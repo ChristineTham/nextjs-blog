@@ -5,7 +5,7 @@
 // Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-evening-dark.css)
 // Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
-import type { PrismTheme } from 'prism-react-renderer'
+// import type { PrismTheme } from 'prism-react-renderer'
 
 const rosely0 = '#27272a'
 const rosely1 = '#615f5f'
@@ -25,7 +25,7 @@ const rosely14 = '#64bfa4'
 const rosely15 = '#919bc9'
 const jamstack = '#F0047F'
 
-const theme: PrismTheme = {
+const theme = {
   plain: {
     backgroundColor: rosely5,
     color: rosely1,

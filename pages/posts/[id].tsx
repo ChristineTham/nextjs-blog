@@ -18,8 +18,6 @@ import rehypeCodeTitles from 'rehype-code-titles'
 import rehypeHighlight from 'rehype-highlight'
 import remarkTOC from 'remark-toc'
 import remarkSmartyPants from 'remark-smartypants'
-// import remarkTWEmoji from 'remark-twemoji'
-// import CodeBlock from '../../components/CodeBlock'
 import A from '../../components/A'
 import Typed from 'react-typed'
 import Gallery from '../../components/Gallery'
@@ -31,13 +29,12 @@ import 'highlight.js/styles/github-dark.css'
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-  a: A,
+  a: A as React.FC,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  // code: CodeBlock,
   Typed,
   Gallery,
   Math
@@ -74,7 +71,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.id}.mdx`)
+  const id = (params && params.id) || 'xx'
+  const postFilePath = path.join(POSTS_PATH, `${id}.mdx`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
@@ -97,7 +95,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         remarkSlug,
         remarkHeadings,
         remarkSmartyPants,
-        // remarkTWEmoji,
         remarkTOC
       ],
       rehypePlugins: [
@@ -110,7 +107,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      id: params.id,
+      id: id,
       url: postFilePath,
       source: mdxSource,
       frontMatter: data as FrontMatter

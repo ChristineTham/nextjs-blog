@@ -2,7 +2,12 @@ import { useMemo } from 'react'
 import katex from 'katex'
 import 'katex/dist/katex.min.css'
 
-export function Math({ children = '', display = false, options }) {
+interface MathProps {
+  children: React.ReactNode
+  display: boolean; options?: string[]
+}
+
+export const Math: React.FC<MathProps> = ({ children = '', display = false, options }) => {
   const Wrapper = display ? 'div' : 'span'
   if (typeof children !== 'string') throw new Error('Children prop must be a katex string')
 

@@ -1,7 +1,7 @@
 interface ButtonProps {
   children?: React.ReactNode
   color?: string
-  size?: string
+  size?: "base" | "xs" | "sm"
 }
 
 const Button: React.FC<ButtonProps> = ({ children, color = 'pink', size = 'base' }) => {

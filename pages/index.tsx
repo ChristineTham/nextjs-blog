@@ -22,7 +22,7 @@ const POSTS_PER_PAGE = 6
 const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, buildDate }) => {
   const [offset, setOffset] = useState(0)
 
-  const handlePageClick = (data) => {
+  const handlePageClick = (data: { selected: number }) => {
     const selected = data.selected
     const offset = Math.ceil(selected * POSTS_PER_PAGE)
     setOffset(offset)

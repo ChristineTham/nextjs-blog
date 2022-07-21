@@ -34,12 +34,21 @@ import { getPosts, PostMeta } from '../lib/postutils'
 import A from '../components/A'
 import NavbarItem from '../components/Notus/NavbarItem'
 
+type StatusType = {
+  submitted: boolean
+  submitting: boolean
+  info: {
+    error: boolean
+    msg: string | null
+  }
+}
+
 const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
-  })
+  } as StatusType)
 
   const [inputs, setInputs] = useState({
     firstname: '',
@@ -47,7 +56,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
     email: ''
   })
 
-  const handleResponse = (status, msg) => {
+  const handleResponse = (status: number, msg: string) => {
     if (status === 201) {
       setStatus({
         submitted: true,
@@ -68,7 +77,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
     }
   }
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: { persist: () => void; target: { id: string; value: string } }) => {
     e.persist()
     setInputs((prev) => ({
       ...prev,
@@ -81,7 +90,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
     })
   }
 
-  const handleOnSubmit = async (e) => {
+  const handleOnSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
     const res0 = await fetch('/api/add', {

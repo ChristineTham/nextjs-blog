@@ -20,7 +20,7 @@ time using the `next-mdx-remote` processor which uses
 [rehype](https://github.com/rehypejs/rehype).
 
 It's possible to enhance the processing by adding plugins, and previously
-I had already enabled the `remark-math` and `rehype-katex` plugins in my
+I had already enabled the `remark-math` and `remark-mdx-math-enhanced` plugins in my
 article called [Rendering Math in Markdown](/posts/math).
 
 I have now decided to explore what other
@@ -31,9 +31,10 @@ I have decided to install the following:
 
 - [remark-slug](https://github.com/remarkjs/remark-slug)
 - [remark-autolink-headings](https://github.com/remarkjs/remark-autolink-headings)
-- [remark-code-titles](https://github.com/mottox2/remark-code-titles)
 - [remark-toc](https://github.com/remarkjs/remark-toc)
 - [@silvenon/remark-smartypants](https://github.com/silvenon/remark-smartypants)
+- [rehype-code-titles](https://github.com/rockchalkwushock/rehype-code-titles)
+- [rehype-highlight](https://github.com/rehypejs/rehype-highlight)
 
 ## Table of Contents
 
@@ -45,11 +46,14 @@ remark plugin to add anchors headings using GitHub’s algorithm.
 
 remark plugin to automatically add links to headings.
 
-## remark-code-titles
-
-Remark plugin to add code title inspired by
-[gatsby-remark-code-titles](https://github.com/DSchau/gatsby-remark-code-titles)
-
 ## remark-toc
 
 remark plugin to generate a table of contents.
+
+## rehype-code-titles
+
+Rehype plugin for parsing code blocks and adding titles to code blocks.
+
+## rehype-highlight
+
+Rehype plugin to highlight code blocks.

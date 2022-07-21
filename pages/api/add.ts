@@ -15,7 +15,7 @@ export default async (req: NowRequest, res: NowResponse) => {
       server: process.env.MAILCHIMP_SERVER_PREFIX
     })
 
-    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID, {
+    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID || "0", {
       email_address: email,
       status: 'subscribed',
       merge_fields: {

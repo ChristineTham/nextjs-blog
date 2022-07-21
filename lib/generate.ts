@@ -8,7 +8,7 @@ import { PostMeta } from '../lib/postutils'
 
 import { site } from '../global'
 
-function addPage(page) {
+function addPage(page: string) {
   const path = page
     .replace('pages', '')
     .replace('.tsx', '')

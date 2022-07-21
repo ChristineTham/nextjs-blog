@@ -5,12 +5,21 @@ import TwitterIcon from '../../icons/twitter.svg'
 import FacebookIcon from '../../icons/facebook.svg'
 import GithubIcon from '../../icons/github.svg'
 
+type StatusType = {
+  submitted: boolean
+  submitting: boolean
+  info: {
+    error: boolean
+    msg: string | null
+  }
+}
+
 function Contact(): JSX.Element {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
-  })
+  } as StatusType)
 
   const [inputs, setInputs] = useState({
     name: '',
@@ -18,7 +27,7 @@ function Contact(): JSX.Element {
     message: ''
   })
 
-  const handleResponse = (status, msg) => {
+  const handleResponse = (status: number, msg: string ) => {
     if (status === 200) {
       setStatus({
         submitted: true,
@@ -39,7 +48,7 @@ function Contact(): JSX.Element {
     }
   }
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: { persist: () => void; target: { id: string; value: string } }) => {
     e.persist()
     setInputs((prev) => ({
       ...prev,
@@ -52,7 +61,7 @@ function Contact(): JSX.Element {
     })
   }
 
-  const handleOnSubmit = async (e) => {
+  const handleOnSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
     const res = await fetch('/api/send', {

@@ -3,7 +3,7 @@ import sgMail from '@sendgrid/mail'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, import/no-anonymous-default-export
 export default async (req: NowRequest, res: NowResponse) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY || "0")
 
   const { email, subject, message } = req.body
 
