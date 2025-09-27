@@ -17,11 +17,11 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
     <>
-      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
+      <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow-sm">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded-sm bg-transparent block lg:hidden outline-hidden focus:outline-hidden"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
@@ -31,17 +31,19 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           </div>
           <div
             className={
-              'lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none' +
+              'lg:flex grow items-center bg-white lg:bg-transparent lg:shadow-none' +
               (navbarOpen ? ' block' : ' hidden')
             }
             id="example-navbar-warning"
           >
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               <li>
-                <Link href="/">
-                  <a className="text-rosely10 hover:rosely9 text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
-                    {site.title}
-                  </a>
+                <Link
+                  href="/"
+                  className="text-rosely10 hover:rosely9 text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
+
+                  {site.title}
+
                 </Link>
               </li>
               {children}
@@ -68,9 +70,9 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
               </NavbarSocialItem>
 
               <li className="flex items-center">
-                <Link href={site.repository} passHref>
+                <Link href={site.repository} passHref legacyBehavior>
                   <button
-                    className="bg-rosely10 text-white hover:bg-rosely9 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 flex flex-row items-center"
+                    className="bg-rosely10 text-white hover:bg-rosely9 text-xs font-bold uppercase px-4 py-2 rounded-sm shadow-sm hover:shadow-lg outline-hidden focus:outline-hidden lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 flex flex-row items-center"
                     type="button"
                   >
                     <Download className="h-6 w-6" /> Download
@@ -82,6 +84,6 @@ const Navbar: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
         </div>
       </nav>
     </>
-  )
+  );
 }
 export default Navbar

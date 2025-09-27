@@ -12,14 +12,14 @@ import { postFilePaths, POSTS_PATH, GALLERY_PATH, FrontMatter } from '../../lib/
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import remarkMdxEnhanced from 'remark-mdx-math-enhanced'
-import remarkSlug from 'remark-slug'
-import remarkHeadings from 'remark-autolink-headings'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
 import rehypeHighlight from 'rehype-highlight'
 import remarkTOC from 'remark-toc'
 import remarkSmartyPants from 'remark-smartypants'
 import A from '../../components/A'
-import Typed from 'react-typed'
+import { ReactTyped } from 'react-typed'
 import Gallery from '../../components/Gallery'
 import { Math } from '../../components/Math'
 import 'highlight.js/styles/github-dark.css'
@@ -35,7 +35,7 @@ const components = {
   // See the notes in README.md for more details.
   TestComponent: dynamic(() => import('../../components/TestComponent')),
   Head,
-  Typed,
+  ReactTyped,
   Gallery,
   Math
 }
@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const images = fs.readdirSync(galleryPath)
     data.images = images.map((image) => path.join('/gallery', data.gallery, image))
     data.image_dimensions = images.map((image) =>
-      ImageSize(path.join(GALLERY_PATH, data.gallery, image))
+      ImageSize(fs.readFileSync(path.join(GALLERY_PATH, data.gallery, image)))
     )
   }
 
@@ -92,15 +92,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         remarkGfm,
         remarkMath,
         [remarkMdxEnhanced, { component: 'Math' }],
-        remarkSlug,
-        remarkHeadings,
         remarkSmartyPants,
         remarkTOC
       ],
-      rehypePlugins: [
-        rehypeCodeTitles,
-        rehypeHighlight
-      ]
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeCodeTitles, rehypeHighlight]
     },
     scope: data
   })

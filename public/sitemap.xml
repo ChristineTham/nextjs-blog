@@ -24,10 +24,6 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://learning-jamstack.hellotham.com/sample-amp-page</loc>
-    <changefreq>hourly</changefreq>
-  </url>
-  <url>
     <loc>https://learning-jamstack.hellotham.com/sample-meraki</loc>
     <changefreq>hourly</changefreq>
   </url>

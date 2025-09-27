@@ -1,11 +1,12 @@
-export default function NavBar(): JSX.Element {
+import type { ReactElement } from 'react'
+export default function NavBar(): ReactElement {
   return (
     <>
       <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <img
                   className="h-8 w-8"
                   src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
@@ -53,7 +54,7 @@ export default function NavBar(): JSX.Element {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex items-center md:ml-6">
-                <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">View notifications</span>
                   {/* Heroicon name: bell */}
                   <svg
@@ -77,7 +78,7 @@ export default function NavBar(): JSX.Element {
                 <div className="ml-3 relative">
                   <div>
                     <button
-                      className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                      className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                       id="user-menu"
                       aria-haspopup="true"
                     >
@@ -134,7 +135,7 @@ export default function NavBar(): JSX.Element {
             </div>
             <div className="-mr-2 flex md:hidden">
               {/* Mobile menu button */}
-              <button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <span className="sr-only">Open main menu</span>
                 {/*
                   Heroicon name: menu
@@ -225,7 +226,7 @@ export default function NavBar(): JSX.Element {
           </div>
           <div className="pt-4 pb-3 border-t border-gray-700">
             <div className="flex items-center px-5">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <img
                   className="h-10 w-10 rounded-full"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -238,7 +239,7 @@ export default function NavBar(): JSX.Element {
                   tom@example.com
                 </div>
               </div>
-              <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <button className="ml-auto bg-gray-800 shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <span className="sr-only">View notifications</span>
                 {/* Heroicon name: bell */}
                 <svg

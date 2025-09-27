@@ -23,14 +23,14 @@ const A: React.FC<AProps> = (props) => {
   } else {
     return (
       <>
-        <Link href={href}>
-          <a
-            className={`text-primary hover:text-rosely9 ${noline || 'underline'} font-semibold`}
-            {...otherProps}
-          />
+        <Link
+          href={href}
+          className={`text-primary hover:text-rosely9 ${noline || 'underline'} font-semibold`}
+          {...otherProps}>
+
         </Link>
       </>
-    )
+    );
   }
 }
 export default A

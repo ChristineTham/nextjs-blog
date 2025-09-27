@@ -103,7 +103,7 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
           marginPagesDisplayed={2}
           pageRangeDisplayed={3}
           onPageChange={handlePageClick}
-          containerClassName="relative z-0 inline-flex shadow-sm -space-x-px"
+          containerClassName="relative z-0 inline-flex shadow-xs -space-x-px"
           activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-rosely7 bg-rosely4 text-sm font-medium text-rosely0 hover:bg-rosely8"
         />
         <div className="flex flex-wrap px-6 pt-6">

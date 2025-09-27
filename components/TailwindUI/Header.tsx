@@ -1,4 +1,5 @@
-export default function Header(): JSX.Element {
+import type { ReactElement } from 'react'
+export default function Header(): ReactElement {
   return (
     <>
       <div className="relative bg-white">
@@ -17,7 +18,7 @@ export default function Header(): JSX.Element {
             <div className="-mr-2 -my-2 md:hidden">
               <button
                 type="button"
-                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500"
               >
                 <span className="sr-only">Open menu</span>
                 {/* Heroicon name: menu */}
@@ -43,7 +44,7 @@ export default function Header(): JSX.Element {
                 {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
                 <button
                   type="button"
-                  className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span>Solutions</span>
                   {/*
@@ -82,7 +83,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: chart-bar */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -107,7 +108,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: cursor-click */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -132,7 +133,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: shield-check */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -157,7 +158,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: view-grid */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -182,7 +183,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: refresh */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -212,7 +213,7 @@ export default function Header(): JSX.Element {
                         >
                           {/* Heroicon name: play */}
                           <svg
-                            className="flex-shrink-0 h-6 w-6 text-gray-400"
+                            className="shrink-0 h-6 w-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -243,7 +244,7 @@ export default function Header(): JSX.Element {
                         >
                           {/* Heroicon name: phone */}
                           <svg
-                            className="flex-shrink-0 h-6 w-6 text-gray-400"
+                            className="shrink-0 h-6 w-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -276,7 +277,7 @@ export default function Header(): JSX.Element {
                 {/* Item active: "text-gray-900", Item inactive: "text-gray-500" */}
                 <button
                   type="button"
-                  className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span>More</span>
                   {/*
@@ -315,7 +316,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: support */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -340,7 +341,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: bookmark-alt */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -365,7 +366,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: calendar */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -390,7 +391,7 @@ export default function Header(): JSX.Element {
                       <a href="#" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                         {/* Heroicon name: shield-check */}
                         <svg
-                          className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                          className="shrink-0 h-6 w-6 text-indigo-600"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -457,7 +458,7 @@ export default function Header(): JSX.Element {
               </a>
               <a
                 href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-xs text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
                 Sign up
               </a>
@@ -489,7 +490,7 @@ export default function Header(): JSX.Element {
                 <div className="-mr-2">
                   <button
                     type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                   >
                     <span className="sr-only">Close menu</span>
                     {/* Heroicon name: x */}
@@ -516,7 +517,7 @@ export default function Header(): JSX.Element {
                   <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     {/* Heroicon name: chart-bar */}
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="shrink-0 h-6 w-6 text-indigo-600"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -536,7 +537,7 @@ export default function Header(): JSX.Element {
                   <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     {/* Heroicon name: cursor-click */}
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="shrink-0 h-6 w-6 text-indigo-600"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -556,7 +557,7 @@ export default function Header(): JSX.Element {
                   <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     {/* Heroicon name: shield-check */}
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="shrink-0 h-6 w-6 text-indigo-600"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -576,7 +577,7 @@ export default function Header(): JSX.Element {
                   <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     {/* Heroicon name: view-grid */}
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="shrink-0 h-6 w-6 text-indigo-600"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -596,7 +597,7 @@ export default function Header(): JSX.Element {
                   <a href="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     {/* Heroicon name: refresh */}
                     <svg
-                      className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                      className="shrink-0 h-6 w-6 text-indigo-600"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -652,7 +653,7 @@ export default function Header(): JSX.Element {
               <div>
                 <a
                   href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-xs text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Sign up
                 </a>

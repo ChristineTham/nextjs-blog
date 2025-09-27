@@ -21,10 +21,12 @@ const Article: React.FC<ArticleProps> = ({ href, meta }) => (
             {category}
           </span>
         ))}
-        <Link href={href}>
-          <a className="block text-rosely10 font-semibold text-2xl mt-2 hover:text-rosely9 hover:underline">
-            {meta.title}
-          </a>
+        <Link
+          href={href}
+          className="block text-rosely10 font-semibold text-2xl mt-2 hover:text-rosely9 hover:underline">
+
+          {meta.title}
+
         </Link>
         <p className="text-sm text-rosely1 mt-2">{meta.description}</p>
       </div>

@@ -2,7 +2,7 @@ const Categories: React.FC<{ categories: string[] }> = ({ categories }) => (
   <div className="flex flex-row items-start space-x-2">
     {categories.map((category) => (
       <span
-        className="inline-block py-1 px-3 rounded bg-rosely2 text-white text-xs font-medium tracking-tight uppercase"
+        className="inline-block py-1 px-3 rounded-sm bg-rosely2 text-white text-xs font-medium tracking-tight uppercase"
         key={category}
       >
         {category}

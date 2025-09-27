@@ -54,8 +54,10 @@ const Footer: React.FC = () => (
           <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
               <h3 className="text-rosely6 uppercase">About</h3>
-              <Link href="/about">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">This Site</a>
+              <Link
+                href="/about"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                This Site
               </Link>
               <a href={site.website} className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
                 Me
@@ -70,14 +72,20 @@ const Footer: React.FC = () => (
 
             <div>
               <h3 className="text-rosely6 uppercase">Site</h3>
-              <Link href="/posts">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">Posts</a>
+              <Link
+                href="/posts"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                Posts
               </Link>
-              <Link href="/sitemap.xml">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">Sitemap</a>
+              <Link
+                href="/sitemap.xml"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                Sitemap
               </Link>
-              <Link href="/feed.xml">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">RSS</a>
+              <Link
+                href="/feed.xml"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                RSS
               </Link>
             </div>
 
@@ -89,8 +97,10 @@ const Footer: React.FC = () => (
               >
                 MIT Licence
               </a>
-              <Link href="/privacy">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">Privacy Policy</a>
+              <Link
+                href="/privacy"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                Privacy Policy
               </Link>
               <a
                 href={site.repository}
@@ -102,8 +112,10 @@ const Footer: React.FC = () => (
 
             <div>
               <h3 className="text-rosely6 uppercase">Contact</h3>
-              <Link href="/contact">
-                <a className="block mt-2 text-sm text-rosely4 hover:text-rosely8">Contact Us</a>
+              <Link
+                href="/contact"
+                className="block mt-2 text-sm text-rosely4 hover:text-rosely8">
+                Contact Us
               </Link>
             </div>
           </div>

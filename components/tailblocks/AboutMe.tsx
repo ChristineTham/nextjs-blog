@@ -1,8 +1,9 @@
 import A from '../A'
 import { site } from '../../global'
 import Image from 'next/image'
+import type { ReactElement } from 'react'
 
-function AboutMe(): JSX.Element {
+function AboutMe(): ReactElement {
   return (
     <section className="text-rosely1 body-font">
       <div className="container px-5 pt-28 mx-auto">
@@ -15,7 +16,7 @@ function AboutMe(): JSX.Element {
       <div className="container mx-auto flex px-5 pt-12 pb-20 xl:flex-row flex-col items-center">
         <div className="xl:max-w-xl xl:w-1/3 w-5/6 mb-10 xl:mb-0">
           <Image
-            className="object-cover object-center rounded"
+            className="object-cover object-center rounded-sm"
             alt="Hello Kitty"
             width="1500"
             height="1000"
@@ -23,18 +24,18 @@ function AboutMe(): JSX.Element {
           />
           <div className="flex justify-center space-x-2 flex-row mt-6">
             <A external noline href={site.website}>
-              <button className="inline-flex items-center text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded">
+              <button className="inline-flex items-center text-white bg-pink-500 border-0 py-2 px-6 focus:outline-hidden hover:bg-pink-600 rounded-sm">
                 christham.net
               </button>
             </A>
             <A external noline href={site.company_url}>
-              <button className="inline-flex items-center text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">
+              <button className="inline-flex items-center text-white bg-purple-500 border-0 py-2 px-6 focus:outline-hidden hover:bg-purple-600 rounded-sm">
                 Hello Tham
               </button>
             </A>
           </div>
         </div>
-        <div className="xl:flex-grow xl:w-2/3 xl:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <div className="xl:grow xl:w-2/3 xl:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
           <p className="mb-4">
             For those of you who are interested, I studied pure mathematics and computer science at
             the University of Sydney in the early 1980s, and did an honours thesis on computer

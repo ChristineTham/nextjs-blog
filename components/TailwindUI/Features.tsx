@@ -6,8 +6,9 @@ import Sparkle from '../../icons/sparkle.svg'
 import Auto from '../../icons/play.svg'
 import Device from '../../icons/device.svg'
 import Code from '../../icons/code.svg'
+import type { ReactElement } from 'react'
 
-export default function Features(): JSX.Element {
+export default function Features(): ReactElement {
   return (
     <>
       <div className="py-12 bg-rosely6">

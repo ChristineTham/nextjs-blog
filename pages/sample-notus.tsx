@@ -149,14 +149,14 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-rosely1">{site.description}</p>
               <div className="mt-12">
-                <Link href="/posts" passHref>
-                  <span className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+                <Link href="/posts" passHref legacyBehavior>
+                  <span className="get-started text-white font-bold px-6 py-4 rounded-sm outline-hidden focus:outline-hidden mr-1 mb-1 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow-sm hover:shadow-lg ease-linear transition-all duration-150">
                     Read
                   </span>
                 </Link>
                 <a
                   href={site.repository}
-                  className="github-star ml-1 text-rosely0 font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely7 hover:bg-rosely3 uppercase text-sm shadow hover:shadow-lg"
+                  className="github-star ml-1 text-rosely0 font-bold px-6 py-4 rounded-sm outline-hidden focus:outline-hidden mr-1 mb-1 bg-rosely7 hover:bg-rosely3 uppercase text-sm shadow-sm hover:shadow-lg"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -172,7 +172,6 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
           alt="Hero"
         />
       </section>
-
       <section className="mt-48 md:mt-40 relative bg-rosely5">
         <div
           className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
@@ -318,27 +317,27 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
                 <img
                   alt="Web"
                   src="/drawings/web.svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-xs sm:-top-96 lg:top-48 lg:left-52 bg-rosely4"
+                  className="w-full align-middle rounded-sm absolute shadow-lg max-w-xs sm:-top-96 lg:top-48 lg:left-52 bg-rosely4"
                 />
                 <img
                   alt="NextJS"
                   src="/drawings/nextjs.svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-xs sm:-top-40 lg:-left-32 lg:-top-28 bg-rosely4"
+                  className="w-full align-middle rounded-sm absolute shadow-lg max-w-xs sm:-top-40 lg:-left-32 lg:-top-28 bg-rosely4"
                 />
                 <img
                   alt="GatsbyJS"
                   src="/drawings/gatsbyjs.svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-xs sm:top-0 lg:left-52 lg:-top-64 bg-rosely4"
+                  className="w-full align-middle rounded-sm absolute shadow-lg max-w-xs sm:top-0 lg:left-52 lg:-top-64 bg-rosely4"
                 />
                 <img
                   alt="TailwindCSS"
                   src="/drawings/tailwindcss.svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-xs sm:top-52 lg:-left-20 lg:top-16 bg-rosely4"
+                  className="w-full align-middle rounded-sm absolute shadow-lg max-w-xs sm:top-52 lg:-left-20 lg:top-16 bg-rosely4"
                 />
                 <img
                   alt="React"
                   src="/drawings/react.svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-xs sm:top-96 lg:left-56 lg:-top-8 bg-rosely4"
+                  className="w-full align-middle rounded-sm absolute shadow-lg max-w-xs sm:top-96 lg:left-56 lg:-top-8 bg-rosely4"
                 />
               </div>
             </div>
@@ -454,7 +453,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
                       onChange={handleOnChange}
                       required
                       value={inputs.firstname}
-                      className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                      className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
                     />
                   </div>
                   <div className="relative mb-4">
@@ -468,7 +467,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
                       onChange={handleOnChange}
                       required
                       value={inputs.lastname}
-                      className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                      className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
                     />
                   </div>
                   <div className="relative mb-4">
@@ -482,11 +481,11 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
                       onChange={handleOnChange}
                       required
                       value={inputs.email}
-                      className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                      className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
                     />
                   </div>
                   <button
-                    className={`text-white bg-rosely10 border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+                    className={`text-white bg-rosely10 border-0 py-2 px-8 focus:outline-hidden hover:bg-rosely9 rounded-sm text-lg`}
                   >
                     {!status.submitting
                       ? !status.submitted
@@ -562,7 +561,6 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
           </div>
         </div>
       </section>
-
       <article className="bg-rosely5">
         <div className="container mx-auto px-6 pt-8 pb-16">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
@@ -572,7 +570,6 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
           </div>
         </div>
       </article>
-
       <section className="py-20 bg-rosely2 overflow-hidden">
         <div className="container mx-auto pb-32">
           <div className="flex flex-wrap justify-center">
@@ -589,7 +586,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
                 href={site.repository}
                 target="_blank"
                 rel="noreferrer"
-                className="github-star mt-4 inline-block text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-rosely10 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg"
+                className="github-star mt-4 inline-block text-white font-bold px-6 py-4 rounded-sm outline-hidden focus:outline-hidden mr-1 mb-1 bg-rosely10 active:bg-gray-700 uppercase text-sm shadow-sm hover:shadow-lg"
               >
                 Github
               </a>
@@ -601,7 +598,6 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
           </div>
         </div>
       </section>
-
       <section className="pb-16 bg-rosely6 relative pt-32">
         <div
           className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20"
@@ -635,7 +631,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
               <div className="sm:block flex flex-col mt-10">
                 <A
                   href="/contact"
-                  className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                  className="get-started text-white font-bold px-6 py-4 rounded-sm outline-hidden focus:outline-hidden mr-1 mb-2 bg-rosely10 hover:bg-rosely9 uppercase text-sm shadow-sm hover:shadow-lg ease-linear transition-all duration-150"
                 >
                   Contact
                 </A>
@@ -647,7 +643,7 @@ const SampleNotus: React.FC<{ allPostsData: PostMeta[] }> = ({ allPostsData }) =
       </section>
       <Footer />
     </>
-  )
+  );
 }
 export default SampleNotus
 

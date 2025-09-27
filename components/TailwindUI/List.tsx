@@ -9,7 +9,7 @@ interface ListProps {
   chimpstatus: string
 }
 const List: React.FC<ListProps> = ({ arch, platform, version, commit, chimpstatus }) => (
-  <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+  <div className="bg-white shadow-sm overflow-hidden sm:rounded-lg">
     <ListHeader title="Deployment Information" description="Website deployment details" />
     <div className="border-t border-rosely7">
       <dl>

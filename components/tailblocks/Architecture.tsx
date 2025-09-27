@@ -1,8 +1,9 @@
 import ArchitectureItem from './ArchitectureItem'
 import Section from './Section'
 import A from '../A'
+import type { ReactElement } from 'react'
 
-function Architecture(): JSX.Element {
+function Architecture(): ReactElement {
   return (
     <Section
       title="Building Blocks"

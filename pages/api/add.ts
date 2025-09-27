@@ -15,7 +15,7 @@ export default async (req: NowRequest, res: NowResponse) => {
       server: process.env.MAILCHIMP_SERVER_PREFIX
     })
 
-    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID || "0", {
+    const response = await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST_ID || '0', {
       email_address: email,
       status: 'subscribed',
       merge_fields: {
@@ -25,7 +25,7 @@ export default async (req: NowRequest, res: NowResponse) => {
     })
 
     return res.status(201).send('You have been subscribed: ' + response.id)
-  } catch (error) {
+  } catch {
     return res
       .status(400)
       .send('An error has occurred. Please contact me at [learning.jamstack@hellotham.com].')

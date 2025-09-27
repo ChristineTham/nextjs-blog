@@ -28,7 +28,7 @@ const MyGallery: React.FC<MyGalleryProps> = ({ photos, dimensions }) => {
     <>
       <div className="container flex flex-col items-center mx-auto">
         <button
-          className="inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-none hover:bg-rosely9 rounded text-lg mb-4"
+          className="inline-flex items-center text-white bg-rosely10 border-0 py-2 px-6 focus:outline-hidden hover:bg-rosely9 rounded-sm text-lg mb-4"
           onClick={() => setIsOpen(true)}
         >
           View gallery

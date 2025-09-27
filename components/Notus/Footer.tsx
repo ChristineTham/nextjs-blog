@@ -32,7 +32,7 @@ const Footer: React.FC = () => (
             <div className="mt-6 lg:mb-0 mb-6">
               <A external noline href={site.twitter}>
                 <button
-                  className="bg-rosely6 text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-rosely6 text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-hidden focus:outline-hidden mr-2"
                   type="button"
                   aria-label="Twitter"
                 >
@@ -42,7 +42,7 @@ const Footer: React.FC = () => (
               </A>
               <A external noline href={site.facebook}>
                 <button
-                  className="bg-rosely6 text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-rosely6 text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-hidden focus:outline-hidden mr-2"
                   type="button"
                   aria-label="Facebook"
                 >
@@ -52,7 +52,7 @@ const Footer: React.FC = () => (
               </A>
               <A external noline href={site.website}>
                 <button
-                  className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-hidden focus:outline-hidden mr-2"
                   type="button"
                   aria-label="Blog"
                 >
@@ -62,7 +62,7 @@ const Footer: React.FC = () => (
               </A>
               <A external noline href={site.github}>
                 <button
-                  className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-rosely6 text-rosely10 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-hidden focus:outline-hidden mr-2"
                   type="button"
                   aria-label="Github"
                 >

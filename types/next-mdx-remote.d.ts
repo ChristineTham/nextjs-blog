@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react'
+
 interface Scope {
   [key: string]: unknown
 }
@@ -11,7 +13,7 @@ declare module 'next-mdx-remote/hydrate' {
     scope?: Scope
   }
 
-  let hydrate: (source: Source, options?: HydrateOptions) => JSX.Element
+  let hydrate: (source: Source, options?: HydrateOptions) => ReactElement
   export default hydrate
 }
 

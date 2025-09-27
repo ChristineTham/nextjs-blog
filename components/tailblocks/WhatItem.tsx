@@ -8,11 +8,11 @@ interface ItemProps {
 const WhatItem: React.FC<ItemProps> = ({ children, feature, more, description }) => (
   <div className="p-4 sm:w-1/2 md:w-1/3 flex flex-col text-center items-center">
     <div
-      className={`w-20 h-20 inline-flex items-center justify-center rounded-full bg-rosely4 text-rosely10 flex-shrink-0`}
+      className={`w-20 h-20 inline-flex items-center justify-center rounded-full bg-rosely4 text-rosely10 shrink-0`}
     >
       {children}
     </div>
-    <div className="flex-grow">
+    <div className="grow">
       <h2 className="text-rosely2 text-lg title-font font-medium mt-4">{feature}</h2>
       <p className="mt-2 text-rosely1 tracking-wide text-sm italic">{description}</p>
       {more && (

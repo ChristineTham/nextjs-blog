@@ -1,8 +1,9 @@
 import LearningItem from './LearningItem'
 import A from '../A'
 import Section from './Section'
+import type { ReactElement } from 'react'
 
-function Learning(): JSX.Element {
+function Learning(): ReactElement {
   return (
     <Section
       title="What I am learning"

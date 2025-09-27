@@ -8,8 +8,9 @@ import Sparkle from '../../icons/sparkle.svg'
 import Auto from '../../icons/play.svg'
 import Device from '../../icons/device.svg'
 import Code from '../../icons/code.svg'
+import type { ReactElement } from 'react'
 
-function What(): JSX.Element {
+function What(): ReactElement {
   return (
     <Section
       title="What"
@@ -42,7 +43,7 @@ function What(): JSX.Element {
       </div>
       <A external noline href="https://jamstack.org">
         <button
-          className={`flex mx-auto mt-8 text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+          className={`flex mx-auto mt-8 text-white bg-primary border-0 py-2 px-8 focus:outline-hidden hover:bg-rosely9 rounded-sm text-lg`}
         >
           Learn More at Jamstack.org
         </button>

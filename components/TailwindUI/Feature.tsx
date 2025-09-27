@@ -6,7 +6,7 @@ interface FeatureProps {
 
 const Feature: React.FC<FeatureProps> = ({ children, feature, description }) => (
   <div className="flex">
-    <div className="flex-shrink-0">
+    <div className="shrink-0">
       <div className="flex items-center justify-center h-12 w-12 rounded-md bg-rosely10 text-white">
         {children}
       </div>

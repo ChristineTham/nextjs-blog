@@ -63,7 +63,7 @@ const About: React.FC<AboutProps> = ({ arch, platform, version, commit, chimpsta
         backgroundColor="bg-rosely5"
         width="w-64"
       >
-        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+        <div className="bg-white shadow-sm overflow-hidden sm:rounded-lg">
           <ListHeader title="Deployment Information" description="Website deployment details" />
           <div className="border-t border-rosely7">
             <dl>
@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps = async () => {
       arch: process.arch,
       platform: process.platform,
       version: process.version,
-      commit: process.env.VERCEL_GIT_COMMIT_MESSAGE,
+      commit: process.env.VERCEL_GIT_COMMIT_MESSAGE || null,
       chimpstatus: mailchimpResponse.health_status
     }
   }

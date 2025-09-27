@@ -1,8 +1,9 @@
 import { site } from '../../global'
 import Logo from '../../icons/stack.svg'
 import A from '../A'
+import type { ReactElement } from 'react'
 
-function Header(): JSX.Element {
+function Header(): ReactElement {
   return (
     <header className="text-rosely0 body-font top-0 fixed z-50 w-full bg-white bg-opacity-90">
       <div className=" container border-b border-rosely7 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -27,7 +28,7 @@ function Header(): JSX.Element {
           </A>
         </nav>
         <A external noline href={site.repository}>
-          <button className="inline-flex items-center bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-rosely9 text-white rounded text-base mt-4 md:mt-0">
+          <button className="inline-flex items-center bg-primary border-0 py-1 px-3 focus:outline-hidden hover:bg-rosely9 text-white rounded-sm text-base mt-4 md:mt-0">
             <svg
               className="h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"

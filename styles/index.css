@@ -1,33 +1,53 @@
-@tailwind base;
+@import 'tailwindcss';
+
+@config '../tailwind.config.js';
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 /* Write your own custom base styles here */
 
 /* Start purging... */
-@tailwind components;
-/* Stop purging. */
+@layer components {
+  /* Stop purging. */
 
-.rehype-code-title {
-  display: block;
-  color: #85677b;
-  background-color: #f7caca;
-  overflow-x: auto;
-  left: 50%;
-  margin-left: -40vw;
-  margin-right: -40vw;
-  max-width: 80vw;
-  position: relative;
-  right: 50%;
-  width: 80vw;
-  border-radius: 0.5rem;
-  margin-bottom: -1.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-weight: bold;
+  .rehype-code-title {
+    display: block;
+    color: #85677b;
+    background-color: #f7caca;
+    overflow-x: auto;
+    left: 50%;
+    margin-left: -40vw;
+    margin-right: -40vw;
+    max-width: 80vw;
+    position: relative;
+    right: 50%;
+    width: 80vw;
+    border-radius: 0.5rem;
+    margin-bottom: -1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+  }
+  /* Write your own custom component styles here */
+
+  /* Start purging... */
 }
-/* Write your own custom component styles here */
-
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
-
-/* Your own custom utilities */

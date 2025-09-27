@@ -111,7 +111,7 @@ const CTA: React.FC = () => {
                 onChange={handleOnChange}
                 required
                 value={inputs.firstname}
-                className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
               />
             </div>
             <div className="relative mb-4">
@@ -125,7 +125,7 @@ const CTA: React.FC = () => {
                 onChange={handleOnChange}
                 required
                 value={inputs.lastname}
-                className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
               />
             </div>
             <div className="relative mb-4">
@@ -139,11 +139,11 @@ const CTA: React.FC = () => {
                 onChange={handleOnChange}
                 required
                 value={inputs.email}
-                className={`w-full bg-rosely4 rounded border border-rosely3 focus:border-rosely7 text-base outline-none text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
+                className={`w-full bg-rosely4 rounded-sm border border-rosely3 focus:border-rosely7 text-base outline-hidden text-rosely0 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out`}
               />
             </div>
             <button
-              className={`text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-rosely9 rounded text-lg`}
+              className={`text-white bg-primary border-0 py-2 px-8 focus:outline-hidden hover:bg-rosely9 rounded-sm text-lg`}
             >
               {!status.submitting ? (!status.submitted ? 'Subscribe' : 'Subscribed') : 'Adding ...'}
             </button>
