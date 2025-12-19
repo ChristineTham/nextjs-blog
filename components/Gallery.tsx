@@ -13,7 +13,6 @@ const MyGallery: React.FC<MyGalleryProps> = ({ photos, dimensions }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentImage, setCurrentImage] = useState(0)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   const openLightbox = useCallback((event: any, { photo, index }: any) => {
     setCurrentImage(index)
     setIsOpen(true)

@@ -55,7 +55,6 @@ const Posts: React.FC<{ posts: PostMeta[]; categories: string[]; buildDate: stri
             as="div"
             className="space-y-1"
             value={selectedCategory}
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onChange={setSelectedCategory as any}
           >
             {({ open }) => (

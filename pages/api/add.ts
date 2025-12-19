@@ -1,8 +1,7 @@
 import { NowRequest, NowResponse } from '@vercel/node'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, import/no-anonymous-default-export
-export default async (req: NowRequest, res: NowResponse) => {
+const add = async (req: NowRequest, res: NowResponse) => {
   const { firstname, lastname, email } = req.body
 
   if (!email) {
@@ -31,3 +30,4 @@ export default async (req: NowRequest, res: NowResponse) => {
       .send('An error has occurred. Please contact me at [learning.jamstack@hellotham.com].')
   }
 }
+export default add

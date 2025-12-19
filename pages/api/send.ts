@@ -1,8 +1,7 @@
 import { NowRequest, NowResponse } from '@vercel/node'
 import sgMail from '@sendgrid/mail'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, import/no-anonymous-default-export
-export default async (req: NowRequest, res: NowResponse) => {
+const send = async (req: NowRequest, res: NowResponse) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || '0')
 
   const { email, subject, message } = req.body
@@ -22,3 +21,4 @@ export default async (req: NowRequest, res: NowResponse) => {
     res.status(400).send('Message not sent.')
   }
 }
+export default send

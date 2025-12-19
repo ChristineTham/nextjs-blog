@@ -47,7 +47,6 @@ interface PostProps {
   frontMatter: FrontMatter
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Post: React.FC<PostProps> = ({ url, source, frontMatter }) => {
   return (
     <BlogLayout url={url} meta={frontMatter}>

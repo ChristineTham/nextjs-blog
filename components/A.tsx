@@ -5,7 +5,6 @@ interface AProps extends React.ComponentPropsWithoutRef<'a'> {
   noline?: boolean
   external?: boolean
 }
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const A: React.FC<AProps> = (props) => {
   const { external, noline: noline, href, ...otherProps } = props
   if (external) {
@@ -26,11 +25,10 @@ const A: React.FC<AProps> = (props) => {
         <Link
           href={href}
           className={`text-primary hover:text-rosely9 ${noline || 'underline'} font-semibold`}
-          {...otherProps}>
-
-        </Link>
+          {...otherProps}
+        ></Link>
       </>
-    );
+    )
   }
 }
 export default A

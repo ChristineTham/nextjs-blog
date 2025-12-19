@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // Generate sitemap.xml and feed.xml
 
 import fs from 'fs'

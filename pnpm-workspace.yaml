@@ -1,5 +1,0 @@
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
-  - unrs-resolver
-  - yarn

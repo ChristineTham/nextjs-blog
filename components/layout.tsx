@@ -5,7 +5,6 @@ import Footer from './Notus/Footer'
 
 import { site } from '../global'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Layout: React.FC<{ children?: React.ReactNode; _home?: boolean }> = ({ children, _home }) => {
   return (
     <>
