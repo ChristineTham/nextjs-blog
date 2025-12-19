@@ -21,7 +21,7 @@
     "eslint": "eslint . --ext ts --ext tsx --ext js",
     "lint": "next lint",
     "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test"
+    "test-all": "pnpm lint && pnpm type-check && pnpm test"
   },
   "prettier": {
     "printWidth": 100,
@@ -66,8 +66,7 @@
     "remark-toc": "^9.0.0",
     "rss": "^1.2.2",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18",
-    "yarn": "^1.22.22"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^16.1.0",
@@ -75,6 +74,7 @@
     "@tailwindcss/postcss": "^4.1.18",
     "@testing-library/react": "^16.3.1",
     "@types/jest": "^30.0.0",
+    "@types/katex": "^0.16.7",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-paginate": "^7.1.4",
