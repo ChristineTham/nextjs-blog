@@ -69,7 +69,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^16.1.0",
+    "@next/eslint-plugin-next": "^16.1.1",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@testing-library/react": "^16.3.1",
@@ -79,20 +79,20 @@
     "@types/react": "^19.2.7",
     "@types/react-paginate": "^7.1.4",
     "@types/rss": "^0.0.32",
-    "@typescript-eslint/eslint-plugin": "^8.50.0",
-    "@typescript-eslint/parser": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "@vercel/node": "^5.5.16",
     "autoprefixer": "^10.4.23",
     "babel-jest": "^30.2.0",
     "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.0",
+    "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "^10.1.8",
-    "globby": "^16.0.0",
+    "globby": "^16.1.0",
     "jest": "^30.2.0",
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa"
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }
