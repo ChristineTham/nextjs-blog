@@ -1,11 +1,17 @@
 import React from 'react'
 import { Gallery, Item } from 'react-photoswipe-gallery'
+import Masonry from 'react-masonry-css'
 import 'photoswipe/dist/photoswipe.css'
 import { ISizeCalculationResult } from 'image-size/dist/types/interface'
 
 interface MyGalleryProps {
   photos: string[]
   dimensions?: ISizeCalculationResult[]
+}
+
+const breakpointColumnsObj = {
+  default: 3,
+  767: 1
 }
 
 const MyGallery: React.FC<MyGalleryProps> = ({ photos, dimensions }) => {
@@ -18,27 +24,32 @@ const MyGallery: React.FC<MyGalleryProps> = ({ photos, dimensions }) => {
       </div>
       <div className="container mx-auto">
         <Gallery>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="flex -ml-4 w-auto"
+            columnClassName="pl-4 bg-clip-padding"
+          >
             {photos.map((photo, i) => (
-              <Item
-                key={photo}
-                original={photo}
-                thumbnail={photo}
-                width={dimensions ? dimensions[i].width : 1024}
-                height={dimensions ? dimensions[i].height : 768}
-              >
-                {({ ref, open }) => (
-                  <img
-                    ref={ref as React.Ref<HTMLImageElement>}
-                    onClick={open}
-                    src={photo}
-                    className="cursor-pointer w-full h-auto object-cover hover:opacity-90 transition-opacity"
-                    alt={`Gallery Image ${i + 1}`}
-                  />
-                )}
-              </Item>
+              <div key={photo} className="mb-4">
+                <Item
+                  original={photo}
+                  thumbnail={photo}
+                  width={dimensions ? dimensions[i].width : 1024}
+                  height={dimensions ? dimensions[i].height : 768}
+                >
+                  {({ ref, open }) => (
+                    <img
+                      ref={ref as React.Ref<HTMLImageElement>}
+                      onClick={open}
+                      src={photo}
+                      className="cursor-pointer w-full h-auto object-cover hover:opacity-90 transition-opacity"
+                      alt={`Gallery Image ${i + 1}`}
+                    />
+                  )}
+                </Item>
+              </div>
             ))}
-          </div>
+          </Masonry>
         </Gallery>
       </div>
     </>
