@@ -1,0 +1,14 @@
+
+> nextjs-blog@0.2.0 dev
+> env NODE_OPTIONS=--max_old_space_size=8192 next dev
+
+ ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.0.2:3001
+
+ ✓ Starting...
+ ✓ Ready in 1991ms
+ ○ Compiling /test-ril ...
+ ✓ Compiled /test-ril in 4.7s (384 modules)
+ HEAD /test-ril 200 in 435ms
