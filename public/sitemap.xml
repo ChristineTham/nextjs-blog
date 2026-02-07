@@ -96,6 +96,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.hellotham.com/posts/migrating-to-photoswipe</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.hellotham.com/posts/nextjs-amp</loc>
     <changefreq>hourly</changefreq>
   </url>

@@ -1,0 +1,88 @@
+---
+date: '2026-02-07'
+type: Article
+draft: false
+title: Migrating to React Photoswipe Gallery
+description: How I replaced react-image-lightbox with react-photoswipe-gallery for better maintainability and performance.
+author: Chris Tham
+featured_image: /drawings/imageviewer.svg
+gallery: test
+tags:
+  - gallery
+  - lightbox
+  - photoswipe
+categories:
+  - Technique
+---
+
+I recently migrated the gallery and lightbox functionality on this blog from `react-photo-gallery` and `react-image-lightbox` to [`react-photoswipe-gallery`](https://github.com/dromru/react-photoswipe-gallery).
+
+## Why the change?
+
+The previous setup used `react-photo-gallery` for the masonry layout and `react-image-lightbox` (and occasionally `react-bnb-gallery`) for the lightbox view. While this worked, it introduced multiple dependencies and complexities, especially around calculating image layouts and managing state for the lightbox.
+
+`react-photoswipe-gallery` provides a cleaner, more integrated solution. It wraps the powerful [PhotoSwipe](https://photoswipe.com/) library and offers a simple declarative API.
+
+## Implementation
+
+The migration involved removing the old dependencies and rewriting the `MyGallery` component. Instead of relying on a masonry layout library, I switched to a responsive CSS Grid using Tailwind CSS, which gives more predictable control over the layout.
+
+Here is how the new `MyGallery` component looks:
+
+```tsx:components/Gallery.tsx
+import React from 'react'
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import 'photoswipe/dist/photoswipe.css'
+import { ISizeCalculationResult } from 'image-size/dist/types/interface'
+
+interface MyGalleryProps {
+  photos: string[]
+  dimensions?: ISizeCalculationResult[]
+}
+
+const MyGallery: React.FC<MyGalleryProps> = ({ photos, dimensions }) => {
+  return (
+    <>
+      <div className="container flex flex-col items-center mx-auto">
+        <p className="mb-4 text-sm text-gray-500">
+          Click on an image to view in lightbox.
+        </p>
+      </div>
+      <div className="container mx-auto">
+        <Gallery>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {photos.map((photo, i) => (
+              <Item
+                key={photo}
+                original={photo}
+                thumbnail={photo}
+                width={dimensions ? dimensions[i].width : 1024}
+                height={dimensions ? dimensions[i].height : 768}
+              >
+                {({ ref, open }) => (
+                  <img
+                    ref={ref as React.MutableRefObject<HTMLImageElement>}
+                    onClick={open}
+                    src={photo}
+                    className="cursor-pointer w-full h-auto object-cover hover:opacity-90 transition-opacity"
+                    alt={`Gallery Image ${i + 1}`}
+                  />
+                )}
+              </Item>
+            ))}
+          </div>
+        </Gallery>
+      </div>
+    </>
+  )
+}
+export default MyGallery
+```
+
+The component now uses `react-photoswipe-gallery`'s `Gallery` context provider and `Item` component to handle the lightbox logic. The layout is handled by a simple `grid` container.
+
+## Result
+
+The result is a lighter weight solution with fewer dependencies and better performance. The gallery is fully responsive and the lightbox experience is smooth and touch-friendly.
+
+Check out the example gallery below (reused from the previous implementation):

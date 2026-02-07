@@ -47,7 +47,7 @@ const TestRPG: React.FC = () => {
               >
                 {({ ref, open }) => (
                   <img
-                    ref={ref as React.MutableRefObject<HTMLImageElement>}
+                    ref={ref as React.Ref<HTMLImageElement>}
                     onClick={open}
                     src={photo.src}
                     className="cursor-pointer w-full h-auto object-cover"
