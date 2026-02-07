@@ -86,7 +86,13 @@ export const getStaticProps: GetStaticProps = async () => {
     apiKey: process.env.MAILCHIMP_API_KEY,
     server: process.env.MAILCHIMP_SERVER_PREFIX
   })
-  const mailchimpResponse = await mailchimp.ping.get()
+  let chimpstatus = 'unknown'
+  try {
+    const mailchimpResponse = await mailchimp.ping.get()
+    chimpstatus = mailchimpResponse.health_status
+  } catch (error) {
+    console.error('Mailchimp ping failed:', error)
+  }
 
   return {
     props: {
@@ -94,7 +100,7 @@ export const getStaticProps: GetStaticProps = async () => {
       platform: process.platform,
       version: process.version,
       commit: process.env.VERCEL_GIT_COMMIT_MESSAGE || null,
-      chimpstatus: mailchimpResponse.health_status
+      chimpstatus
     }
   }
 }
