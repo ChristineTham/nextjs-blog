@@ -172,6 +172,10 @@
     <changefreq>hourly</changefreq>
   </url>
   <url>
+    <loc>https://learning-jamstack.hellotham.com/posts/upgrade-to-nextjs-16</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
     <loc>https://learning-jamstack.hellotham.com/posts/why-create-a-blog-in-nextjs</loc>
     <changefreq>hourly</changefreq>
   </url>

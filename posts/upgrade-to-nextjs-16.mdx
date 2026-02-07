@@ -1,0 +1,69 @@
+---
+date: '2026-02-07'
+type: Article
+draft: false
+title: Upgrading to Next.js 16
+description: A technical deep dive into upgrading this blog to Next.js 16, React 19, and the associated challenges with dependencies and build tools.
+author: Jules
+featured_image: /images/nextjs-16-upgrade.jpg
+tags:
+  - Next.js
+  - React
+  - Upgrade
+  - Technical
+categories:
+  - Technical
+  - Maintenance
+---
+
+This blog has recently been upgraded to the latest and greatest in the React ecosystem: **Next.js 16** and **React 19**. This upgrade brings performance improvements, better developer experience, and aligns the project with modern web development standards.
+
+Special thanks to **Jules** for orchestrating this upgrade and resolving the technical challenges along the way.
+
+## The Upgrade Path
+
+Upgrading a codebase is rarely just about bumping version numbers in `package.json`. It involves ensuring compatibility across the entire dependency tree, handling breaking changes, and verifying that the build process remains robust.
+
+Here is a summary of the key changes made during this upgrade:
+
+### 1. Next.js 16 and React 19
+
+The core of the upgrade involved moving to:
+- **Next.js**: `^16.1.6`
+- **React**: `^19.2.4`
+- **React DOM**: `^19.2.4`
+
+These versions introduce new features and deprecations that required careful handling of peer dependencies and configuration.
+
+### 2. Handling `next-seo` Compatibility
+
+One of the significant challenges encountered was with `next-seo`. The latest version (v7) drops support for the Pages Router components (`NextSeo`, `DefaultSeo`) in favor of the App Router. Since this blog currently uses the Pages Router, upgrading to v7 would have required a major refactor.
+
+To maintain stability and avoid a complete rewrite of the SEO implementation, we pinned `next-seo` to **v6.8.0**, which retains support for the components we rely on.
+
+### 3. Build Tooling: Webpack vs. Turbopack
+
+Next.js 16 enables Turbopack by default for development. While Turbopack is incredibly fast, it doesn't yet support all custom Webpack configurations out of the box—specifically, our usage of SVGR for importing SVG files as React components.
+
+To ensure our SVG assets continued to load correctly, we explicitly opted into Webpack for both development and build scripts:
+
+```json
+"scripts": {
+  "dev": "env NODE_OPTIONS=--max_old_space_size=8192 next dev --webpack",
+  "build": "env NODE_OPTIONS=--max_old_space_size=8192 next build --webpack"
+}
+```
+
+### 4. ESLint Configuration
+
+The upgrade also included moving to the latest ESLint versions (`^9.39.2`) and the corresponding Next.js plugin (`^16.1.6`). We updated our linting scripts to use `eslint .` directly, removing deprecated flags and ensuring our code quality checks remain rigorous.
+
+### 5. Robust Error Handling
+
+During the verification process, we identified that the build could fail if the Mailchimp API configuration was missing or if the service was unreachable. To make the build more resilient, specifically for the "About" page, we added try-catch blocks around the API calls in `getStaticProps`. This ensures that a third-party service outage doesn't bring down our entire build pipeline.
+
+## Conclusion
+
+Keeping dependencies up to date is crucial for security and performance, but it requires a strategic approach. By carefully managing version compatibility and build configurations, we've successfully brought this blog to the cutting edge of the Next.js ecosystem.
+
+Thanks again to **Jules** for the hard work on this upgrade!
