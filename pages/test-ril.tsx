@@ -1,8 +1,6 @@
-import Gallery from 'react-photo-gallery'
-import Lightbox from 'react-image-lightbox'
-import { useCallback, useState } from 'react'
+import { Gallery as PSGallery, Item } from 'react-photoswipe-gallery'
+import 'photoswipe/dist/photoswipe.css'
 import Layout from '../components/layout'
-import 'react-image-lightbox/style.css'
 
 const gallery = [
   {
@@ -33,35 +31,33 @@ const gallery = [
 ]
 
 const TestRPG: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState(0)
-  const [viewerIsOpen, setViewerIsOpen] = useState(false)
-
-  const openLightbox = useCallback((event: any, { photo, index }: any) => {
-    setCurrentImage(index)
-    setViewerIsOpen(true)
-  }, [])
-
-  const closeLightbox = () => {
-    setCurrentImage(0)
-    setViewerIsOpen(false)
-  }
   return (
     <>
       <Layout>
         <div className="mt-20" />
-        <Gallery photos={gallery} direction="column" onClick={openLightbox} />
-        {viewerIsOpen && (
-          <Lightbox
-            mainSrc={gallery[currentImage].src}
-            nextSrc={gallery[(currentImage + 1) % gallery.length].src}
-            prevSrc={gallery[(currentImage + gallery.length - 1) % gallery.length].src}
-            onCloseRequest={closeLightbox}
-            onMovePrevRequest={() =>
-              setCurrentImage((currentImage + gallery.length - 1) % gallery.length)
-            }
-            onMoveNextRequest={() => setCurrentImage((currentImage + 1) % gallery.length)}
-          />
-        )}
+        <PSGallery>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+            {gallery.map((photo, index) => (
+              <Item
+                key={index}
+                original={photo.src}
+                thumbnail={photo.src}
+                width={photo.width}
+                height={photo.height}
+              >
+                {({ ref, open }) => (
+                  <img
+                    ref={ref as React.Ref<HTMLImageElement>}
+                    onClick={open}
+                    src={photo.src}
+                    className="cursor-pointer w-full h-auto object-cover"
+                    alt=""
+                  />
+                )}
+              </Item>
+            ))}
+          </div>
+        </PSGallery>
       </Layout>
     </>
   )

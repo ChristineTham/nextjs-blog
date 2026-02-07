@@ -19,6 +19,7 @@ lots of additional features (mainly from [Next.js examples](https://github.com/v
 - [TailwindCSS](https://tailwindcss.com/) UI framework
 - [Tailblocks](https://mertjf.github.io/tailblocks/) for web components
 - [Undraw](https://undraw.io) for illustrations and feature images
+- Image Gallery using [`react-photoswipe-gallery`](https://github.com/dromru/react-photoswipe-gallery)
 
 ## Deploy
 
