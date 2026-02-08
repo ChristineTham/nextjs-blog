@@ -2,7 +2,7 @@ import '../styles/index.css'
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { DefaultSeo } from 'next-seo'
+import { generateDefaultSeo } from 'next-seo/pages'
 import SEO from '../next-seo.config'
 
 // import { config } from '@fortawesome/fontawesome-svg-core'
@@ -27,8 +27,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           title="RSS for blog posts"
           href={site.url + '/rss'}
         />
+        {generateDefaultSeo(SEO)}
       </Head>
-      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
   )

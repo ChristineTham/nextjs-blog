@@ -2,7 +2,7 @@ import React from 'react'
 import { Gallery, Item } from 'react-photoswipe-gallery'
 import Masonry from 'react-masonry-css'
 import 'photoswipe/dist/photoswipe.css'
-import { ISizeCalculationResult } from 'image-size/dist/types/interface'
+import { ISizeCalculationResult } from 'image-size/types/interface'
 
 interface MyGalleryProps {
   photos: string[]

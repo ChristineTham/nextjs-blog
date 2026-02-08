@@ -1,4 +1,5 @@
-import { NextSeo, SocialProfileJsonLd } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
+import { SocialProfileJsonLd } from '../components/SEO/SocialProfileJsonLd'
 
 // components
 import Layout from '../components/layout'

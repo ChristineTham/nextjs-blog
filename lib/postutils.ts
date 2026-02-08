@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { ISizeCalculationResult } from 'image-size/dist/types/interface'
+import { ISizeCalculationResult } from 'image-size/types/interface'
 
 // POSTS_PATH is useful when you want to get the path to a specific file
 export const POSTS_PATH = path.join(process.cwd(), 'posts')

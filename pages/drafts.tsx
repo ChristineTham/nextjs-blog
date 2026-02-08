@@ -1,4 +1,5 @@
-import { NextSeo, ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
 // external modules
 import { GetStaticProps } from 'next'
 
@@ -28,11 +29,11 @@ const Drafts: React.FC<{ allPostsData: PostMeta[]; buildDate: string }> = ({
       />
       <ArticleJsonLd
         url={site.url}
-        title={site.title}
-        images={[site.url + '/images/screenshot.png']}
+        headline={site.title}
+        image={[site.url + '/images/screenshot.png']}
         datePublished="2020-12-01"
         dateModified={buildDate}
-        authorName={site.author}
+        author={[site.author]}
         description={site.description}
       />
       <div className="h-24 w-full bg-rosely6"></div>
