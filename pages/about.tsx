@@ -1,4 +1,5 @@
-import { NextSeo, SocialProfileJsonLd } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
+import { SocialProfileJsonLd } from '../components/SEO/SocialProfileJsonLd'
 import { GetStaticProps } from 'next'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 

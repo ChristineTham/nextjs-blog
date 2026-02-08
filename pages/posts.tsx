@@ -1,4 +1,5 @@
-import { NextSeo, ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
 // external modules
 import { GetStaticProps } from 'next'
 import { Listbox, Transition } from '@headlessui/react'
@@ -42,11 +43,11 @@ const Posts: React.FC<{ posts: PostMeta[]; categories: string[]; buildDate: stri
       />
       <ArticleJsonLd
         url={site.url}
-        title={site.title}
-        images={[site.url + '/images/screenshot.png']}
+        headline={site.title}
+        image={[site.url + '/images/screenshot.png']}
         datePublished="2020-12-01"
         dateModified={buildDate}
-        authorName={site.author}
+        author={[site.author]}
         description={site.description}
       />
       <div className="flex items-center justify-center pt-24 bg-rosely6">

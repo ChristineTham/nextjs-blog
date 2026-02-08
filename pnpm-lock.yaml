@@ -45,8 +45,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@19.2.13)(react@19.2.4)
       next-seo:
-        specifier: ^6.8.0
-        version: 6.8.0(next@16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^7.1.0
+        version: 7.1.0(next@16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       photoswipe:
         specifier: ^5.4.4
         version: 5.4.4
@@ -3996,12 +3996,11 @@ packages:
     peerDependencies:
       react: '>=16'
 
-  next-seo@6.8.0:
-    resolution: {integrity: sha512-zcxaV67PFXCSf8e6SXxbxPaOTgc8St/esxfsYXfQXMM24UESUVSXFm7f2A9HMkAwa0Gqn4s64HxYZAGfdF4Vhg==}
+  next-seo@7.1.0:
+    resolution: {integrity: sha512-gTWm9wnAXvtqD8QPIpbBA6iMnqMp1WyNTGza9QJPabVIPoX+ZDt1/J0KUkziiIKRyad+nSGLC0BfHgekqcfq0Q==}
     peerDependencies:
-      next: ^8.1.1-canary.54 || >=9.0.0
-      react: '>=16.0.0'
-      react-dom: '>=16.0.0'
+      next: '>=13.4.0'
+      react: '>=18.2.0'
 
   next@16.1.6:
     resolution: {integrity: sha512-hkyRkcu5x/41KoqnROkfTm2pZVbKxvbZRuNvKXLRXxs3VfyO0WhY50TQS40EuKO9SW3rBj/sF3WbVwDACeMZyw==}
@@ -9829,11 +9828,10 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  next-seo@6.8.0(next@16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  next-seo@7.1.0(next@16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4):
     dependencies:
       next: 16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
 
   next@16.1.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:

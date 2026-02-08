@@ -1,5 +1,6 @@
 // external modules
-import { NextSeo, ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
 import { GetStaticProps } from 'next'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
@@ -40,11 +41,11 @@ const Home: React.FC<{ posts: PostMeta[]; buildDate: string }> = ({ posts, build
       />
       <ArticleJsonLd
         url={site.url}
-        title={site.title}
-        images={[site.url + '/images/screenshot.png']}
+        headline={site.title}
+        image={[site.url + '/images/screenshot.png']}
         datePublished="2020-12-01"
         dateModified={buildDate}
-        authorName={site.author}
+        author={[site.author]}
         description={site.description}
       />
       <Hero />

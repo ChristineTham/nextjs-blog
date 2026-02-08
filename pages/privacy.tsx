@@ -1,4 +1,4 @@
-import { NextSeo } from 'next-seo'
+import { NextSeo } from '../components/SEO/NextSeo'
 
 // components
 import Layout from '../components/layout'

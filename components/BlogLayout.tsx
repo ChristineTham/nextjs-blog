@@ -4,7 +4,8 @@ import BlogHero from './tailblocks/BlogHero'
 import CTA from './tailblocks/CTA'
 import MyGallery from './Gallery'
 import Footer from './Notus/Footer'
-import { NextSeo, ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd } from 'next-seo'
+import { NextSeo } from './SEO/NextSeo'
 import { FrontMatter } from '../lib/postutils'
 import { site } from '../global'
 
@@ -37,13 +38,15 @@ const BlogLayout: React.FC<{ children?: React.ReactNode; url: string; meta: Fron
       />
       <ArticleJsonLd
         url={url}
-        title={meta.title}
-        images={[site.url + meta.featured_image.replace('.svg', '.png')]}
+        headline={meta.title}
+        image={[site.url + meta.featured_image.replace('.svg', '.png')]}
         datePublished={meta.date}
         dateModified={meta.date}
-        authorName={[meta.author]}
-        publisherName={meta.author}
-        publisherLogo={site.url + '/android-chrome-512x512.png'}
+        author={[meta.author]}
+        publisher={{
+          name: meta.author,
+          logo: site.url + '/android-chrome-512x512.png'
+        }}
         description={meta.description}
       />
       <Header />

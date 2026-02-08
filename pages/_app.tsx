@@ -2,8 +2,7 @@ import '../styles/index.css'
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { DefaultSeo } from 'next-seo'
-import SEO from '../next-seo.config'
+import { NextSeo } from '../components/SEO/NextSeo'
 
 // import { config } from '@fortawesome/fontawesome-svg-core'
 // import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
@@ -28,7 +27,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           href={site.url + '/rss'}
         />
       </Head>
-      <DefaultSeo {...SEO} />
+      <NextSeo />
       <Component {...pageProps} />
     </>
   )
