@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
+
+
 declare module '@mailchimp/mailchimp_marketing' {
   type Config = {
     apiKey?: string
@@ -24,6 +24,7 @@ declare module '@mailchimp/mailchimp_marketing' {
     merge_fields?: { [key: string]: any }
   }
 
+  // eslint-disable-next-line import/no-anonymous-default-export
   export default {
     setConfig: (config: Config) => {},
     ping: {
